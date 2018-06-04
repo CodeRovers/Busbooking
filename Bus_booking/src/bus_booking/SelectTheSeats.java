@@ -566,7 +566,7 @@ public class SelectTheSeats extends javax.swing.JFrame {
                 .addGap(17, 17, 17))
         );
 
-        jButton59.setFont(new java.awt.Font("Lucida Calligraphy", 1, 11)); // NOI18N
+        jButton59.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
         jButton59.setText("Submit");
         jButton59.setName("submit"); // NOI18N
         jButton59.addActionListener(new java.awt.event.ActionListener() {
@@ -600,7 +600,7 @@ public class SelectTheSeats extends javax.swing.JFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44)
                 .addComponent(jButton59)
-                .addContainerGap(186, Short.MAX_VALUE))
+                .addContainerGap(182, Short.MAX_VALUE))
         );
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bus_booking/Bus.png"))); // NOI18N
