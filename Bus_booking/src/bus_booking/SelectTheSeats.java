@@ -98,7 +98,7 @@ public class SelectTheSeats extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Lucida Calligraphy", 1, 48)); // NOI18N
         jLabel1.setText("BOOK MY BUS");
 
-        jPanel2.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
 
         jButton2.setBackground(new java.awt.Color(0, 153, 51));
         jButton2.setFont(new java.awt.Font("Lucida Calligraphy", 1, 11)); // NOI18N
