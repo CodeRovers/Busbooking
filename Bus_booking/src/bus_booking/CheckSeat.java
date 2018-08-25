@@ -10,6 +10,16 @@ package bus_booking;
  * @author Thasni
  */
 public class CheckSeat extends javax.swing.JFrame {
+    
+    static String nbus;
+    static String ndate;
+    
+    public static String setbusid(){          
+        return nbus;
+    }
+    public static String setdate(){
+        return ndate;
+    }
 
     /**
      * Creates new form NewJFrame

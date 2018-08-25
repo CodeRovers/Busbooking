@@ -10,7 +10,6 @@ package bus_booking;
  * @author Thasni
  */
 public class SearchUpdate extends javax.swing.JFrame {
-
     /**
      * Creates new form NewJFrame
      */

@@ -454,7 +454,6 @@
                   <Font name="Lucida Calligraphy" size="18" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Search"/>
-                <Property name="actionCommand" type="java.lang.String" value="Search"/>
                 <Property name="name" type="java.lang.String" value="searchorupdate" noResource="true"/>
               </Properties>
               <Events>
