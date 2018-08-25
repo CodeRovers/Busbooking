@@ -135,6 +135,10 @@
                 <Property name="text" type="java.lang.String" value="Admin"/>
               </Properties>
               <Events>
+<<<<<<< HEAD
+=======
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton2MouseClicked"/>
+>>>>>>> d4598d6e9af3d76eadbe8e7727389ed68c8a8d76
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
               </Events>
             </Component>
@@ -146,6 +150,7 @@
                 <Property name="text" type="java.lang.String" value="User"/>
               </Properties>
               <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton5MouseClicked"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
               </Events>
             </Component>
