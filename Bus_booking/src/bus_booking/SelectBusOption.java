@@ -23,6 +23,24 @@ public class SelectBusOption extends javax.swing.JFrame {
      * 
      * Creates new form NewJFrame
      */
+    static String passvaluefrom;
+    static String passvalueto;
+
+     public static String getPassvaluefrom() {
+        return passvaluefrom;
+    }
+
+    public static void setPassvaluefrom(String passvaluefrom) {
+        SelectBusOption.passvaluefrom = passvaluefrom;
+    }
+    
+    public static String getPassvalueto() {
+        return passvalueto;
+    }
+
+    public static void setPassvalueto(String passvalueto) {
+        SelectBusOption.passvalueto = passvalueto;
+    }
     public SelectBusOption() {
         initComponents();
         from();
@@ -245,17 +263,23 @@ public class SelectBusOption extends javax.swing.JFrame {
           // TODO add your handling code here:
     }//GEN-LAST:event_fromActionPerformed
 
+    
   
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        
-       String bfrom = (String) from.getSelectedItem();
-       String bto = (String) to.getSelectedItem(); 
+      
+      keep(); 
        new CheckSeat().setVisible(true);
        this.setVisible(false);
        
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
-
+public void keep()
+{
+    passvaluefrom = (String) from.getSelectedItem();
+    passvalueto = (String) to.getSelectedItem(); 
+    
+}
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         new LogIn().setVisible(true);
         this.setVisible(false);// TODO add your handling code here:
