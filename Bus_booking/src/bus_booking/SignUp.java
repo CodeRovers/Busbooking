@@ -267,7 +267,11 @@ public class SignUp extends javax.swing.JFrame {
        
 //        initComponents();
 //        conn = DbConnection.ConnectDb();
+        if(txtempid.getText().trim().isEmpty()&& txtusername.getText().trim().isEmpty()&&txtnic.getText().trim().isEmpty()&&txtcontactno.getText().trim().isEmpty()&&txtaddress.getText().trim().isEmpty()&&txtmailid.getText().trim().isEmpty()&&txtpassword.getText().trim().isEmpty()){
         
+            JOptionPane.showMessageDialog(null, "!!!!!!!  Please File all coloms..");
+        }
+        else{
         try {
             Connection conn = DbConnection.ConnectDb();
             String sql  = "INSERT INTO employee(emp_id, emp_name, emp_nic, emp_phone, emp_address, emp_mail, emp_password) VALUES (?,?,?,?,?,?,?)";
@@ -298,7 +302,8 @@ public class SignUp extends javax.swing.JFrame {
         }
         catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e);
-        }     // TODO add your handling code here:
+        } 
+      }// TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
