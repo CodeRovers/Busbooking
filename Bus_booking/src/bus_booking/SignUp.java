@@ -5,12 +5,23 @@
  */
 package bus_booking;
 
+import static bus_booking.DbConnection.ConnectDb;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Thasni
  */
 public class SignUp extends javax.swing.JFrame {
-
+//
+//    Connection conn=null;
+//    PreparedStatement pst=null;
+//    ResultSet rs=null;
     /**
      * Creates new form NewJFrame
      */
@@ -39,15 +50,15 @@ public class SignUp extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jPasswordField2 = new javax.swing.JPasswordField();
-        jTextField5 = new javax.swing.JTextField();
+        txtaddress = new javax.swing.JTextArea();
+        txtusername = new javax.swing.JTextField();
+        txtempid = new javax.swing.JTextField();
+        txtnic = new javax.swing.JTextField();
+        txtcontactno = new javax.swing.JTextField();
+        txtpassword = new javax.swing.JPasswordField();
+        txtmailid = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jPasswordField3 = new javax.swing.JPasswordField();
+        txtconpassword = new javax.swing.JPasswordField();
         jButton4 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
@@ -84,36 +95,36 @@ public class SignUp extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
         jLabel12.setText("Password : ");
 
-        jTextArea1.setColumns(15);
-        jTextArea1.setRows(3);
-        jTextArea1.setTabSize(5);
-        jTextArea1.setText("\n\n\n\n");
-        jTextArea1.setMinimumSize(new java.awt.Dimension(3, 30));
-        jTextArea1.setName("address"); // NOI18N
-        jTextArea1.setPreferredSize(new java.awt.Dimension(90, 30));
-        jScrollPane1.setViewportView(jTextArea1);
+        txtaddress.setColumns(15);
+        txtaddress.setRows(3);
+        txtaddress.setTabSize(5);
+        txtaddress.setText("\n\n\n\n");
+        txtaddress.setMinimumSize(new java.awt.Dimension(3, 30));
+        txtaddress.setName("address"); // NOI18N
+        txtaddress.setPreferredSize(new java.awt.Dimension(90, 30));
+        jScrollPane1.setViewportView(txtaddress);
 
-        jTextField1.setName("name"); // NOI18N
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtusername.setName("name"); // NOI18N
+        txtusername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtusernameActionPerformed(evt);
             }
         });
 
-        jTextField2.setName("empid"); // NOI18N
+        txtempid.setName("empid"); // NOI18N
 
-        jTextField3.setName("nicno"); // NOI18N
+        txtnic.setName("nicno"); // NOI18N
 
-        jTextField4.setName("contactno"); // NOI18N
+        txtcontactno.setName("contactno"); // NOI18N
 
-        jPasswordField2.setName("password"); // NOI18N
+        txtpassword.setName("password"); // NOI18N
 
-        jTextField5.setName("mailid"); // NOI18N
+        txtmailid.setName("mailid"); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Lucida Calligraphy", 1, 24)); // NOI18N
         jLabel2.setText("Sign Up");
 
-        jPasswordField3.setName("confirmpassword"); // NOI18N
+        txtconpassword.setName("confirmpassword"); // NOI18N
 
         jButton4.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
         jButton4.setText("Submit");
@@ -147,13 +158,13 @@ public class SignUp extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
-                                .addComponent(jTextField4)
-                                .addComponent(jTextField3)
-                                .addComponent(jTextField2)
-                                .addComponent(jTextField1)
-                                .addComponent(jTextField5)
-                                .addComponent(jPasswordField2))
-                            .addComponent(jPasswordField3, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)))
+                                .addComponent(txtcontactno)
+                                .addComponent(txtnic)
+                                .addComponent(txtempid)
+                                .addComponent(txtusername)
+                                .addComponent(txtmailid)
+                                .addComponent(txtpassword))
+                            .addComponent(txtconpassword, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton4)))
@@ -167,19 +178,19 @@ public class SignUp extends javax.swing.JFrame {
                 .addGap(41, 41, 41)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtusername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtempid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtnic, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtcontactno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel10)
@@ -187,15 +198,15 @@ public class SignUp extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtmailid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
-                    .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtpassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(jPasswordField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtconpassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(43, 43, 43)
                 .addComponent(jButton4)
                 .addContainerGap(247, Short.MAX_VALUE))
@@ -248,12 +259,46 @@ public class SignUp extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtusernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtusernameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtusernameActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+       
+//        initComponents();
+//        conn = DbConnection.ConnectDb();
+        
+        try {
+            Connection conn = DbConnection.ConnectDb();
+            String sql  = "INSERT INTO employee(emp_id, emp_name, emp_nic, emp_phone, emp_address, emp_mail, emp_password) VALUES (?,?,?,?,?,?,?)";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            
+//            conn=DbConnection.ConnectDb();
+//            String sql="INSERT INTO employee(emp_id, emp_name, emp_nic, emp_phone, emp_address, emp_mail, emp_password) VALUES ('"+txtempid.getText()+"','"+txtusername.getText()+"','"+txtnic.getText()+"','"+txtcontactno.getText()+"','"+txtaddress.getText()+"','"+txtmailid.getText()+"','"+txtpassword.getText()+"')";
+//            pst.executeUpdate(sql);
+// String sql  = "INSERT INTO employee(emp_id, emp_name, emp_nic, emp_phone, emp_address, emp_mail, emp_password) VALUES (?,?,?,?,?,?,?)";
+          
+//            pst= conn.prepareStatement(sql);
+           
+           pst.setString(1,txtempid.getText());
+           pst.setString(2,txtusername.getText());
+           pst.setString(3,txtnic.getText());
+           pst.setString(4,txtcontactno.getText());
+           pst.setString(5,txtaddress.getText());
+           pst.setString(6,txtmailid.getText());
+           pst.setString(7,txtpassword.getText());
+           pst.execute();
+           
+          // pst.executeUpdate(sql);
+//
+          JOptionPane.showMessageDialog(this, "Success !");
+             LogIn log=new LogIn();
+               log.setVisible(true);
+                this.dispose();
+        }
+        catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e);
+        }     // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
@@ -307,14 +352,14 @@ public class SignUp extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField jPasswordField2;
-    private javax.swing.JPasswordField jPasswordField3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextArea txtaddress;
+    private javax.swing.JPasswordField txtconpassword;
+    private javax.swing.JTextField txtcontactno;
+    private javax.swing.JTextField txtempid;
+    private javax.swing.JTextField txtmailid;
+    private javax.swing.JTextField txtnic;
+    private javax.swing.JPasswordField txtpassword;
+    private javax.swing.JTextField txtusername;
     // End of variables declaration//GEN-END:variables
 }
