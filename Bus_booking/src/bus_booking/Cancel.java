@@ -9,8 +9,12 @@ package bus_booking;
  *
  * @author Thasni
  */
+<<<<<<< HEAD:Bus_booking/src/bus_booking/SearchUpdate.java
+public class SearchUpdate extends javax.swing.JFrame {
+=======
 public class Cancel extends javax.swing.JFrame {
 
+>>>>>>> adc98f2607d9ff16bc30292be990fc35d90e7a49:Bus_booking/src/bus_booking/Cancel.java
     /**
      * Creates new form NewJFrame
      */

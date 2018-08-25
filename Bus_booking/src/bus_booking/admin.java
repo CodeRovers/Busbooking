@@ -61,6 +61,11 @@ public class admin extends javax.swing.JFrame {
 
         jButton4.setFont(new java.awt.Font("Lucida Calligraphy", 1, 36)); // NOI18N
         jButton4.setText("Control User");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
 
         jButton6.setFont(new java.awt.Font("Lucida Calligraphy", 1, 36)); // NOI18N
         jButton6.setText("View Details");
@@ -165,6 +170,19 @@ public class admin extends javax.swing.JFrame {
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        
+        userdetails ud= new userdetails();
+        ud.setVisible(true);
+       ud.pack();
+       ud.setLocationRelativeTo(null);
+      // ud.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+       this.dispose(); 
+       
+       // TODO add your handling code here:
+// TODO add your handling code here:
+    }//GEN-LAST:event_jButton4MouseClicked
 
     /**
      * @param args the command line arguments

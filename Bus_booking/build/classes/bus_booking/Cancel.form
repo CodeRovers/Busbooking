@@ -462,8 +462,12 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Lucida Calligraphy" size="18" style="1"/>
                 </Property>
+<<<<<<< HEAD:Bus_booking/src/bus_booking/SearchUpdate.form
+                <Property name="text" type="java.lang.String" value="Search"/>
+=======
                 <Property name="text" type="java.lang.String" value="Cancel"/>
                 <Property name="actionCommand" type="java.lang.String" value="Search"/>
+>>>>>>> adc98f2607d9ff16bc30292be990fc35d90e7a49:Bus_booking/src/bus_booking/Cancel.form
                 <Property name="name" type="java.lang.String" value="searchorupdate" noResource="true"/>
               </Properties>
               <Events>
