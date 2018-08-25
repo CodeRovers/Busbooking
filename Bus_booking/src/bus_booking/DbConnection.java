@@ -7,7 +7,7 @@ package bus_booking;
  */
 /**
  *
- * @author Ashik
+ * 
  */
 import java.sql.*;
 import javax.swing.*;
