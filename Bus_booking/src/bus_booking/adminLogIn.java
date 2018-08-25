@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
  */
 public class adminLogIn extends javax.swing.JFrame {
 
-    public home home;
+    public admin admin;
      Connection conn=null;
     PreparedStatement pst=null;
     ResultSet rs=null;
