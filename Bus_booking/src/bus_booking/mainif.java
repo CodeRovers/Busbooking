@@ -5,6 +5,8 @@
  */
 package bus_booking;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author Thasni
@@ -46,9 +48,24 @@ public class mainif extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Lucida Calligraphy", 1, 36)); // NOI18N
         jButton2.setText("Admin");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton5.setFont(new java.awt.Font("Lucida Calligraphy", 1, 36)); // NOI18N
         jButton5.setText("User");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -144,6 +161,29 @@ public class mainif extends javax.swing.JFrame {
         new LogIn().setVisible(true);
         this.setVisible(false);// TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+       adminLogIn add=new adminLogIn();
+       add.setVisible(true);
+       add.pack();
+       add.setLocationRelativeTo(null);
+       add.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+       this.dispose();
+// TODO add your handling code here:
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+       LogIn add=new LogIn();
+       add.setVisible(true);
+       add.pack();
+       add.setLocationRelativeTo(null);
+       add.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+       this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5MouseClicked
 
     /**
      * @param args the command line arguments
