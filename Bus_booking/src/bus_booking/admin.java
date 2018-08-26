@@ -5,17 +5,67 @@
  */
 package bus_booking;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.Vector;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Thasni
  */
 public class admin extends javax.swing.JFrame {
+    public userdetails userdetails;
+     Connection conn=null;
+    PreparedStatement pst=null;
+    ResultSet rs=null;
+    int i=0;
+    
 
     /**
      * Creates new form NewJFrame
      */
     public admin() {
         initComponents();
+    }
+    /*String name;
+    public admin(String name){
+        
+    }*/
+    void addDetails(){
+        userdetails emp_name=new userdetails();
+        DefaultTableModel dt;
+        dt = (DefaultTableModel) emp_name.jTable1.getModel();
+    String names[] = null;
+    conn = DbConnection.ConnectDb();
+    String Sql="Select * from employee where emp_name=? and emp_password=?";    
+        try
+        {
+            pst=conn.prepareStatement(Sql);
+            rs=pst.executeQuery();
+            
+            while(rs.next())
+            {
+               
+               names[i] = rs.getString(1);
+               
+               /* Vector v = new Vector();
+               v.add(names[i]); */
+               
+               //dt.addRow(names[i]);
+               i+=1;
+                
+            }
+           
+        }
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null,e);
+        } 
+    
+    
     }
 
     /**
@@ -177,7 +227,8 @@ public class admin extends javax.swing.JFrame {
         ud.setVisible(true);
        ud.pack();
        ud.setLocationRelativeTo(null);
-      // ud.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+       //addDetails();
+      //ud.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
        this.dispose(); 
        
        // TODO add your handling code here:
