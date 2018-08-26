@@ -1004,9 +1004,9 @@ String[] booknow = new String[52];
             }
                 
         }
-<<<<<<< HEAD
+//<<<<<<< HEAD
       
-=======
+//=======
         
         if(refseatno != null){
             new CustomersDetails().setVisible(true);
@@ -1016,7 +1016,7 @@ String[] booknow = new String[52];
             JOptionPane.showMessageDialog(null,"Please Select The Seats","Access Denied",JOptionPane.ERROR_MESSAGE);
         }
         
->>>>>>> 460ca886baeb68dcc99177e83baed804799c919e
+//>>>>>>> 460ca886baeb68dcc99177e83baed804799c919e
     }//GEN-LAST:event_jButton59ActionPerformed
 
     private void jButton58ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton58ActionPerformed
