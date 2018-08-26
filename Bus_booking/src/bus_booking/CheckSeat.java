@@ -52,6 +52,7 @@ public class CheckSeat extends javax.swing.JFrame {
         initComponents();
         Time();
         
+        
     }
 
     public void Time(){
@@ -71,6 +72,8 @@ public class CheckSeat extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, e);
         }
     }
+    
+   
     
 //     public void Date(){
 //        
@@ -245,18 +248,44 @@ public class CheckSeat extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+
+
+
         keeptime_date();    
+        BusId();
+        
         new SelectTheSeats().setVisible(true);
         this.setVisible(false);
             // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 public void keeptime_date()
 {
-    passvaluetime = (String) time.getSelectedItem();
+   passvaluetime = (String) time.getSelectedItem();
    SimpleDateFormat dcn = new SimpleDateFormat("yyyy-MM-dd");
             // String sel_date = dcn.format(date.getDate() );
     ndate = dcn.format(date.getDate() );
+    
 }
+
+public void BusId(){
+        
+        try{
+            Connection conn = DbConnection.ConnectDb();
+            Statement pst = conn.createStatement();
+            keeptime_date();
+            //String sql= "SELECT bus_time FROM bus WHERE bus_from = '"+sel_from+"' AND bus_to = '"+sel_to"'";
+            String sql = "SELECT * FROM `bus` WHERE bus_from = '"+sel_from+"' AND bus_to = '"+sel_to+"' AND bus_time = '"+passvaluetime+"'";
+            ResultSet rs = pst.executeQuery(sql);
+            while(rs.next()){              
+                nbus = rs.getString("bus_id");
+            }
+             
+        }
+        catch (SQLException e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
+
     private void timeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_timeActionPerformed
