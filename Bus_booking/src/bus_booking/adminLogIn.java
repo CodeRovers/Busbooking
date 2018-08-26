@@ -72,7 +72,7 @@ public class adminLogIn extends javax.swing.JFrame {
         });
 
         jLabel2.setFont(new java.awt.Font("Lucida Calligraphy", 1, 24)); // NOI18N
-        jLabel2.setText("Log In");
+        jLabel2.setText("Log In as Admin :");
 
         txtadminpassword.setName("password"); // NOI18N
 
@@ -107,7 +107,7 @@ public class adminLogIn extends javax.swing.JFrame {
                                     .addComponent(txtadminpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(175, 175, 175)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(692, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -254,4 +254,8 @@ public class adminLogIn extends javax.swing.JFrame {
     private javax.swing.JTextField txtadminname;
     private javax.swing.JPasswordField txtadminpassword;
     // End of variables declaration//GEN-END:variables
+
+
+
+
 }

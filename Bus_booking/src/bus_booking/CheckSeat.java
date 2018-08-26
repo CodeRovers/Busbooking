@@ -5,15 +5,35 @@
  */
 package bus_booking;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Thasni
  */
 public class CheckSeat extends javax.swing.JFrame {
     
+    String sel_from = SelectBusOption.getPassvaluefrom();
+    String sel_to = SelectBusOption.getPassvalueto();
+    
+    
+    static String passvaluetime;
     static String nbus;
     static String ndate;
     
+    
+     public static String getPassvaluetime() {
+        return passvaluetime;
+    }
+
+    public static void setPassvaluetime(String passvaluetime) {
+        CheckSeat.passvaluetime = passvaluetime;
+    }
     public static String setbusid(){          
         return nbus;
     }
@@ -21,13 +41,43 @@ public class CheckSeat extends javax.swing.JFrame {
         return ndate;
     }
 
+    public static String getdate() {
+        return ndate;
+    }
     /**
      * Creates new form NewJFrame
      */
     public CheckSeat() {
+        
         initComponents();
+        Time();
+        
     }
 
+    public void Time(){
+        
+        try{
+            Connection conn = DbConnection.ConnectDb();
+            Statement pst = conn.createStatement();
+            //String sql= "SELECT bus_time FROM bus WHERE bus_from = '"+sel_from+"' AND bus_to = '"+sel_to"'";
+            String sql = "SELECT * FROM `bus` WHERE bus_from = '"+sel_from+"' AND bus_to = '"+sel_to+"'";
+            ResultSet rs = pst.executeQuery(sql);
+            while(rs.next()){
+                time.addItem(rs.getString("bus_time"));
+            }
+             
+        }
+        catch (SQLException e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
+    
+//     public void Date(){
+//        
+//          SimpleDateFormat dcn = new SimpleDateFormat("yyyy-MM-dd");
+//             String sel_date = dcn.format(date.getDate() );
+//    }
+//   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -45,8 +95,8 @@ public class CheckSeat extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        jComboBox1 = new javax.swing.JComboBox<String>();
+        date = new com.toedter.calendar.JDateChooser();
+        time = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -87,13 +137,13 @@ public class CheckSeat extends javax.swing.JFrame {
             }
         });
 
-        jDateChooser1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        date.setDateFormatString("yyyy-MM-dd");
+        date.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
-        jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        time.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        time.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                timeActionPerformed(evt);
             }
         });
 
@@ -114,13 +164,13 @@ public class CheckSeat extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addGap(18, 18, 18)
-                                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jButton4)
                                 .addGroup(jPanel2Layout.createSequentialGroup()
                                     .addComponent(jLabel4)
                                     .addGap(18, 18, 18)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(time, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(366, 366, 366))
         );
@@ -135,11 +185,11 @@ public class CheckSeat extends javax.swing.JFrame {
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(36, 36, 36)
                         .addComponent(jLabel3))
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(time, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
                 .addComponent(jButton4)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -195,12 +245,21 @@ public class CheckSeat extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        keeptime_date();    
+        new SelectTheSeats().setVisible(true);
+        this.setVisible(false);
+            // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+public void keeptime_date()
+{
+    passvaluetime = (String) time.getSelectedItem();
+   SimpleDateFormat dcn = new SimpleDateFormat("yyyy-MM-dd");
+            // String sel_date = dcn.format(date.getDate() );
+    ndate = dcn.format(date.getDate() );
+}
+    private void timeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_timeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -245,10 +304,9 @@ public class CheckSeat extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.toedter.calendar.JDateChooser date;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -256,5 +314,6 @@ public class CheckSeat extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JComboBox<String> time;
     // End of variables declaration//GEN-END:variables
 }
