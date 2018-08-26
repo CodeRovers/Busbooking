@@ -16,13 +16,10 @@ import javax.swing.JOptionPane;
  */
 public class CustomersDetails extends javax.swing.JFrame {
 
-<<<<<<< HEAD
-    
-    String refno = SelectTheSeats.getRefno();
-=======
+
     static String bookrefno;
     
->>>>>>> 460ca886baeb68dcc99177e83baed804799c919e
+
     /**
      * Creates new form NewJFrame
      */
@@ -222,7 +219,7 @@ public class CustomersDetails extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-<<<<<<< HEAD
+//<<<<<<< HEAD
             if(txtcusname.getText().trim().isEmpty() && txtcusnum.getText().trim().isEmpty() && txtcusnic.getText().trim().isEmpty() && txtcusaddress.getText().trim().isEmpty()){
                 JOptionPane.showMessageDialog(null, "!!!!!!!  Please File all coloms..");
             }
@@ -233,7 +230,7 @@ public class CustomersDetails extends javax.swing.JFrame {
            
             PreparedStatement pst = conn.prepareStatement(sql);
            
-           pst.setString(1,refno);
+           pst.setString(1,bookrefno);
            pst.setString(2,txtcusname.getText());
            pst.setString(3,txtcusnum.getText());
            pst.setString(4,txtcusnic.getText());
@@ -251,10 +248,7 @@ public class CustomersDetails extends javax.swing.JFrame {
         } 
       }// TODO add your handling code here:
     // TODO add your handling code here:
-=======
-        // TODO add your handling code here:
-        
->>>>>>> 460ca886baeb68dcc99177e83baed804799c919e
+
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
