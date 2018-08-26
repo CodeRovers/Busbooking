@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 
 /**
@@ -50,6 +51,7 @@ public class CheckSeat extends javax.swing.JFrame {
         
         initComponents();
         Time();
+        
     }
 
     public void Time(){
@@ -70,10 +72,12 @@ public class CheckSeat extends javax.swing.JFrame {
         }
     }
     
-     public void Date(){
-        
-         date.getDate();
-    }
+//     public void Date(){
+//        
+//          SimpleDateFormat dcn = new SimpleDateFormat("yyyy-MM-dd");
+//             String sel_date = dcn.format(date.getDate() );
+//    }
+//   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -241,14 +245,17 @@ public class CheckSeat extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-
+        keeptime_date();    
+        new SelectTheSeats().setVisible(true);
+        this.setVisible(false);
             // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 public void keeptime_date()
 {
     passvaluetime = (String) time.getSelectedItem();
-    
-    
+   SimpleDateFormat dcn = new SimpleDateFormat("yyyy-MM-dd");
+            // String sel_date = dcn.format(date.getDate() );
+    ndate = dcn.format(date.getDate() );
 }
     private void timeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timeActionPerformed
         // TODO add your handling code here:
