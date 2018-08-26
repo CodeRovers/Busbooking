@@ -18,15 +18,36 @@ import javax.swing.JOptionPane;
  */
 public class SelectBusOption extends javax.swing.JFrame {
 
+     
     /**
+     * 
      * Creates new form NewJFrame
      */
+    static String passvaluefrom;
+    static String passvalueto;
+
+     public static String getPassvaluefrom() {
+        return passvaluefrom;
+    }
+
+    public static void setPassvaluefrom(String passvaluefrom) {
+        SelectBusOption.passvaluefrom = passvaluefrom;
+    }
+    
+    public static String getPassvalueto() {
+        return passvalueto;
+    }
+
+    public static void setPassvalueto(String passvalueto) {
+        SelectBusOption.passvalueto = passvalueto;
+    }
     public SelectBusOption() {
         initComponents();
         from();
         to();
     }
 
+    
     public void from(){
         
         try{
@@ -53,6 +74,7 @@ public class SelectBusOption extends javax.swing.JFrame {
             while(rs.next()){
                 to.addItem(rs.getString("bus_to"));
             }
+             
         }
         catch (SQLException e){
             JOptionPane.showMessageDialog(null, e);
@@ -237,13 +259,27 @@ public class SelectBusOption extends javax.swing.JFrame {
     }//GEN-LAST:event_toActionPerformed
 
     private void fromActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fromActionPerformed
-                // TODO add your handling code here:
+         
+          // TODO add your handling code here:
     }//GEN-LAST:event_fromActionPerformed
 
+    
+  
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+       
+      
+      keep(); 
+       new CheckSeat().setVisible(true);
+       this.setVisible(false);
+       
+// TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
-
+public void keep()
+{
+    passvaluefrom = (String) from.getSelectedItem();
+    passvalueto = (String) to.getSelectedItem(); 
+    
+}
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         new LogIn().setVisible(true);
         this.setVisible(false);// TODO add your handling code here:

@@ -5,6 +5,11 @@
  */
 package bus_booking;
 
+<<<<<<< HEAD
+=======
+import javax.swing.JFrame;
+
+>>>>>>> 4b51aa216036df6f7fa44e1c6811db82333b550b
 /**
  *
  * @author Thasni
@@ -30,9 +35,16 @@ public class mainif extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+<<<<<<< HEAD
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
+=======
+        jButton2 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+>>>>>>> 4b51aa216036df6f7fa44e1c6811db82333b550b
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -44,6 +56,7 @@ public class mainif extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(153, 153, 153));
 
+<<<<<<< HEAD
         jButton3.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
         jButton3.setText("Log Out ");
         jButton3.setActionCommand("Search");
@@ -75,11 +88,53 @@ public class mainif extends javax.swing.JFrame {
             }
         });
 
+=======
+        jButton2.setFont(new java.awt.Font("Lucida Calligraphy", 1, 36)); // NOI18N
+        jButton2.setText("Admin");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton5.setFont(new java.awt.Font("Lucida Calligraphy", 1, 36)); // NOI18N
+        jButton5.setText("User");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
+        jButton3.setText("Log Out ");
+        jButton3.setActionCommand("Search");
+        jButton3.setName("searchorupdate"); // NOI18N
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Lucida Calligraphy", 1, 48)); // NOI18N
+        jLabel2.setText("Welcome to Book My Bus");
+
+>>>>>>> 4b51aa216036df6f7fa44e1c6811db82333b550b
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addContainerGap(748, Short.MAX_VALUE)
                 .addComponent(jButton3)
                 .addGap(359, 359, 359))
@@ -89,10 +144,27 @@ public class mainif extends javax.swing.JFrame {
                 .addGap(45, 45, 45)
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+=======
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton3)
+                .addGap(288, 288, 288))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(141, 141, 141)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(132, 132, 132)
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 721, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(427, Short.MAX_VALUE))
+>>>>>>> 4b51aa216036df6f7fa44e1c6811db82333b550b
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addGap(88, 88, 88)
                 .addComponent(jButton3)
                 .addGap(168, 168, 168)
@@ -100,6 +172,17 @@ public class mainif extends javax.swing.JFrame {
                     .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+=======
+                .addGap(39, 39, 39)
+                .addComponent(jButton3)
+                .addGap(96, 96, 96)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(268, 268, 268))
+>>>>>>> 4b51aa216036df6f7fa44e1c6811db82333b550b
         );
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bus_booking/Bus.png"))); // NOI18N
@@ -126,7 +209,11 @@ public class mainif extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
                 .addComponent(jLabel5)
+<<<<<<< HEAD
                 .addGap(0, 376, Short.MAX_VALUE))
+=======
+                .addGap(0, 337, Short.MAX_VALUE))
+>>>>>>> 4b51aa216036df6f7fa44e1c6811db82333b550b
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -136,7 +223,11 @@ public class mainif extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                 .addGap(0, 0, Short.MAX_VALUE))
+=======
+                .addGap(0, 96, Short.MAX_VALUE))
+>>>>>>> 4b51aa216036df6f7fa44e1c6811db82333b550b
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,6 +237,7 @@ public class mainif extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+<<<<<<< HEAD
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         new LogIn().setVisible(true);
         this.setVisible(false);// TODO add your handling code here:
@@ -176,6 +268,39 @@ public class mainif extends javax.swing.JFrame {
      // ad.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
        this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton7MouseClicked
+=======
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+       adminLogIn add=new adminLogIn();
+       add.setVisible(true);
+       add.pack();
+       add.setLocationRelativeTo(null);
+       add.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+       this.dispose();
+// TODO add your handling code here:
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+       LogIn add=new LogIn();
+       add.setVisible(true);
+       add.pack();
+       add.setLocationRelativeTo(null);
+       add.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+       this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        new LogIn().setVisible(true);
+        this.setVisible(false);// TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+>>>>>>> 4b51aa216036df6f7fa44e1c6811db82333b550b
 
     /**
      * @param args the command line arguments
@@ -210,6 +335,7 @@ public class mainif extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+<<<<<<< HEAD
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -234,6 +360,8 @@ public class mainif extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+=======
+>>>>>>> 4b51aa216036df6f7fa44e1c6811db82333b550b
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -244,10 +372,18 @@ public class mainif extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+<<<<<<< HEAD
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
+=======
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+>>>>>>> 4b51aa216036df6f7fa44e1c6811db82333b550b
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

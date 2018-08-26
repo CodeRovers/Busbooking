@@ -73,7 +73,7 @@ public class LogIn extends javax.swing.JFrame {
         });
 
         jLabel2.setFont(new java.awt.Font("Lucida Calligraphy", 1, 24)); // NOI18N
-        jLabel2.setText("Log In");
+        jLabel2.setText("Log In as User :");
 
         txtpassword.setName("password"); // NOI18N
 

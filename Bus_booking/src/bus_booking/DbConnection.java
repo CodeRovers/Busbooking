@@ -14,6 +14,8 @@ import javax.swing.*;
 
 public class DbConnection {
      Connection conn=null;
+     ResultSet rs = null;
+     PreparedStatement pst;
     public static Connection ConnectDb()
             {
             try
@@ -29,11 +31,15 @@ public class DbConnection {
             conn = DriverManager.getConnection(dbpath, "root", "");
             */
             }
-            catch(Exception e)
+            catch(ClassNotFoundException | SQLException e)
             {
             JOptionPane.showMessageDialog(null,e);
             return null;
             }
             
             }
+
+    public DbConnection() {
+        this.pst = null;
+    }
 }

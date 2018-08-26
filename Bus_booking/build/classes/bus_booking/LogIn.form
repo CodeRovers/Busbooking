@@ -182,7 +182,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Lucida Calligraphy" size="24" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Log In"/>
+                <Property name="text" type="java.lang.String" value="Log In as User :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JPasswordField" name="txtpassword">
