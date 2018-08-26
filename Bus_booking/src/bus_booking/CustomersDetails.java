@@ -237,9 +237,11 @@ public class CustomersDetails extends javax.swing.JFrame {
            pst.setString(5,txtcusaddress.getText());
            pst.execute();
            
-   
-             ConfirmDetails con_det=new ConfirmDetails();
-               con_det.setVisible(true);
+           
+          
+             Pay amount =new Pay();
+               amount.setVisible(true);
+              
                 this.dispose();
         }
         catch (SQLException e) {
