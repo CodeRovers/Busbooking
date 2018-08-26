@@ -20,16 +20,19 @@ public class SelectTheSeats extends javax.swing.JFrame {
     
 String[] booknow = new String[52];
 
-        String bbus;
-        String bdate;
+        String bbus = "bus1";
+        String bdate = "1 aug 18";
         String seatno;
+        String refno = "ref10";
+        String avai = "no";
         
     /**
      * Creates new form NewJFrame
      */
     public SelectTheSeats() {
         
-        bbus=CheckSeat.setbusid();
+        //bbus=CheckSeat.setbusid();
+        //bdate=CheckSeat.setdate();
         
         initComponents();        
         Connection con;
@@ -37,7 +40,7 @@ String[] booknow = new String[52];
         PreparedStatement pst;
         String sql;
         
-        sql = "select seat_no from seat where bbus_id=bbus and date=bdate";
+        sql = "select seat_no from seat where bus_id='"+bbus+"' AND date='"+bdate+"'";
         
         try
         { 
@@ -961,11 +964,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         
         Connection conn;
-        Statement stm;
+        PreparedStatement pstins;
         String sqlins;
-        sqlins = "INSERT INTO `seat`(`bus_id`, `date`, `seat_no`, `available`) VALUES ("+bbus+","+bdate+","+seatno+",'no')";
+        sqlins = "INSERT INTO `seat`(`bus_id`, `date`,`ref_no`, `seat_no`, `available`) VALUES (?,?,?,?,?)";
         
-        for(int i=0 ; i<=52 ; i++){
+        for(int i=0 ; i<=51 ; i++){
             if(booknow[i] != null){
                 
                 seatno=booknow[i];
@@ -973,13 +976,16 @@ String[] booknow = new String[52];
                 try
                 { 
                     conn=DbConnection.ConnectDb();
-                    stm = conn.createStatement();
-                    stm.executeUpdate(sqlins);  
+                    pstins = conn.prepareStatement(sqlins);
+                    pstins.setString(1,bbus);
+                    pstins.setString(2,bdate);
+                    pstins.setString(3,refno);
+                    pstins.setString(4,seatno);
+                    pstins.setString(5,avai);
+                    pstins.execute();
+                    
                 }
-                catch(HeadlessException ex)
-                {
-                    JOptionPane.showMessageDialog(null,ex);
-                } catch (SQLException ex) {
+                 catch (SQLException ex) {
                     Logger.getLogger(SelectTheSeats.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 
