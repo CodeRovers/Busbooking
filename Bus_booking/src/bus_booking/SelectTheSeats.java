@@ -26,7 +26,6 @@ String[] booknow = new String[52];
         String seatno;
         String refseatno;
         static String refno;
-        String avai = "No";
         
     /**
      * Creates new form NewJFrame
@@ -978,7 +977,7 @@ String[] booknow = new String[52];
         Connection conn;
         PreparedStatement pstins;
         String sqlins;
-        sqlins = "INSERT INTO `seat`(`bus_id`, `date`,`ref_no`, `seat_no`, `available`) VALUES (?,?,?,?,?)";
+        sqlins = "INSERT INTO `seat`(`bus_id`, `date`,`ref_no`, `seat_no`) VALUES (?,?,?,?)";
         
         for(int i=0 ; i<=51 ; i++){
             if(booknow[i] != null){
@@ -993,7 +992,6 @@ String[] booknow = new String[52];
                     pstins.setString(2,bdate);
                     pstins.setString(3,refno);
                     pstins.setString(4,seatno);
-                    pstins.setString(5,avai);
                     pstins.execute();
                     
                 }
