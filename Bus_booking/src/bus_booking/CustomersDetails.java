@@ -238,7 +238,6 @@ public class CustomersDetails extends javax.swing.JFrame {
            pst.execute();
            
    
-     JOptionPane.showMessageDialog(this, "Success !");
              ConfirmDetails con_det=new ConfirmDetails();
                con_det.setVisible(true);
                 this.dispose();
