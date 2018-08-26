@@ -116,7 +116,7 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="175" max="-2" attributes="0"/>
-                              <Component id="jLabel2" min="-2" pref="114" max="-2" attributes="0"/>
+                              <Component id="jLabel2" min="-2" pref="258" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace pref="692" max="32767" attributes="0"/>
@@ -175,7 +175,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Lucida Calligraphy" size="24" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Log In"/>
+                <Property name="text" type="java.lang.String" value="Log In as Admin :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JPasswordField" name="txtadminpassword">
