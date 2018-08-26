@@ -11,11 +11,16 @@ package bus_booking;
  */
 public class CustomersDetails extends javax.swing.JFrame {
 
+    static String bookrefno;
+    
     /**
      * Creates new form NewJFrame
      */
     public CustomersDetails() {
         initComponents();
+        
+        bookrefno=SelectTheSeats.getRefno();
+        
     }
 
     /**
@@ -208,6 +213,7 @@ public class CustomersDetails extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
