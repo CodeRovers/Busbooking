@@ -151,13 +151,14 @@ public class mainif extends javax.swing.JFrame {
         // TODO add your handling code here:
         new LogIn().setVisible(true);
         this.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         new adminLogIn().setVisible(true);
         this.setVisible(false);
-        
+        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
