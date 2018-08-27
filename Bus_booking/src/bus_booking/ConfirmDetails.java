@@ -423,7 +423,7 @@ public class ConfirmDetails extends javax.swing.JFrame {
            pst.setString(7,txtamount.getText());
            pst.execute();
            
-          // pst.executeUpdate(sql);
+        
 //
          
              TicketPrint ticket=new TicketPrint();

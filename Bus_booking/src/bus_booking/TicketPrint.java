@@ -55,10 +55,10 @@ public class TicketPrint extends javax.swing.JFrame {
             
             while (rs.next())
             {
-               tbusno.setText(rs.getString("bus_no"));
-               tbusno.setText(rs.getString("bus_time"));
-               tbusno.setText(rs.getString("bus_from"));
-               tbusno.setText(rs.getString("bus_to"));
+               trefno.setText(tname);
+               ttime.setText(rs.getString("bus_time"));
+               tfrom.setText(rs.getString("bus_from"));
+               tto.setText(rs.getString("bus_to"));
                tbusno.setText(rs.getString("bus_no"));
                    
             }
