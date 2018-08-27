@@ -124,14 +124,14 @@
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="txtrefno" alignment="0" pref="150" max="32767" attributes="0"/>
                                       <Component id="txtbusid" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="txtrootno" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txtrouteno" alignment="0" max="32767" attributes="0"/>
                                       <Component id="txtbusno" alignment="0" max="32767" attributes="0"/>
                                       <Component id="txtdate" alignment="0" max="32767" attributes="0"/>
                                       <Component id="txttime" alignment="0" max="32767" attributes="0"/>
                                       <Component id="txtfrom" alignment="0" max="32767" attributes="0"/>
                                       <Component id="txtto" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="txtnumofseats" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="txtseatnums" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txtnoofseats" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txtseatnos" alignment="0" max="32767" attributes="0"/>
                                       <Component id="txtcusname" alignment="0" max="32767" attributes="0"/>
                                       <Component id="txtempid" alignment="0" max="32767" attributes="0"/>
                                       <Component id="txtamount" alignment="0" max="32767" attributes="0"/>
@@ -171,7 +171,7 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtrootno" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtrouteno" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -201,29 +201,29 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtnumofseats" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtnoofseats" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtseatnums" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtseatnos" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtcusname" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtempid" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txtamount" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtamount" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                       <Component id="jButton4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="204" max="32767" attributes="0"/>
                   </Group>
@@ -260,7 +260,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Lucida Calligraphy" size="18" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Root No :"/>
+                <Property name="text" type="java.lang.String" value="Route No :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel7">
@@ -343,7 +343,7 @@
                 <Property name="text" type="java.lang.String" value="Amount :"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtnumofseats">
+            <Component class="javax.swing.JTextField" name="txtnoofseats">
               <Properties>
                 <Property name="name" type="java.lang.String" value="numberofseats" noResource="true"/>
               </Properties>
@@ -373,7 +373,7 @@
                 <Property name="name" type="java.lang.String" value="busno" noResource="true"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtrootno">
+            <Component class="javax.swing.JTextField" name="txtrouteno">
               <Properties>
                 <Property name="name" type="java.lang.String" value="rootno" noResource="true"/>
               </Properties>
@@ -388,7 +388,7 @@
                 <Property name="name" type="java.lang.String" value="referanceno" noResource="true"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtseatnums">
+            <Component class="javax.swing.JTextField" name="txtseatnos">
               <Properties>
                 <Property name="name" type="java.lang.String" value="seatnumbers" noResource="true"/>
               </Properties>
