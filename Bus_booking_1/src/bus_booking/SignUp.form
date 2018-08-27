@@ -116,6 +116,7 @@
                               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
+<<<<<<< HEAD:Bus_booking_1/src/bus_booking/SignUp.form
                                       <Component id="jScrollPane1" pref="151" max="32767" attributes="0"/>
                                       <Component id="txtcontactno" alignment="0" max="32767" attributes="0"/>
                                       <Component id="txtnic" alignment="0" max="32767" attributes="0"/>
@@ -123,13 +124,30 @@
                                       <Component id="txtusername" alignment="0" max="32767" attributes="0"/>
                                       <Component id="txtmailid" alignment="0" max="32767" attributes="0"/>
                                       <Component id="txtpassword" alignment="0" max="32767" attributes="0"/>
+=======
+                                      <Component id="tbusno" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="tdate" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="ttime" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="tfrom" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="tto" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="tseats" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="tamount" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+>>>>>>> f6d5e4965037f712c34253617ed056ac4ed41711:Bus_booking/src/bus_booking/TicketPrint.form
                                   </Group>
                                   <Component id="txtconpassword" pref="151" max="32767" attributes="0"/>
                               </Group>
+<<<<<<< HEAD:Bus_booking_1/src/bus_booking/SignUp.form
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="jButton4" min="-2" max="-2" attributes="0"/>
+=======
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                                  <Component id="trefno" max="32767" attributes="0"/>
+                              </Group>
+>>>>>>> f6d5e4965037f712c34253617ed056ac4ed41711:Bus_booking/src/bus_booking/TicketPrint.form
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="277" max="-2" attributes="0"/>
@@ -144,11 +162,16 @@
                       <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+<<<<<<< HEAD:Bus_booking_1/src/bus_booking/SignUp.form
                           <Component id="txtusername" alignment="3" min="-2" max="-2" attributes="0"/>
+=======
+                          <Component id="trefno" alignment="3" min="-2" max="-2" attributes="0"/>
+>>>>>>> f6d5e4965037f712c34253617ed056ac4ed41711:Bus_booking/src/bus_booking/TicketPrint.form
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+<<<<<<< HEAD:Bus_booking_1/src/bus_booking/SignUp.form
                           <Component id="txtempid" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -165,9 +188,28 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                           <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+=======
+                          <Component id="tbusno" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tdate" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ttime" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfrom" alignment="3" min="-2" max="-2" attributes="0"/>
+>>>>>>> f6d5e4965037f712c34253617ed056ac4ed41711:Bus_booking/src/bus_booking/TicketPrint.form
                       </Group>
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
+<<<<<<< HEAD:Bus_booking_1/src/bus_booking/SignUp.form
                           <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtmailid" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -180,6 +222,20 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtconpassword" alignment="3" min="-2" max="-2" attributes="0"/>
+=======
+                          <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tto" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tseats" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tamount" alignment="3" min="-2" max="-2" attributes="0"/>
+>>>>>>> f6d5e4965037f712c34253617ed056ac4ed41711:Bus_booking/src/bus_booking/TicketPrint.form
                       </Group>
                       <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                       <Component id="jButton4" min="-2" max="-2" attributes="0"/>
@@ -253,6 +309,7 @@
                 <Property name="text" type="java.lang.String" value="Password : "/>
               </Properties>
             </Component>
+<<<<<<< HEAD:Bus_booking_1/src/bus_booking/SignUp.form
             <Container class="javax.swing.JScrollPane" name="jScrollPane1">
               <AuxValues>
                 <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
@@ -278,6 +335,9 @@
               </SubComponents>
             </Container>
             <Component class="javax.swing.JTextField" name="txtusername">
+=======
+            <Component class="javax.swing.JTextField" name="tto">
+>>>>>>> f6d5e4965037f712c34253617ed056ac4ed41711:Bus_booking/src/bus_booking/TicketPrint.form
               <Properties>
                 <Property name="name" type="java.lang.String" value="name" noResource="true"/>
               </Properties>
@@ -285,32 +345,56 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtusernameActionPerformed"/>
               </Events>
             </Component>
+<<<<<<< HEAD:Bus_booking_1/src/bus_booking/SignUp.form
             <Component class="javax.swing.JTextField" name="txtempid">
+=======
+            <Component class="javax.swing.JTextField" name="tfrom">
+>>>>>>> f6d5e4965037f712c34253617ed056ac4ed41711:Bus_booking/src/bus_booking/TicketPrint.form
               <Properties>
                 <Property name="name" type="java.lang.String" value="empid" noResource="true"/>
               </Properties>
             </Component>
+<<<<<<< HEAD:Bus_booking_1/src/bus_booking/SignUp.form
             <Component class="javax.swing.JTextField" name="txtnic">
+=======
+            <Component class="javax.swing.JTextField" name="ttime">
+>>>>>>> f6d5e4965037f712c34253617ed056ac4ed41711:Bus_booking/src/bus_booking/TicketPrint.form
               <Properties>
                 <Property name="name" type="java.lang.String" value="nicno" noResource="true"/>
               </Properties>
             </Component>
+<<<<<<< HEAD:Bus_booking_1/src/bus_booking/SignUp.form
             <Component class="javax.swing.JTextField" name="txtcontactno">
+=======
+            <Component class="javax.swing.JTextField" name="tdate">
+>>>>>>> f6d5e4965037f712c34253617ed056ac4ed41711:Bus_booking/src/bus_booking/TicketPrint.form
               <Properties>
                 <Property name="name" type="java.lang.String" value="contactno" noResource="true"/>
               </Properties>
             </Component>
+<<<<<<< HEAD:Bus_booking_1/src/bus_booking/SignUp.form
             <Component class="javax.swing.JPasswordField" name="txtpassword">
+=======
+            <Component class="javax.swing.JTextField" name="tbusno">
+>>>>>>> f6d5e4965037f712c34253617ed056ac4ed41711:Bus_booking/src/bus_booking/TicketPrint.form
               <Properties>
                 <Property name="name" type="java.lang.String" value="password" noResource="true"/>
               </Properties>
             </Component>
+<<<<<<< HEAD:Bus_booking_1/src/bus_booking/SignUp.form
             <Component class="javax.swing.JTextField" name="txtmailid">
+=======
+            <Component class="javax.swing.JTextField" name="trefno">
+>>>>>>> f6d5e4965037f712c34253617ed056ac4ed41711:Bus_booking/src/bus_booking/TicketPrint.form
               <Properties>
                 <Property name="name" type="java.lang.String" value="mailid" noResource="true"/>
               </Properties>
             </Component>
+<<<<<<< HEAD:Bus_booking_1/src/bus_booking/SignUp.form
             <Component class="javax.swing.JLabel" name="jLabel2">
+=======
+            <Component class="javax.swing.JTextField" name="tseats">
+>>>>>>> f6d5e4965037f712c34253617ed056ac4ed41711:Bus_booking/src/bus_booking/TicketPrint.form
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Lucida Calligraphy" size="24" style="1"/>
@@ -318,7 +402,11 @@
                 <Property name="text" type="java.lang.String" value="Sign Up"/>
               </Properties>
             </Component>
+<<<<<<< HEAD:Bus_booking_1/src/bus_booking/SignUp.form
             <Component class="javax.swing.JPasswordField" name="txtconpassword">
+=======
+            <Component class="javax.swing.JTextField" name="tamount">
+>>>>>>> f6d5e4965037f712c34253617ed056ac4ed41711:Bus_booking/src/bus_booking/TicketPrint.form
               <Properties>
                 <Property name="name" type="java.lang.String" value="confirmpassword" noResource="true"/>
               </Properties>

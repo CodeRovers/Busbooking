@@ -8,6 +8,10 @@ package bus_booking;
 import java.io.FileOutputStream;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,6 +25,49 @@ public class TicketPrint extends javax.swing.JFrame {
      */
     public TicketPrint() {
         initComponents();
+        String tbusid = CheckSeat.setbusid();
+        String tname = SelectTheSeats.getRefno();
+        
+        try{
+            Connection conn = DbConnection.ConnectDb();
+            Statement pst = conn.createStatement();
+            String sql="SELECT * FROM booking WHERE ref_no ='"+tname+"'";
+            ResultSet rs = pst.executeQuery(sql);
+            
+            while (rs.next())
+            {
+               tseats.setText(rs.getString("seat_no"));
+               tdate.setText(rs.getString("date"));
+               tamount.setText(rs.getString("amount"));
+                     
+            }
+            
+           }
+        catch (SQLException e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        
+        try{
+            Connection conn = DbConnection.ConnectDb();
+            Statement pst = conn.createStatement();
+            String sql="SELECT * FROM bus WHERE bus_id ='"+tbusid+"'";
+            ResultSet rs = pst.executeQuery(sql);
+            
+            while (rs.next())
+            {
+               trefno.setText(tname);
+               ttime.setText(rs.getString("bus_time"));
+               tfrom.setText(rs.getString("bus_from"));
+               tto.setText(rs.getString("bus_to"));
+               tbusno.setText(rs.getString("bus_no"));
+                   
+            }
+            
+           }
+        catch (SQLException e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        
     }
 
     /**
@@ -44,14 +91,14 @@ public class TicketPrint extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField14 = new javax.swing.JTextField();
+        tto = new javax.swing.JTextField();
+        tfrom = new javax.swing.JTextField();
+        ttime = new javax.swing.JTextField();
+        tdate = new javax.swing.JTextField();
+        tbusno = new javax.swing.JTextField();
+        trefno = new javax.swing.JTextField();
+        tseats = new javax.swing.JTextField();
+        tamount = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
@@ -91,21 +138,21 @@ public class TicketPrint extends javax.swing.JFrame {
         jLabel17.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
         jLabel17.setText("Amount :");
 
-        jTextField2.setName("to"); // NOI18N
+        tto.setName("to"); // NOI18N
 
-        jTextField3.setName("from"); // NOI18N
+        tfrom.setName("from"); // NOI18N
 
-        jTextField4.setName("time"); // NOI18N
+        ttime.setName("time"); // NOI18N
 
-        jTextField5.setName("date"); // NOI18N
+        tdate.setName("date"); // NOI18N
 
-        jTextField6.setName("busno"); // NOI18N
+        tbusno.setName("busno"); // NOI18N
 
-        jTextField9.setName("referanceno"); // NOI18N
+        trefno.setName("referanceno"); // NOI18N
 
-        jTextField10.setName("seatnumbers"); // NOI18N
+        tseats.setName("seatnumbers"); // NOI18N
 
-        jTextField14.setName("amount"); // NOI18N
+        tamount.setName("amount"); // NOI18N
 
         jButton4.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
         jButton4.setText("Print");
@@ -138,17 +185,17 @@ public class TicketPrint extends javax.swing.JFrame {
                                 .addComponent(jLabel17))
                             .addGap(64, 64, 64)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextField6)
-                                .addComponent(jTextField5)
-                                .addComponent(jTextField4)
-                                .addComponent(jTextField3)
-                                .addComponent(jTextField2)
-                                .addComponent(jTextField10)
-                                .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(tbusno)
+                                .addComponent(tdate)
+                                .addComponent(ttime)
+                                .addComponent(tfrom)
+                                .addComponent(tto)
+                                .addComponent(tseats)
+                                .addComponent(tamount, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addComponent(jLabel3)
                             .addGap(64, 64, 64)
-                            .addComponent(jTextField9))))
+                            .addComponent(trefno))))
                 .addGap(487, 487, 487))
         );
         jPanel2Layout.setVerticalGroup(
@@ -159,35 +206,35 @@ public class TicketPrint extends javax.swing.JFrame {
                 .addGap(53, 53, 53)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(trefno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tbusno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tdate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ttime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfrom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tseats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
-                    .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tamount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(47, 47, 47)
                 .addComponent(jButton4)
                 .addContainerGap(237, Short.MAX_VALUE))
@@ -244,33 +291,34 @@ public class TicketPrint extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         try{
-            String trname = SelectTheSeats.getRefno();
-            //String 
+            
+            
+            String tname = SelectTheSeats.getRefno();
             String File;
-            File = "C:/Users/Public/Documents/"+trname+".pdf";
+            File = "C:/Users/Public/Documents/"+tname+".pdf";
             Document document = new Document();
             
             PdfWriter.getInstance(document, new FileOutputStream(File));
             document.open();
             
-            Paragraph p1 = new Paragraph("#########################");
+            Paragraph p1 = new Paragraph("##############################");
             Paragraph p2 = new Paragraph(" ");
-            Paragraph p3 = new Paragraph("     BOOK MY BUS");
-            Paragraph p4 = new Paragraph("******************");
+            Paragraph p3 = new Paragraph("                 BOOK MY BUS");
+            Paragraph p4 = new Paragraph("                 ******************");
             Paragraph p5 = new Paragraph(" ");
-            Paragraph p6 = new Paragraph("Referance No : "+trname);
-            Paragraph p7 = new Paragraph("Bus No :"+trname);
-            Paragraph p8 = new Paragraph("Date : "+trname);
-            Paragraph p9 = new Paragraph("Time : "+trname);
-            Paragraph p10 = new Paragraph("From : "+trname);
-            Paragraph p11 = new Paragraph("T0 : "+trname);
-            Paragraph p12 = new Paragraph("Seat Numbers : "+trname);
-            Paragraph p13 = new Paragraph("Amount : "+trname);
+            Paragraph p6 = new Paragraph("Referance No : "+trefno.getText());
+            Paragraph p7 = new Paragraph("Bus No :"+tbusno.getText());
+            Paragraph p8 = new Paragraph("Date : "+tdate.getText());
+            Paragraph p9 = new Paragraph("Time : "+ttime.getText());
+            Paragraph p10 = new Paragraph("From : "+tfrom.getText());
+            Paragraph p11 = new Paragraph("T0 : "+tto.getText());
+            Paragraph p12 = new Paragraph("Seat Numbers : "+tseats.getText());
+            Paragraph p13 = new Paragraph("Amount : "+tamount.getText());
             Paragraph p14 = new Paragraph(" ");
-            Paragraph p15 = new Paragraph("+++++++++++++++++++");
+            Paragraph p15 = new Paragraph("++++++++++++++++++");
             Paragraph p16 = new Paragraph("Hotline : 012 345 6789");
             Paragraph p17 = new Paragraph(" ");
-            Paragraph p18 = new Paragraph("#########################");
+            Paragraph p18 = new Paragraph("##############################");
             document.add(p1);
             document.add(p2);
             document.add(p3);
@@ -366,13 +414,13 @@ public class TicketPrint extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextField tamount;
+    private javax.swing.JTextField tbusno;
+    private javax.swing.JTextField tdate;
+    private javax.swing.JTextField tfrom;
+    private javax.swing.JTextField trefno;
+    private javax.swing.JTextField tseats;
+    private javax.swing.JTextField ttime;
+    private javax.swing.JTextField tto;
     // End of variables declaration//GEN-END:variables
 }
