@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 27, 2018 at 09:49 PM
--- Server version: 10.1.32-MariaDB
--- PHP Version: 7.2.5
+-- Generation Time: Aug 27, 2018 at 10:02 PM
+-- Server version: 10.1.16-MariaDB
+-- PHP Version: 7.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -62,7 +60,8 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`ref_no`, `bus_id`, `emp_id`, `num_of_seat`, `seat_no`, `date`, `amount`) VALUES
-(' b32018-08-28s4', ' b3', 'SE/2015/036', ' 3', ' s4 ,s12 ,s16 ,', '2018-08-28', '2400');
+(' b32018-08-28s4', ' b3', 'SE/2015/036', ' 3', ' s4 ,s12 ,s16 ,', '2018-08-28', '2400'),
+(' b32018-08-28s25', ' b3', 'SE/2015/031', ' 2', ' s25 ,s35 ,', '2018-08-28', '1600');
 
 -- --------------------------------------------------------
 
@@ -113,7 +112,8 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`ref_no`, `cus_name`, `cus_nic`, `cus_phone`, `cus_address`) VALUES
-(' b32018-08-28s4', 'Ram', '0776532198', '963258452v', 'kelaniya');
+(' b32018-08-28s4', 'Ram', '0776532198', '963258452v', 'kelaniya'),
+(' b32018-08-28s25', 'Kekayan', '0775658963', '949658369v', 'Jaffna');
 
 -- --------------------------------------------------------
 
@@ -160,8 +160,9 @@ CREATE TABLE `seat` (
 INSERT INTO `seat` (`bus_id`, `date`, `ref_no`, `seat_no`) VALUES
 (' b3', '2018-08-28', ' b32018-08-28s4', 's4'),
 (' b3', '2018-08-28', ' b32018-08-28s4', 's12'),
-(' b3', '2018-08-28', ' b32018-08-28s4', 's16');
-COMMIT;
+(' b3', '2018-08-28', ' b32018-08-28s4', 's16'),
+(' b3', '2018-08-28', ' b32018-08-28s25', 's25'),
+(' b3', '2018-08-28', ' b32018-08-28s25', 's35');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
