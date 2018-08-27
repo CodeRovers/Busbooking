@@ -5,6 +5,7 @@
  */
 package bus_booking;
 
+import static bus_booking.LogIn.empid;
 import java.sql.*;
 import javax.swing.*;
 import java.sql.PreparedStatement;
@@ -208,7 +209,32 @@ public class adminLogIn extends javax.swing.JFrame {
     }//GEN-LAST:event_txtadminnameActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+               conn=DbConnection.ConnectDb();
+        String Sql="SELECT * FROM admin WHERE admin_name = ? and admin_password = ?";
+        try
+        {
+            pst=conn.prepareStatement(Sql);
+            pst.setString(1,txtadminname.getText());
+            pst.setString(2,txtadminpassword.getText());
+            rs=pst.executeQuery();
+            if(rs.next())
+            {
+              
+                admin adm =new admin();
+                adm.setVisible(true);
+                this.dispose();
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null,"Invalid Username or Password","Access Denied",JOptionPane.ERROR_MESSAGE);
+
+            }
+        }
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null,e);
+        }      // TODO add your handling code here:
+                    // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
