@@ -422,7 +422,7 @@ public class userdetails extends javax.swing.JFrame {
     }//GEN-LAST:event_tEmpIDActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-            
+//delete from records where Date='"+selected+"' "            
     
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
     if(jTable1.getSelectedRow()==-1){
@@ -439,7 +439,7 @@ public class userdetails extends javax.swing.JFrame {
             Connection conn = DbConnection.ConnectDb();
             int row = jTable1.getSelectedRow();
             String value = (jTable1.getModel().getValueAt(row,0).toString());
-            String sql  = "UPDATE bus  SET bus_id=?,bus_route=?,route_no=?,bus_no=?,bus_time=?,bus_from=?,bus_to=?"+value;
+            String sql  = "UPDATE employee  SET emp_id=?,emp_name=?,emp_nic=?,emp_phone=?,emp_address=?,emp_mail=?,emp_password=?"+value;
             PreparedStatement pst = conn.prepareStatement(sql);
             pst.setString(1,tEmpID.getText());
             pst.setString(2,tEmpName.getText());
@@ -508,8 +508,12 @@ public class userdetails extends javax.swing.JFrame {
             Connection conn = DbConnection.ConnectDb();
         int row=jTable1.getSelectedRow();
         String value=(jTable1.getModel().getValueAt(row, 0).toString());
-        String sql="DELETE FROM bus where bus_id="+value;
-        PreparedStatement pst = conn.prepareStatement(sql);
+        //delete from records where Date='"+selected+"' 
+        //String sql= "DELETE FROM employee where emp_id='"+value"' " ;
+        //String sql="DELETE FROM bus where bus_id="+value;
+        PreparedStatement pst = conn.prepareStatement("delete from employee where emp_id='"+value+"' ");
+
+        //PreparedStatement pst = conn.prepareStatement(sql);
         pst.executeUpdate();
         model.setRowCount(0);
         showDetails();
@@ -582,7 +586,7 @@ public class userdetails extends javax.swing.JFrame {
     
         model.addRow(new Object[]{tEmpID.getText(),tEmpName.getText(),tEmpNIC.getText(),tEmpPhoneNo.getText(),tEmpAddress.getText(),tEmpMail.getText(),tEmpName.getText()});    
         Connection conn = DbConnection.ConnectDb();
-            String sql  = "INSERT INTO bus(bus_id, bus_route, route_no, bus_no, bus_time, bus_from,bus_to) VALUES (?,?,?,?,?,?,?)";
+            String sql  = "INSERT INTO employee(emp_id, emp_name, emp_nic, emp_phone, emp_address, emp_mail,emp_password) VALUES (?,?,?,?,?,?,?)";
             PreparedStatement pst = conn.prepareStatement(sql);
             
       
