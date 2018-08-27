@@ -7,6 +7,7 @@ package bus_booking;
 
 import static bus_booking.Pay.price;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -398,7 +399,42 @@ public class ConfirmDetails extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+         
+        
+       
+        try {
+            Connection conn = DbConnection.ConnectDb();
+            String sql  = "INSERT INTO `booking`(`ref_no`, `bus_id`, `emp_id`, `num_of_seat`, `seat_no`, `date`, `amount`) VALUES (?,?,?,?,?,?,?,)";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            
+//            conn=DbConnection.ConnectDb();
+//            String sql="INSERT INTO employee(emp_id, emp_name, emp_nic, emp_phone, emp_address, emp_mail, emp_password) VALUES ('"+txtempid.getText()+"','"+txtusername.getText()+"','"+txtnic.getText()+"','"+txtcontactno.getText()+"','"+txtaddress.getText()+"','"+txtmailid.getText()+"','"+txtpassword.getText()+"')";
+//            pst.executeUpdate(sql);
+// String sql  = "INSERT INTO employee(emp_id, emp_name, emp_nic, emp_phone, emp_address, emp_mail, emp_password) VALUES (?,?,?,?,?,?,?)";
+          
+//            pst= conn.prepareStatement(sql);
+           
+           pst.setString(1,txtrefno.getText());
+           pst.setString(2,txtbusid.getText());
+           pst.setString(3,txtempid.getText());
+           pst.setString(4,txtnoofseats.getText());
+           pst.setString(5,txtseatnos.getText());
+           pst.setString(6,txtdate.getText());
+           pst.setString(7,txtamount.getText());
+           pst.execute();
+           
+          // pst.executeUpdate(sql);
+//
+         
+//             TicketPrint ticket=new TicketPrint();
+//               ticket.setVisible(true);
+//                this.dispose();
+        }
+        catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e);
+        } 
+      // TODO add your handling code here:
+                               // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**

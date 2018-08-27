@@ -295,7 +295,7 @@ public class SignUp extends javax.swing.JFrame {
            
           // pst.executeUpdate(sql);
 //
-          JOptionPane.showMessageDialog(this, "Success !");
+        
              LogIn log=new LogIn();
                log.setVisible(true);
                 this.dispose();
