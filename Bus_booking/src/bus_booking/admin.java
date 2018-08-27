@@ -241,7 +241,7 @@ public class admin extends javax.swing.JFrame {
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
        // showDetails();
-        
+        //huytfr
 //        userdetails ud= new userdetails();
 //        ud.setVisible(true);
 //       ud.pack();
