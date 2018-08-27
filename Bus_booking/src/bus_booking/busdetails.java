@@ -34,16 +34,16 @@ public class busdetails extends javax.swing.JFrame {
         ArrayList<show> showList= new ArrayList<>();
         try{
             Connection conn = DbConnection.ConnectDb();
-        String Sql="Select * from employee ";
+            String Sql="Select * from bus ";
             PreparedStatement pst = conn.prepareStatement(Sql);
             ResultSet rs = pst.executeQuery();
             show show;
             
             while(rs.next()){
-                show = new show(rs.getString("emp_id"),rs.getString("emp_name"),rs.getString("emp_nic"),rs.getString("emp_phone"),rs.getString("emp_address"),rs.getString("emp_mail"),rs.getString("emp_password"),rs.getString("Emp_name"));
+                show = new show(rs.getString("bus_id"),rs.getString("route_no"),rs.getString("bus_no"),rs.getString("bus_time"),rs.getString("bus_from"),rs.getString("bus_to"),rs.getString("amount"));
                 
                 showList.add(show);
-                        }
+            }
             
         }
          catch(Exception e)
@@ -55,18 +55,18 @@ public class busdetails extends javax.swing.JFrame {
     
     
     void showDetails(){
-        //userdetails ud = new userdetails();
+       
         ArrayList<show> list = showList();
         DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
         Object[] row = new Object[7];
         for(int i=0;i<list.size();i++){
             row[0]=list.get(i).getEmp_id();
-            row[1]=list.get(i).getEmp_nic();
-            row[2]=list.get(i).getEmp_phone();
-            row[3]=list.get(i).getEmp_address();
-            row[4]=list.get(i).getEmp_mail();
-            row[5]=list.get(i).getBus_to();
-            row[6]=list.get(i).getEmp_name();
+            row[1]=list.get(i).getEmp_name();
+            row[2]=list.get(i).getEmp_nic();
+            row[3]=list.get(i).getEmp_phone();
+            row[4]=list.get(i).getEmp_address();
+            row[5]=list.get(i).getEmp_mail();
+            row[6]=list.get(i).getEmp_password();
             model.addRow(row);
         }
         }
@@ -95,14 +95,16 @@ public class busdetails extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        tEmpName = new javax.swing.JTextField();
         tEmpNIC = new javax.swing.JTextField();
-        tEmpPhoneNo = new javax.swing.JTextField();
-        tEmpAddress = new javax.swing.JTextField();
+        tEmpPhone = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        tEmpMail = new javax.swing.JTextField();
+        tEmpAddress = new javax.swing.JTextField();
         jButton6 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        tEmpMail = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
         tEmpPassword = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
 
@@ -130,7 +132,7 @@ public class busdetails extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Bus ID", "Route No", "Bus No", "Bus Time", "Bus From", "Bus To"
+                "Bus ID", "Route No", "Bus No", "Bus Time", "Bus From", "Bus To", "Amount"
             }
         ));
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -178,6 +180,13 @@ public class busdetails extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Lucida Calligraphy", 1, 12)); // NOI18N
         jLabel7.setText("Bus No :");
 
+        tEmpName.setText(" ");
+        tEmpName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tEmpNameActionPerformed(evt);
+            }
+        });
+
         tEmpNIC.setText(" ");
         tEmpNIC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -185,27 +194,20 @@ public class busdetails extends javax.swing.JFrame {
             }
         });
 
-        tEmpPhoneNo.setText(" ");
-        tEmpPhoneNo.addActionListener(new java.awt.event.ActionListener() {
+        tEmpPhone.setText(" ");
+        tEmpPhone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tEmpPhoneNoActionPerformed(evt);
-            }
-        });
-
-        tEmpAddress.setText(" ");
-        tEmpAddress.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tEmpAddressActionPerformed(evt);
+                tEmpPhoneActionPerformed(evt);
             }
         });
 
         jLabel8.setFont(new java.awt.Font("Lucida Calligraphy", 1, 12)); // NOI18N
         jLabel8.setText("Bus From :");
 
-        tEmpMail.setText(" ");
-        tEmpMail.addActionListener(new java.awt.event.ActionListener() {
+        tEmpAddress.setText(" ");
+        tEmpAddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tEmpMailActionPerformed(evt);
+                tEmpAddressActionPerformed(evt);
             }
         });
 
@@ -222,6 +224,15 @@ public class busdetails extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Lucida Calligraphy", 1, 12)); // NOI18N
         jLabel10.setText("Bus To :");
+
+        tEmpMail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tEmpMailActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setFont(new java.awt.Font("Lucida Calligraphy", 1, 12)); // NOI18N
+        jLabel11.setText("Amount :");
 
         tEmpPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -248,7 +259,7 @@ public class busdetails extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tEmpPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(tEmpMail, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -257,7 +268,11 @@ public class busdetails extends javax.swing.JFrame {
                                     .addGap(18, 18, 18)
                                     .addComponent(jButton5)
                                     .addGap(18, 18, 18)
-                                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tEmpPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(540, 540, 540)
                         .addComponent(lMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -268,10 +283,10 @@ public class busdetails extends javax.swing.JFrame {
                             .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tEmpPhoneNo, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                            .addComponent(tEmpMail)
+                            .addComponent(tEmpNIC, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
                             .addComponent(tEmpAddress)
-                            .addComponent(tEmpNIC))
+                            .addComponent(tEmpPhone)
+                            .addComponent(tEmpName))
                         .addContainerGap())))
         );
         jPanel2Layout.setVerticalGroup(
@@ -282,7 +297,7 @@ public class busdetails extends javax.swing.JFrame {
                         .addGap(367, 367, 367)
                         .addComponent(lMessage))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
+                        .addGap(22, 22, 22)
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -291,24 +306,28 @@ public class busdetails extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tEmpNIC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tEmpName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tEmpPhoneNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tEmpNIC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tEmpAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tEmpPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tEmpMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tEmpAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
+                            .addComponent(tEmpMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel11)
                             .addComponent(tEmpPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(40, 40, 40)
+                        .addGap(32, 32, 32)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton6)
                             .addComponent(jButton5)
@@ -378,27 +397,27 @@ public class busdetails extends javax.swing.JFrame {
     if(jTable1.getSelectedRow()==-1){
         if(jTable1.getRowCount()==0){
             lMessage.setText("Table is empty");
-        }else{lMessage.setText("You must select a product");
+        }else{JOptionPane.showMessageDialog(null,"Please Select one in Table","Access Denied",JOptionPane.ERROR_MESSAGE);
         
     }
     }
         else{
-        //DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+
             Connection conn = DbConnection.ConnectDb();
             int row = jTable1.getSelectedRow();
             String value = (jTable1.getModel().getValueAt(row,0).toString());
-<<<<<<< HEAD
-            String sql  = "UPDATE bus  SET bus_id=?,route_no=?,bus_no=?,bus_time=?,bus_from=?,bus_to=?"+value;
-=======
-            String sql  = "UPDATE employee  SET emp_id=?,emp_name=?,emp_nic=?,emp_phone=?,emp_address=?,emp_mail=?,emp_password=?"+value;
->>>>>>> 40cc9b1dd643932e5878e4dcb897c6fad65a9407
+
+            String sql  = "UPDATE bus  SET bus_id=?,route_no=?,bus_no=?,bus_time=?,bus_from=?,bus_to=?,amount=? WHERE bus_id = '"+value+"'";
+
+
             PreparedStatement pst = conn.prepareStatement(sql);
             pst.setString(1,tEmpID.getText());
-            pst.setString(2,tEmpNIC.getText());
-            pst.setString(3,tEmpPhoneNo.getText());
-            pst.setString(4,tEmpAddress.getText());
-            pst.setString(5,tEmpMail.getText());
-            pst.setString(6,tEmpPassword.getText());
+            pst.setString(2,tEmpName.getText());           
+            pst.setString(3,tEmpNIC.getText());
+            pst.setString(4,tEmpPhone.getText());
+            pst.setString(5,tEmpAddress.getText());
+            pst.setString(6,tEmpMail.getText());
+            pst.setString(7,tEmpPassword.getText());
             
             
             pst.executeUpdate();
@@ -406,6 +425,15 @@ public class busdetails extends javax.swing.JFrame {
             model.setRowCount(0);
             showDetails();
             JOptionPane.showMessageDialog(null, "Updated successfully");
+            
+            tEmpID.setText(null);
+        tEmpName.setText(null);
+        tEmpNIC.setText(null);
+        tEmpPhone.setText(null);
+        tEmpAddress.setText(null);
+        tEmpMail.setText(null);
+        tEmpPassword.setText(null);
+            
         }
     }
         catch(SQLException | HeadlessException e)
@@ -414,22 +442,6 @@ public class busdetails extends javax.swing.JFrame {
         }      // TODO add your handling code here:
 
         
-        /*    DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-    if(jTable1.getSelectedRow()==-1){
-        if(jTable1.getRowCount()==0){
-            lMessage.setText("Table is empty");
-        }else{lMessage.setText("You must select a product");
-        
-    }
-    }
-        else{
-        model.setValueAt(tEmpID.getText(),jTable1.getSelectedRow(),0);
-        model.setValueAt(tEmpName.getText(),jTable1.getSelectedRow(),1);
-        model.setValueAt(tEmpNIC.getText(),jTable1.getSelectedRow(),2);
-        model.setValueAt(tEmpPhoneNo.getText(),jTable1.getSelectedRow(),3);
-        model.setValueAt(tEmpAddress.getText(),jTable1.getSelectedRow(),4);
-        model.setValueAt(tEmpMail.getText(),jTable1.getSelectedRow(),5);
-        }
     // TODO add your handling code here:*/
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -440,7 +452,7 @@ public class busdetails extends javax.swing.JFrame {
         if(jTable1.getSelectedRow()==-1){
         if(jTable1.getRowCount()==0){
             lMessage.setText("Table is empty");
-        }else{lMessage.setText("You must select a product");
+        }else{JOptionPane.showMessageDialog(null,"Please Select one in Table","Access Denied",JOptionPane.ERROR_MESSAGE);
         
     }
     }
@@ -451,7 +463,7 @@ public class busdetails extends javax.swing.JFrame {
             Connection conn = DbConnection.ConnectDb();
         int row=jTable1.getSelectedRow();
         String value=(jTable1.getModel().getValueAt(row, 0).toString());
-        String sql="DELETE FROM employee where emp_id="+value;
+        String sql="DELETE FROM bus where bus_id= '"+value+"'";
         PreparedStatement pst = conn.prepareStatement(sql);
         pst.executeUpdate();
         model.setRowCount(0);
@@ -463,8 +475,9 @@ public class busdetails extends javax.swing.JFrame {
         
     
         tEmpID.setText(null);
+        tEmpName.setText(null);
         tEmpNIC.setText(null);
-        tEmpPhoneNo.setText(null);
+        tEmpPhone.setText(null);
         tEmpAddress.setText(null);
         tEmpMail.setText(null);
         tEmpPassword.setText(null);
@@ -479,62 +492,60 @@ public class busdetails extends javax.swing.JFrame {
     // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void tEmpNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tEmpNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tEmpNameActionPerformed
+
     private void tEmpNICActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tEmpNICActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tEmpNICActionPerformed
 
-    private void tEmpPhoneNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tEmpPhoneNoActionPerformed
+    private void tEmpPhoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tEmpPhoneActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tEmpPhoneNoActionPerformed
+    }//GEN-LAST:event_tEmpPhoneActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        tEmpID.setText(model.getValueAt(jTable1.getSelectedRow(),0).toString());
+        tEmpName.setText(model.getValueAt(jTable1.getSelectedRow(),1).toString());
+        tEmpNIC.setText(model.getValueAt(jTable1.getSelectedRow(),2).toString());
+        tEmpPhone.setText(model.getValueAt(jTable1.getSelectedRow(),3).toString());
+        tEmpAddress.setText(model.getValueAt(jTable1.getSelectedRow(),4).toString()); 
+        tEmpMail.setText(model.getValueAt(jTable1.getSelectedRow(),5).toString());
+        tEmpPassword.setText(model.getValueAt(jTable1.getSelectedRow(),6).toString());
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTable1MouseClicked
 
     private void tEmpAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tEmpAddressActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tEmpAddressActionPerformed
 
-    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
-        tEmpID.setText(model.getValueAt(jTable1.getSelectedRow(),0).toString());
-        tEmpNIC.setText(model.getValueAt(jTable1.getSelectedRow(),1).toString());
-        tEmpPhoneNo.setText(model.getValueAt(jTable1.getSelectedRow(),2).toString());
-        tEmpAddress.setText(model.getValueAt(jTable1.getSelectedRow(),3).toString()); 
-        tEmpMail.setText(model.getValueAt(jTable1.getSelectedRow(),4).toString());
-        tEmpPassword.setText(model.getValueAt(jTable1.getSelectedRow(),5).toString());
-        
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTable1MouseClicked
-
-    private void tEmpMailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tEmpMailActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tEmpMailActionPerformed
-
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
        try { DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-    if(tEmpID.getText().trim().isEmpty() || tEmpNIC.getText().trim().isEmpty()||tEmpPhoneNo.getText().trim().isEmpty()||tEmpAddress.getText().trim().isEmpty()||tEmpMail.getText().trim().isEmpty()|| tEmpPassword.getText().trim().isEmpty()){
+    if(tEmpID.getText().trim().isEmpty() || tEmpName.getText().trim().isEmpty()|| tEmpNIC.getText().trim().isEmpty()||tEmpPhone.getText().trim().isEmpty()||tEmpAddress.getText().trim().isEmpty()||tEmpMail.getText().trim().isEmpty()|| tEmpPassword.getText().trim().isEmpty()){
         
-            JOptionPane.showMessageDialog(null, "!!!!!!!  Please File all details..");
+            JOptionPane.showMessageDialog(null,"Please Fill All the Fields","Access Denied",JOptionPane.ERROR_MESSAGE);
         }
     
         
     else{
     
-<<<<<<< HEAD
-        model.addRow(new Object[]{tEmpID.getText(),tEmpNIC.getText(),tEmpPhoneNo.getText(),tEmpAddress.getText(),tEmpMail.getText(),});    
+
+        model.addRow(new Object[]{tEmpID.getText(),tEmpName.getText(),tEmpNIC.getText(),tEmpPhone.getText(),tEmpAddress.getText(),tEmpMail.getText(),tEmpPassword.getText()});    
         Connection conn = DbConnection.ConnectDb();
-            String sql  = "INSERT INTO bus(bus_id, route_no, bus_no, bus_time, bus_from,bus_to) VALUES (?,?,?,?,?,?)";
-=======
-        model.addRow(new Object[]{tEmpID.getText(),tEmpName.getText(),tEmpNIC.getText(),tEmpPhoneNo.getText(),tEmpAddress.getText(),tEmpMail.getText(),tEmpPassword.getText()});    
-        Connection conn = DbConnection.ConnectDb();
-            String sql  = "INSERT INTO employee(emp_id, emp_name, emp_nic, emp_phone, emp_address, emp_mail, emp_password) VALUES (?,?,?,?,?,?,?)";
->>>>>>> 40cc9b1dd643932e5878e4dcb897c6fad65a9407
-            PreparedStatement pst = conn.prepareStatement(sql);
+        String sql  = "INSERT INTO bus(bus_id, route_no, bus_no, bus_time, bus_from,bus_to,amount) VALUES (?,?,?,?,?,?,?)";
+
+        PreparedStatement pst = conn.prepareStatement(sql);
             
       
            pst.setString(1,tEmpID.getText());
-           pst.setString(2,tEmpNIC.getText());
-           pst.setString(3,tEmpPhoneNo.getText());
-           pst.setString(4,tEmpAddress.getText());
-           pst.setString(5,tEmpMail.getText());
-           pst.setString(6,tEmpPassword.getText());
+           pst.setString(2,tEmpName.getText());
+           pst.setString(3,tEmpNIC.getText());
+           pst.setString(4,tEmpPhone.getText());
+           pst.setString(5,tEmpAddress.getText());
+           pst.setString(6,tEmpMail.getText());
+           pst.setString(7,tEmpPassword.getText());
            pst.execute();
            model.setRowCount(0);
            showDetails();
@@ -542,6 +553,15 @@ public class busdetails extends javax.swing.JFrame {
           // pst.executeUpdate(sql);
 //
           JOptionPane.showMessageDialog(this, "Success !");
+          
+          tEmpID.setText(null);
+        tEmpName.setText(null);
+        tEmpNIC.setText(null);
+        tEmpPhone.setText(null);
+        tEmpAddress.setText(null);
+        tEmpMail.setText(null);
+        tEmpPassword.setText(null);
+          
                  }
         }
     catch (SQLException e) {
@@ -552,49 +572,15 @@ public class busdetails extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
 
+    private void tEmpMailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tEmpMailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tEmpMailActionPerformed
+
     private void tEmpPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tEmpPasswordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tEmpPasswordActionPerformed
 
-    /*public static void listed(){
-        DefaultTableModel table=new DefaultTableModel();
-        table.addColumn("emp_id");
-        table.addColumn("emp_name");
-        table.addColumn("emp_nic");
-        table.addColumn("emp_phone");
-        table.addColumn("emp_address");
-        table.addColumn("emp_mail");
-        
-        try{
-            Connection conn=DbConnection.ConnectDb();
-        String Sql="Select * from employee ";
-       Statement pst=conn.createStatement();
-          ResultSet rs;
-            rs = pst.executeQuery(Sql);
-          
-          while(rs.next())
-           {
-            table.addRow(new Object[]{
-              rs.getString(1),
-              rs.getString(2),
-                
-              rs.getString(3),
-              rs.getString(4),
-              rs.getString(5),
-              rs.getString(6),
-              
-          });
-        }
-          jTable1.setModel(table);
-          
-            
-        }
-        catch(Exception e){
-            
-            
-        }
     
-}*/
     /**
      * @param args the command line arguments
      */
@@ -625,69 +611,7 @@ public class busdetails extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(busdetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+        
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -704,6 +628,7 @@ public class busdetails extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
@@ -720,7 +645,8 @@ public class busdetails extends javax.swing.JFrame {
     private javax.swing.JTextField tEmpID;
     private javax.swing.JTextField tEmpMail;
     private javax.swing.JTextField tEmpNIC;
+    private javax.swing.JTextField tEmpName;
     private javax.swing.JTextField tEmpPassword;
-    private javax.swing.JTextField tEmpPhoneNo;
+    private javax.swing.JTextField tEmpPhone;
     // End of variables declaration//GEN-END:variables
 }

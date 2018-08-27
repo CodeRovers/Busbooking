@@ -34,7 +34,7 @@ public class userdetails extends javax.swing.JFrame {
         ArrayList<show> showList= new ArrayList<>();
         try{
             Connection conn = DbConnection.ConnectDb();
-        String Sql="Select * from employee ";
+            String Sql="Select * from employee ";
             PreparedStatement pst = conn.prepareStatement(Sql);
             ResultSet rs = pst.executeQuery();
             show show;
@@ -43,7 +43,7 @@ public class userdetails extends javax.swing.JFrame {
                 show = new show(rs.getString("emp_id"),rs.getString("emp_name"),rs.getString("emp_nic"),rs.getString("emp_phone"),rs.getString("emp_address"),rs.getString("emp_mail"),rs.getString("emp_password"));
                 
                 showList.add(show);
-                        }
+            }
             
         }
          catch(Exception e)
@@ -66,7 +66,7 @@ public class userdetails extends javax.swing.JFrame {
             row[3]=list.get(i).getEmp_phone();
             row[4]=list.get(i).getEmp_address();
             row[5]=list.get(i).getEmp_mail();
-            row[6]=list.get(i).getBus_to();
+            row[6]=list.get(i).getEmp_password();
             model.addRow(row);
         }
         }
@@ -98,7 +98,7 @@ public class userdetails extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         tEmpNIC = new javax.swing.JTextField();
         tEmpName = new javax.swing.JTextField();
-        tEmpPhoneNo = new javax.swing.JTextField();
+        tEmpPhone = new javax.swing.JTextField();
         tEmpAddress = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         tEmpMail = new javax.swing.JTextField();
@@ -152,7 +152,7 @@ public class userdetails extends javax.swing.JFrame {
         });
 
         jLabel2.setFont(new java.awt.Font("Lucida Calligraphy", 1, 12)); // NOI18N
-        jLabel2.setText("Employee ID");
+        jLabel2.setText("Employee ID :");
 
         tEmpID.setText(" ");
         tEmpID.addActionListener(new java.awt.event.ActionListener() {
@@ -173,16 +173,16 @@ public class userdetails extends javax.swing.JFrame {
         lMessage.setText(" ");
 
         jLabel3.setFont(new java.awt.Font("Lucida Calligraphy", 1, 12)); // NOI18N
-        jLabel3.setText("Employee NIC");
+        jLabel3.setText("Employee NIC :");
 
         jLabel4.setFont(new java.awt.Font("Lucida Calligraphy", 1, 12)); // NOI18N
-        jLabel4.setText("Employee Name");
+        jLabel4.setText("Employee Name :");
 
         jLabel6.setFont(new java.awt.Font("Lucida Calligraphy", 1, 12)); // NOI18N
-        jLabel6.setText("Employee Address");
+        jLabel6.setText("Employee Address :");
 
         jLabel7.setFont(new java.awt.Font("Lucida Calligraphy", 1, 12)); // NOI18N
-        jLabel7.setText("Employee Phone");
+        jLabel7.setText("Employee Phone :");
 
         tEmpNIC.setText(" ");
         tEmpNIC.addActionListener(new java.awt.event.ActionListener() {
@@ -198,10 +198,10 @@ public class userdetails extends javax.swing.JFrame {
             }
         });
 
-        tEmpPhoneNo.setText(" ");
-        tEmpPhoneNo.addActionListener(new java.awt.event.ActionListener() {
+        tEmpPhone.setText(" ");
+        tEmpPhone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tEmpPhoneNoActionPerformed(evt);
+                tEmpPhoneActionPerformed(evt);
             }
         });
 
@@ -213,7 +213,7 @@ public class userdetails extends javax.swing.JFrame {
         });
 
         jLabel8.setFont(new java.awt.Font("Lucida Calligraphy", 1, 12)); // NOI18N
-        jLabel8.setText("Employee Mail");
+        jLabel8.setText("Employee Mail :");
 
         tEmpMail.setText(" ");
         tEmpMail.addActionListener(new java.awt.event.ActionListener() {
@@ -234,7 +234,7 @@ public class userdetails extends javax.swing.JFrame {
         jLabel9.setText("Control User Details");
 
         jLabel10.setFont(new java.awt.Font("Lucida Calligraphy", 1, 12)); // NOI18N
-        jLabel10.setText("Employee Password");
+        jLabel10.setText("Employee Password :");
 
         tEmpPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -250,20 +250,19 @@ public class userdetails extends javax.swing.JFrame {
                 .addGap(124, 124, 124)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2)
                             .addComponent(jLabel4)
                             .addComponent(jLabel7)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel10))
-                        .addGap(45, 45, 45)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(34, 34, 34)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(tEmpName, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tEmpNIC, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tEmpPhoneNo, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tEmpPhone, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tEmpAddress, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tEmpMail, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tEmpPassword, javax.swing.GroupLayout.Alignment.LEADING)
@@ -295,17 +294,18 @@ public class userdetails extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tEmpID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(13, 13, 13)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tEmpName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(8, 8, 8)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tEmpName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(5, 5, 5)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tEmpNIC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tEmpPhoneNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tEmpPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -382,29 +382,30 @@ public class userdetails extends javax.swing.JFrame {
     }//GEN-LAST:event_tEmpIDActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-            
-    
+         
+       try{
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
     if(jTable1.getSelectedRow()==-1){
         if(jTable1.getRowCount()==0){
             lMessage.setText("Table is empty");
-        }else{lMessage.setText("You must select a product");
+        }else{JOptionPane.showMessageDialog(null,"Please Select one in Table","Access Denied",JOptionPane.ERROR_MESSAGE);
         
     }
     }
         else{
-        
-        try{
-        //DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+
             Connection conn = DbConnection.ConnectDb();
             int row = jTable1.getSelectedRow();
             String value = (jTable1.getModel().getValueAt(row,0).toString());
-            String sql  = "UPDATE bus  SET bus_id=?,bus_route=?,route_no=?,bus_no=?,bus_time=?,bus_from=?,bus_to=?"+value;
+
+            String sql  = "UPDATE employee  SET emp_id=?,emp_name=?,emp_nic=?,emp_phone=?,emp_address=?,emp_mail=?,emp_password=? WHERE emp_id = '"+value+"'";
+
+
             PreparedStatement pst = conn.prepareStatement(sql);
             pst.setString(1,tEmpID.getText());
-            pst.setString(2,tEmpName.getText());
+            pst.setString(2,tEmpName.getText());           
             pst.setString(3,tEmpNIC.getText());
-            pst.setString(4,tEmpPhoneNo.getText());
+            pst.setString(4,tEmpPhone.getText());
             pst.setString(5,tEmpAddress.getText());
             pst.setString(6,tEmpMail.getText());
             pst.setString(7,tEmpPassword.getText());
@@ -415,49 +416,35 @@ public class userdetails extends javax.swing.JFrame {
             model.setRowCount(0);
             showDetails();
             JOptionPane.showMessageDialog(null, "Updated successfully");
+            
             tEmpID.setText(null);
         tEmpName.setText(null);
         tEmpNIC.setText(null);
-        tEmpPhoneNo.setText(null);
+        tEmpPhone.setText(null);
         tEmpAddress.setText(null);
         tEmpMail.setText(null);
         tEmpPassword.setText(null);
-
+            
         }
-    
+    }
         catch(SQLException | HeadlessException e)
         {
             JOptionPane.showMessageDialog(null,e);
-        }      // TODO add your handling code here:
-    }
+        } 
         
-        /*    DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-    if(jTable1.getSelectedRow()==-1){
-        if(jTable1.getRowCount()==0){
-            lMessage.setText("Table is empty");
-        }else{lMessage.setText("You must select a product");
-        
-    }
-    }
-        else{
-        model.setValueAt(tEmpID.getText(),jTable1.getSelectedRow(),0);
-        model.setValueAt(tEmpName.getText(),jTable1.getSelectedRow(),1);
-        model.setValueAt(tEmpNIC.getText(),jTable1.getSelectedRow(),2);
-        model.setValueAt(tEmpPhoneNo.getText(),jTable1.getSelectedRow(),3);
-        model.setValueAt(tEmpAddress.getText(),jTable1.getSelectedRow(),4);
-        model.setValueAt(tEmpMail.getText(),jTable1.getSelectedRow(),5);
-        }
-    // TODO add your handling code here:*/
+
+    // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-    DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
     
         
         if(jTable1.getSelectedRow()==-1){
         if(jTable1.getRowCount()==0){
             lMessage.setText("Table is empty");
-        }else{lMessage.setText("You must select a product");
+        }else{JOptionPane.showMessageDialog(null,"Please Select one in Table","Access Denied",JOptionPane.ERROR_MESSAGE);
         
     }
     }
@@ -468,7 +455,7 @@ public class userdetails extends javax.swing.JFrame {
             Connection conn = DbConnection.ConnectDb();
         int row=jTable1.getSelectedRow();
         String value=(jTable1.getModel().getValueAt(row, 0).toString());
-        String sql="DELETE FROM bus where bus_id="+value;
+        String sql="DELETE FROM employee where emp_id= '"+value+"'";
         PreparedStatement pst = conn.prepareStatement(sql);
         pst.executeUpdate();
         model.setRowCount(0);
@@ -482,7 +469,7 @@ public class userdetails extends javax.swing.JFrame {
         tEmpID.setText(null);
         tEmpName.setText(null);
         tEmpNIC.setText(null);
-        tEmpPhoneNo.setText(null);
+        tEmpPhone.setText(null);
         tEmpAddress.setText(null);
         tEmpMail.setText(null);
         tEmpPassword.setText(null);
@@ -493,6 +480,8 @@ public class userdetails extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, e);
         }
         }
+        
+        
       
     // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -505,9 +494,9 @@ public class userdetails extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tEmpNameActionPerformed
 
-    private void tEmpPhoneNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tEmpPhoneNoActionPerformed
+    private void tEmpPhoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tEmpPhoneActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tEmpPhoneNoActionPerformed
+    }//GEN-LAST:event_tEmpPhoneActionPerformed
 
     private void tEmpAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tEmpAddressActionPerformed
         // TODO add your handling code here:
@@ -518,7 +507,7 @@ public class userdetails extends javax.swing.JFrame {
         tEmpID.setText(model.getValueAt(jTable1.getSelectedRow(),0).toString());
         tEmpName.setText(model.getValueAt(jTable1.getSelectedRow(),1).toString());
         tEmpNIC.setText(model.getValueAt(jTable1.getSelectedRow(),2).toString());
-        tEmpPhoneNo.setText(model.getValueAt(jTable1.getSelectedRow(),3).toString());
+        tEmpPhone.setText(model.getValueAt(jTable1.getSelectedRow(),3).toString());
         tEmpAddress.setText(model.getValueAt(jTable1.getSelectedRow(),4).toString()); 
         tEmpMail.setText(model.getValueAt(jTable1.getSelectedRow(),5).toString());
         tEmpPassword.setText(model.getValueAt(jTable1.getSelectedRow(),6).toString());
@@ -532,24 +521,24 @@ public class userdetails extends javax.swing.JFrame {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
        try { DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-    if(tEmpID.getText().trim().isEmpty()|| tEmpName.getText().trim().isEmpty()||tEmpNIC.getText().trim().isEmpty()||tEmpPhoneNo.getText().trim().isEmpty()||tEmpAddress.getText().trim().isEmpty()||tEmpMail.getText().trim().isEmpty()|| tEmpPassword.getText().trim().isEmpty()){
+    if(tEmpID.getText().trim().isEmpty()|| tEmpName.getText().trim().isEmpty()||tEmpNIC.getText().trim().isEmpty()||tEmpPhone.getText().trim().isEmpty()||tEmpAddress.getText().trim().isEmpty()||tEmpMail.getText().trim().isEmpty()|| tEmpPassword.getText().trim().isEmpty()){
         
-            JOptionPane.showMessageDialog(null, "!!!!!!!  Please File all details..");
+            JOptionPane.showMessageDialog(null,"Please Fill All the Details","Access Denied",JOptionPane.ERROR_MESSAGE);
         }
     
         
     else{
     
-        model.addRow(new Object[]{tEmpID.getText(),tEmpName.getText(),tEmpNIC.getText(),tEmpPhoneNo.getText(),tEmpAddress.getText(),tEmpMail.getText(),tEmpName.getText()});    
+        model.addRow(new Object[]{tEmpID.getText(),tEmpName.getText(),tEmpNIC.getText(),tEmpPhone.getText(),tEmpAddress.getText(),tEmpMail.getText(),tEmpPassword.getText()});    
         Connection conn = DbConnection.ConnectDb();
-            String sql  = "INSERT INTO bus(bus_id, bus_route, route_no, bus_no, bus_time, bus_from,bus_to) VALUES (?,?,?,?,?,?,?)";
+            String sql  = "INSERT INTO employee(emp_id, emp_name, emp_nic, emp_phone, emp_address, emp_mail, emp_password) VALUES (?,?,?,?,?,?,?)";
             PreparedStatement pst = conn.prepareStatement(sql);
             
       
            pst.setString(1,tEmpID.getText());
            pst.setString(2,tEmpName.getText());
            pst.setString(3,tEmpNIC.getText());
-           pst.setString(4,tEmpPhoneNo.getText());
+           pst.setString(4,tEmpPhone.getText());
            pst.setString(5,tEmpAddress.getText());
            pst.setString(6,tEmpMail.getText());
            pst.setString(7,tEmpPassword.getText());
@@ -557,16 +546,16 @@ public class userdetails extends javax.swing.JFrame {
            model.setRowCount(0);
            showDetails();
            
-          // pst.executeUpdate(sql);
-//
+          
+
           JOptionPane.showMessageDialog(this, "Success !");
-          tEmpID.setText(null);
-        tEmpName.setText(null);
-        tEmpNIC.setText(null);
-        tEmpPhoneNo.setText(null);
-        tEmpAddress.setText(null);
-        tEmpMail.setText(null);
-        tEmpPassword.setText(null);
+            tEmpID.setText(null);
+            tEmpName.setText(null);
+            tEmpNIC.setText(null);
+            tEmpPhone.setText(null);
+            tEmpAddress.setText(null);
+            tEmpMail.setText(null);
+            tEmpPassword.setText(null);
 
                  }
         }
@@ -582,45 +571,7 @@ public class userdetails extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tEmpPasswordActionPerformed
 
-    /*public static void listed(){
-        DefaultTableModel table=new DefaultTableModel();
-        table.addColumn("emp_id");
-        table.addColumn("emp_name");
-        table.addColumn("emp_nic");
-        table.addColumn("emp_phone");
-        table.addColumn("emp_address");
-        table.addColumn("emp_mail");
-        
-        try{
-            Connection conn=DbConnection.ConnectDb();
-        String Sql="Select * from employee ";
-       Statement pst=conn.createStatement();
-          ResultSet rs;
-            rs = pst.executeQuery(Sql);
-          
-          while(rs.next())
-           {
-            table.addRow(new Object[]{
-              rs.getString(1),
-              rs.getString(2),
-                
-              rs.getString(3),
-              rs.getString(4),
-              rs.getString(5),
-              rs.getString(6),
-              
-          });
-        }
-          jTable1.setModel(table);
-          
-            
-        }
-        catch(Exception e){
-            
-            
-        }
     
-}*/
     /**
      * @param args the command line arguments
      */
@@ -651,261 +602,7 @@ public class userdetails extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(userdetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+       
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -941,6 +638,6 @@ public class userdetails extends javax.swing.JFrame {
     private javax.swing.JTextField tEmpNIC;
     private javax.swing.JTextField tEmpName;
     private javax.swing.JTextField tEmpPassword;
-    private javax.swing.JTextField tEmpPhoneNo;
+    private javax.swing.JTextField tEmpPhone;
     // End of variables declaration//GEN-END:variables
 }

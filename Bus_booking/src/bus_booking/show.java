@@ -10,33 +10,26 @@ package bus_booking;
  * @author suthesana
  */
 public class show {
-    private String emp_id,emp_name,emp_nic,emp_phone,emp_address,emp_mail,bus_to;
+    private String emp_id,emp_name,emp_nic,emp_phone,emp_address,emp_mail,emp_password;
 
-   /* public show(String emp_id, String emp_name, String emp_nic, String emp_phone, String emp_address, String emp_mail) {
+   
+
+    public show(String emp_id, String emp_name, String emp_nic, String emp_phone, String emp_address, String emp_mail, String emp_password) {
         this.emp_id = emp_id;
         this.emp_name = emp_name;
         this.emp_nic = emp_nic;
         this.emp_phone = emp_phone;
         this.emp_address = emp_address;
         this.emp_mail = emp_mail;
-    }*/
-
-    public show(String emp_id, String emp_name, String emp_nic, String emp_phone, String emp_address, String emp_mail, String bus_to) {
-        this.emp_id = emp_id;
-        this.emp_name = emp_name;
-        this.emp_nic = emp_nic;
-        this.emp_phone = emp_phone;
-        this.emp_address = emp_address;
-        this.emp_mail = emp_mail;
-        this.bus_to = bus_to;
+        this.emp_password = emp_password;
     }
 
-    public String getBus_to() {
-        return bus_to;
+    public String getEmp_password() {
+        return emp_password;
     }
 
-    public void setBus_to(String bus_to) {
-        this.bus_to = bus_to;
+    public void setEmp_password(String emp_password) {
+        this.emp_password = emp_password;
     }
     
 
