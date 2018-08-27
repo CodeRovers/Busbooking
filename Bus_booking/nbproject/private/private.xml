@@ -3,39 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/Sangeevan/Documents/GitHub/Busbooking/Bus_booking/src/bus_booking/show.java</file>
-            <file>file:/C:/Users/Sangeevan/Documents/GitHub/Busbooking/Bus_booking/src/bus_booking/Update.java</file>
-            <file>file:/C:/Users/Sangeevan/Documents/GitHub/Busbooking/Bus_booking/src/bus_booking/admin.java</file>
-            <file>file:/C:/Users/Sangeevan/Documents/GitHub/Busbooking/Bus_booking/src/bus_booking/userdetails.java</file>
-            <file>file:/C:/Users/Sangeevan/Documents/GitHub/Busbooking/Bus_booking/src/bus_booking/LogIn.java</file>
-            <file>file:/C:/Users/Sangeevan/Documents/GitHub/Busbooking/Bus_booking/src/bus_booking/Pay.java</file>
-            <file>file:/C:/Users/Sangeevan/Documents/GitHub/Busbooking/Bus_booking/src/bus_booking/SelectTheSeats.java</file>
-            <file>file:/C:/Users/Sangeevan/Documents/GitHub/Busbooking/Bus_booking/src/bus_booking/ConfirmDetails.java</file>
-            <file>file:/C:/Users/Sangeevan/Documents/GitHub/Busbooking/Bus_booking/src/bus_booking/SignUp.java</file>
-            <file>file:/C:/Users/Sangeevan/Documents/GitHub/Busbooking/Bus_booking/src/bus_booking/CheckSeat.java</file>
-            <file>file:/C:/Users/Sangeevan/Documents/GitHub/Busbooking/Bus_booking/src/bus_booking/mainif.java</file>
-            <file>file:/C:/Users/Sangeevan/Documents/GitHub/Busbooking/Bus_booking/src/bus_booking/home.java</file>
-            <file>file:/C:/Users/Sangeevan/Documents/GitHub/Busbooking/Bus_booking/src/bus_booking/adminLogIn.java</file>
-            <file>file:/C:/Users/Sangeevan/Documents/GitHub/Busbooking/Bus_booking/src/bus_booking/CancelSeat.java</file>
-            <file>file:/C:/Users/Sangeevan/Documents/GitHub/Busbooking/Bus_booking/src/bus_booking/CustomersDetails.java</file>
-            <file>file:/C:/Users/Sangeevan/Documents/GitHub/Busbooking/Bus_booking/src/bus_booking/DbConnection.java</file>
-            <file>file:/C:/Users/Sangeevan/Documents/GitHub/Busbooking/Bus_booking/src/bus_booking/TicketPrint.java</file>
-            <file>file:/C:/Users/Sangeevan/Documents/GitHub/Busbooking/Bus_booking/src/bus_booking/SelectBusOption.java</file>
-            <file>file:/C:/Users/Sangeevan/Documents/GitHub/Busbooking/Bus_booking/src/bus_booking/SearchDetails.java</file>
-=======
+            <file>file:/C:/Users/Thasni/Desktop/Busbooking/Bus_booking/src/bus_booking/mainif.java</file>
             <file>file:/C:/Users/Thasni/Desktop/Busbooking/Bus_booking/src/bus_booking/SearchDetails.java</file>
-            <file>file:/C:/Users/Thasni/Desktop/Busbooking/Bus_booking/src/bus_booking/CancelSeat.java</file>
+            <file>file:/C:/Users/Thasni/Desktop/Busbooking/Bus_booking/src/bus_booking/busdetails.java</file>
+            <file>file:/C:/Users/Thasni/Desktop/Busbooking/Bus_booking/src/bus_booking/TicketPrint.java</file>
             <file>file:/C:/Users/Thasni/Desktop/Busbooking/Bus_booking/src/bus_booking/CheckSeat.java</file>
             <file>file:/C:/Users/Thasni/Desktop/Busbooking/Bus_booking/src/bus_booking/CustomersDetails.java</file>
-            <file>file:/C:/Users/Thasni/Desktop/Busbooking/Bus_booking/src/bus_booking/SelectBusOption.java</file>
+            <file>file:/C:/Users/Thasni/Desktop/Busbooking/Bus_booking/src/bus_booking/home.java</file>
             <file>file:/C:/Users/Thasni/Desktop/Busbooking/Bus_booking/src/bus_booking/Pay.java</file>
+            <file>file:/C:/Users/Thasni/Desktop/Busbooking/Bus_booking/src/bus_booking/userdetails.java</file>
+            <file>file:/C:/Users/Thasni/Desktop/Busbooking/Bus_booking/src/bus_booking/adminLogIn.java</file>
+            <file>file:/C:/Users/Thasni/Desktop/Busbooking/Bus_booking/src/bus_booking/SelectBusOption.java</file>
             <file>file:/C:/Users/Thasni/Desktop/Busbooking/Bus_booking/src/bus_booking/ConfirmDetails.java</file>
+            <file>file:/C:/Users/Thasni/Desktop/Busbooking/Bus_booking/src/bus_booking/admin.java</file>
             <file>file:/C:/Users/Thasni/Desktop/Busbooking/Bus_booking/src/bus_booking/SignUp.java</file>
             <file>file:/C:/Users/Thasni/Desktop/Busbooking/Bus_booking/src/bus_booking/LogIn.java</file>
             <file>file:/C:/Users/Thasni/Desktop/Busbooking/Bus_booking/src/bus_booking/SelectTheSeats.java</file>
-            <file>file:/C:/Users/Thasni/Desktop/Busbooking/Bus_booking/src/bus_booking/Ticket.java</file>
->>>>>>> eeb08c919efbe2c0818244e7cb5d5137b1946186
         </group>
     </open-files>
 </project-private>

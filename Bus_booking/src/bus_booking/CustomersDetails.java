@@ -197,7 +197,7 @@ public class CustomersDetails extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-//<<<<<<< HEAD
+
             if(txtcusname.getText().trim().isEmpty() && txtcusnum.getText().trim().isEmpty() && txtcusnic.getText().trim().isEmpty() && txtcusaddress.getText().trim().isEmpty()){
                 JOptionPane.showMessageDialog(null, "!!!!!!!  Please File all coloms..");
             }
