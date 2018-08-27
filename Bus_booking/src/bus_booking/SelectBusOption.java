@@ -53,7 +53,7 @@ public class SelectBusOption extends javax.swing.JFrame {
         try{
             Connection conn = DbConnection.ConnectDb();
             Statement pst = conn.createStatement();
-            String sql="SELECT`bus_from` FROM `bus`";
+            String sql="SELECT DISTINCT `bus_from` FROM `bus`";
             ResultSet rs = pst.executeQuery(sql);
             while(rs.next()){
                 from.addItem(rs.getString("bus_from"));
@@ -69,7 +69,7 @@ public class SelectBusOption extends javax.swing.JFrame {
         try{
             Connection conn = DbConnection.ConnectDb();
             Statement pst = conn.createStatement();
-            String sql="SELECT`bus_to` FROM `bus`";
+            String sql="SELECT DISTINCT `bus_to` FROM `bus`";
             ResultSet rs = pst.executeQuery(sql);
             while(rs.next()){
                 to.addItem(rs.getString("bus_to"));
@@ -79,6 +79,7 @@ public class SelectBusOption extends javax.swing.JFrame {
         catch (SQLException e){
             JOptionPane.showMessageDialog(null, e);
         }
+        
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -254,10 +255,14 @@ public class SelectBusOption extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        
       
-      keep(); 
+      keep();
+      if(passvaluefrom.equals(passvalueto)){
+             JOptionPane.showMessageDialog(null, "!!!!!!!  Please select correct choice ..");
+        }
+      else{
        new CheckSeat().setVisible(true);
        this.setVisible(false);
-       
+      }
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 

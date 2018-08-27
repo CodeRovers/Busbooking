@@ -282,7 +282,7 @@ public class SignUp extends javax.swing.JFrame {
        
 //        initComponents();
 //        conn = DbConnection.ConnectDb();
-        if(txtempid.getText().trim().isEmpty()&& txtusername.getText().trim().isEmpty()&&txtnic.getText().trim().isEmpty()&&txtcontactno.getText().trim().isEmpty()&&txtaddress.getText().trim().isEmpty()&&txtmailid.getText().trim().isEmpty()&&txtpassword.getText().trim().isEmpty()){
+        if(txtempid.getText().trim().isEmpty()|| txtusername.getText().trim().isEmpty()|| txtnic.getText().trim().isEmpty() || txtcontactno.getText().trim().isEmpty() || txtaddress.getText().trim().isEmpty() || txtmailid.getText().trim().isEmpty() || txtpassword.getText().trim().isEmpty()){
         
             JOptionPane.showMessageDialog(null, "!!!!!!!  Please File all coloms..");
         }
