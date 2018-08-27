@@ -98,7 +98,6 @@ public class SelectBusOption extends javax.swing.JFrame {
         to = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -141,16 +140,6 @@ public class SelectBusOption extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Lucida Calligraphy", 1, 24)); // NOI18N
         jLabel6.setText("From :");
 
-        jButton5.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
-        jButton5.setText("Back");
-        jButton5.setActionCommand("Search");
-        jButton5.setName("searchorupdate"); // NOI18N
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -171,8 +160,7 @@ public class SelectBusOption extends javax.swing.JFrame {
                                 .addGap(65, 65, 65)
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(to, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jButton5))))
+                                .addComponent(to, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(420, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -188,9 +176,7 @@ public class SelectBusOption extends javax.swing.JFrame {
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(114, 114, 114)
                 .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 219, Short.MAX_VALUE)
-                .addComponent(jButton5)
-                .addGap(44, 44, 44))
+                .addContainerGap(296, Short.MAX_VALUE))
         );
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bus_booking/Bus.png"))); // NOI18N
@@ -263,11 +249,6 @@ public void keep()
     passvalueto = (String) to.getSelectedItem(); 
     
 }
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        new home().setVisible(true);
-        this.setVisible(false);        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -313,7 +294,6 @@ public void keep()
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> from;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
