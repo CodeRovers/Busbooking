@@ -118,7 +118,6 @@
                                           <Component id="jLabel13" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel14" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -132,7 +131,6 @@
                                           <Component id="txtto" alignment="0" max="32767" attributes="0"/>
                                           <Component id="txtnoofseats" alignment="0" max="32767" attributes="0"/>
                                           <Component id="txtseatno" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="txtcusname" alignment="0" max="32767" attributes="0"/>
                                           <Component id="txtempid" alignment="0" max="32767" attributes="0"/>
                                           <Component id="txtamount" alignment="0" max="32767" attributes="0"/>
                                       </Group>
@@ -208,20 +206,15 @@
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtcusname" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtempid" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtempid" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtamount" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtamount" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
                       <Component id="jButton5" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="185" max="-2" attributes="0"/>
                   </Group>
@@ -317,14 +310,6 @@
                 <Property name="text" type="java.lang.String" value="Seat Numbers :"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel14">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Calligraphy" size="18" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Customer Name :"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabel16">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -391,11 +376,6 @@
                 <Property name="name" type="java.lang.String" value="seatnumbers" noResource="true"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtcusname">
-              <Properties>
-                <Property name="name" type="java.lang.String" value="customername" noResource="true"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JTextField" name="txtempid">
               <Properties>
                 <Property name="name" type="java.lang.String" value="customerid" noResource="true"/>
@@ -412,7 +392,6 @@
                   <Font name="Lucida Calligraphy" size="18" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Search"/>
-                <Property name="actionCommand" type="java.lang.String" value="Search"/>
                 <Property name="name" type="java.lang.String" value="searchorupdate" noResource="true"/>
               </Properties>
               <Events>
