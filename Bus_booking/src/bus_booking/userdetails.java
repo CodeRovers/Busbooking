@@ -382,13 +382,8 @@ public class userdetails extends javax.swing.JFrame {
     }//GEN-LAST:event_tEmpIDActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-<<<<<<< HEAD
          
        try{
-=======
-//delete from records where Date='"+selected+"' "            
-    
->>>>>>> 748d1010aaf2d0815ca95899011b073990f5a90c
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
     if(jTable1.getSelectedRow()==-1){
         if(jTable1.getRowCount()==0){
@@ -402,14 +397,10 @@ public class userdetails extends javax.swing.JFrame {
             Connection conn = DbConnection.ConnectDb();
             int row = jTable1.getSelectedRow();
             String value = (jTable1.getModel().getValueAt(row,0).toString());
-<<<<<<< HEAD
 
             String sql  = "UPDATE employee  SET emp_id=?,emp_name=?,emp_nic=?,emp_phone=?,emp_address=?,emp_mail=?,emp_password=? WHERE emp_id = '"+value+"'";
 
 
-=======
-            String sql  = "UPDATE employee  SET emp_id=?,emp_name=?,emp_nic=?,emp_phone=?,emp_address=?,emp_mail=?,emp_password=?"+value;
->>>>>>> 748d1010aaf2d0815ca95899011b073990f5a90c
             PreparedStatement pst = conn.prepareStatement(sql);
             pst.setString(1,tEmpID.getText());
             pst.setString(2,tEmpName.getText());           
@@ -464,17 +455,8 @@ public class userdetails extends javax.swing.JFrame {
             Connection conn = DbConnection.ConnectDb();
         int row=jTable1.getSelectedRow();
         String value=(jTable1.getModel().getValueAt(row, 0).toString());
-<<<<<<< HEAD
         String sql="DELETE FROM employee where emp_id= '"+value+"'";
         PreparedStatement pst = conn.prepareStatement(sql);
-=======
-        //delete from records where Date='"+selected+"' 
-        //String sql= "DELETE FROM employee where emp_id='"+value"' " ;
-        //String sql="DELETE FROM bus where bus_id="+value;
-        PreparedStatement pst = conn.prepareStatement("delete from employee where emp_id='"+value+"' ");
-
-        //PreparedStatement pst = conn.prepareStatement(sql);
->>>>>>> 748d1010aaf2d0815ca95899011b073990f5a90c
         pst.executeUpdate();
         model.setRowCount(0);
         showDetails();
@@ -549,11 +531,7 @@ public class userdetails extends javax.swing.JFrame {
     
         model.addRow(new Object[]{tEmpID.getText(),tEmpName.getText(),tEmpNIC.getText(),tEmpPhone.getText(),tEmpAddress.getText(),tEmpMail.getText(),tEmpPassword.getText()});    
         Connection conn = DbConnection.ConnectDb();
-<<<<<<< HEAD
             String sql  = "INSERT INTO employee(emp_id, emp_name, emp_nic, emp_phone, emp_address, emp_mail, emp_password) VALUES (?,?,?,?,?,?,?)";
-=======
-            String sql  = "INSERT INTO employee(emp_id, emp_name, emp_nic, emp_phone, emp_address, emp_mail,emp_password) VALUES (?,?,?,?,?,?,?)";
->>>>>>> 748d1010aaf2d0815ca95899011b073990f5a90c
             PreparedStatement pst = conn.prepareStatement(sql);
             
       

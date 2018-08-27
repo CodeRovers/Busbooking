@@ -34,21 +34,13 @@ public class busdetails extends javax.swing.JFrame {
         ArrayList<show> showList= new ArrayList<>();
         try{
             Connection conn = DbConnection.ConnectDb();
-<<<<<<< HEAD
             String Sql="Select * from bus ";
-=======
-        String Sql="Select * from bus ";
->>>>>>> 748d1010aaf2d0815ca95899011b073990f5a90c
             PreparedStatement pst = conn.prepareStatement(Sql);
             ResultSet rs = pst.executeQuery();
             show show;
             
             while(rs.next()){
-<<<<<<< HEAD
                 show = new show(rs.getString("bus_id"),rs.getString("route_no"),rs.getString("bus_no"),rs.getString("bus_time"),rs.getString("bus_from"),rs.getString("bus_to"),rs.getString("amount"));
-=======
-                show = new show(rs.getString("bus_id"),rs.getString("bus_route"),rs.getString("route_no"),rs.getString("bus_no"),rs.getString("bus_time"),rs.getString("bus_from"),rs.getString("bus_to"));
->>>>>>> 748d1010aaf2d0815ca95899011b073990f5a90c
                 
                 showList.add(show);
             }
@@ -74,11 +66,7 @@ public class busdetails extends javax.swing.JFrame {
             row[3]=list.get(i).getEmp_phone();
             row[4]=list.get(i).getEmp_address();
             row[5]=list.get(i).getEmp_mail();
-<<<<<<< HEAD
             row[6]=list.get(i).getEmp_password();
-=======
-            row[6]=list.get(i).getBus_to();
->>>>>>> 748d1010aaf2d0815ca95899011b073990f5a90c
             model.addRow(row);
         }
         }
@@ -105,22 +93,14 @@ public class busdetails extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         lMessage = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         tEmpName = new javax.swing.JTextField();
         tEmpNIC = new javax.swing.JTextField();
-<<<<<<< HEAD
         tEmpPhone = new javax.swing.JTextField();
-=======
-        tEmpName = new javax.swing.JTextField();
-        tEmpPhoneNo = new javax.swing.JTextField();
-        tEmpAddress = new javax.swing.JTextField();
->>>>>>> 748d1010aaf2d0815ca95899011b073990f5a90c
         jLabel8 = new javax.swing.JLabel();
         tEmpAddress = new javax.swing.JTextField();
         jButton6 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         tEmpMail = new javax.swing.JTextField();
@@ -152,11 +132,7 @@ public class busdetails extends javax.swing.JFrame {
 
             },
             new String [] {
-<<<<<<< HEAD
                 "Bus ID", "Route No", "Bus No", "Bus Time", "Bus From", "Bus To", "Amount"
-=======
-                "Bus ID", "Bus Route", "Route No", "Bus No", "Bus Time", "Bus From", "Bus To"
->>>>>>> 748d1010aaf2d0815ca95899011b073990f5a90c
             }
         ));
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -166,6 +142,7 @@ public class busdetails extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
+        jButton4.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
         jButton4.setText("Delete");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -173,7 +150,8 @@ public class busdetails extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("Bus ID");
+        jLabel2.setFont(new java.awt.Font("Lucida Calligraphy", 1, 12)); // NOI18N
+        jLabel2.setText("Bus ID :");
 
         tEmpID.setText(" ");
         tEmpID.addActionListener(new java.awt.event.ActionListener() {
@@ -182,7 +160,8 @@ public class busdetails extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setText("update");
+        jButton5.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
+        jButton5.setText("Update");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -192,13 +171,14 @@ public class busdetails extends javax.swing.JFrame {
         lMessage.setForeground(new java.awt.Color(255, 0, 0));
         lMessage.setText(" ");
 
-        jLabel3.setText("Route No");
+        jLabel3.setFont(new java.awt.Font("Lucida Calligraphy", 1, 12)); // NOI18N
+        jLabel3.setText("Route No :");
 
-        jLabel4.setText("Bus Route");
+        jLabel6.setFont(new java.awt.Font("Lucida Calligraphy", 1, 12)); // NOI18N
+        jLabel6.setText("Bus Time :");
 
-        jLabel6.setText("Bus Time");
-
-        jLabel7.setText("Bus No");
+        jLabel7.setFont(new java.awt.Font("Lucida Calligraphy", 1, 12)); // NOI18N
+        jLabel7.setText("Bus No :");
 
         tEmpName.setText(" ");
         tEmpName.addActionListener(new java.awt.event.ActionListener() {
@@ -207,20 +187,8 @@ public class busdetails extends javax.swing.JFrame {
             }
         });
 
-<<<<<<< HEAD
         tEmpNIC.setText(" ");
         tEmpNIC.addActionListener(new java.awt.event.ActionListener() {
-=======
-        tEmpName.setText(" ");
-        tEmpName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tEmpNameActionPerformed(evt);
-            }
-        });
-
-        tEmpPhoneNo.setText(" ");
-        tEmpPhoneNo.addActionListener(new java.awt.event.ActionListener() {
->>>>>>> 748d1010aaf2d0815ca95899011b073990f5a90c
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tEmpNICActionPerformed(evt);
             }
@@ -233,7 +201,8 @@ public class busdetails extends javax.swing.JFrame {
             }
         });
 
-        jLabel8.setText("Bus From");
+        jLabel8.setFont(new java.awt.Font("Lucida Calligraphy", 1, 12)); // NOI18N
+        jLabel8.setText("Bus From :");
 
         tEmpAddress.setText(" ");
         tEmpAddress.addActionListener(new java.awt.event.ActionListener() {
@@ -242,6 +211,7 @@ public class busdetails extends javax.swing.JFrame {
             }
         });
 
+        jButton6.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
         jButton6.setText("Add");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -249,24 +219,11 @@ public class busdetails extends javax.swing.JFrame {
             }
         });
 
-<<<<<<< HEAD
         jLabel9.setFont(new java.awt.Font("Lucida Calligraphy", 1, 24)); // NOI18N
         jLabel9.setText("Control Bus Details");
-=======
-        jButton3.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
-        jButton3.setText("Log Out ");
-        jButton3.setActionCommand("Search");
-        jButton3.setName("searchorupdate"); // NOI18N
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
->>>>>>> 748d1010aaf2d0815ca95899011b073990f5a90c
 
-        jLabel9.setText("                    BUS DETAILS");
-
-        jLabel10.setText("Bus To");
+        jLabel10.setFont(new java.awt.Font("Lucida Calligraphy", 1, 12)); // NOI18N
+        jLabel10.setText("Bus To :");
 
         tEmpMail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -288,19 +245,16 @@ public class busdetails extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(322, 322, 322)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(69, 69, 69)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(229, 229, 229)
+                .addGap(128, 128, 128)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tEmpID, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -334,55 +288,11 @@ public class busdetails extends javax.swing.JFrame {
                             .addComponent(tEmpPhone)
                             .addComponent(tEmpName))
                         .addContainerGap())))
-=======
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tEmpPassword))
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(tEmpID, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(tEmpPhoneNo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(tEmpAddress, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(tEmpNIC, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(tEmpName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(tEmpMail, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(45, 45, 45)
-                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(143, 143, 143)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 675, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(130, Short.MAX_VALUE))))
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                    .addContainerGap(860, Short.MAX_VALUE)
-                    .addComponent(jButton3)
-                    .addGap(53, 53, 53)))
->>>>>>> 748d1010aaf2d0815ca95899011b073990f5a90c
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(88, 88, 88)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(367, 367, 367)
                         .addComponent(lMessage))
@@ -427,52 +337,6 @@ public class busdetails extends javax.swing.JFrame {
                 .addGap(34, 34, 34)
                 .addComponent(jButton2)
                 .addContainerGap(103, Short.MAX_VALUE))
-=======
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tEmpID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(14, 14, 14)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tEmpName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tEmpNIC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tEmpPhoneNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tEmpAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(2, 2, 2)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tEmpMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lMessage)
-                    .addComponent(jLabel10)
-                    .addComponent(tEmpPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(54, 54, 54)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton6)
-                    .addComponent(jButton5)
-                    .addComponent(jButton4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(87, 87, 87)
-                    .addComponent(jButton3)
-                    .addContainerGap(611, Short.MAX_VALUE)))
->>>>>>> 748d1010aaf2d0815ca95899011b073990f5a90c
         );
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bus_booking/Bus.png"))); // NOI18N
@@ -542,7 +406,6 @@ public class busdetails extends javax.swing.JFrame {
             Connection conn = DbConnection.ConnectDb();
             int row = jTable1.getSelectedRow();
             String value = (jTable1.getModel().getValueAt(row,0).toString());
-<<<<<<< HEAD
 
             String sql  = "UPDATE bus  SET bus_id=?,route_no=?,bus_no=?,bus_time=?,bus_from=?,bus_to=?,amount=? WHERE bus_id = '"+value+"'";
 
@@ -552,14 +415,6 @@ public class busdetails extends javax.swing.JFrame {
             pst.setString(2,tEmpName.getText());           
             pst.setString(3,tEmpNIC.getText());
             pst.setString(4,tEmpPhone.getText());
-=======
-            String sql  = "UPDATE bus  SET bus_id=?,bus_route=?,route_no=?,bus_no=?,bus_time=?,bus_from=?,bus_to=?"+value;
-            PreparedStatement pst = conn.prepareStatement(sql);
-            pst.setString(1,tEmpID.getText());
-            pst.setString(2,tEmpName.getText());
-            pst.setString(3,tEmpNIC.getText());
-            pst.setString(4,tEmpPhoneNo.getText());
->>>>>>> 748d1010aaf2d0815ca95899011b073990f5a90c
             pst.setString(5,tEmpAddress.getText());
             pst.setString(6,tEmpMail.getText());
             pst.setString(7,tEmpPassword.getText());
@@ -608,14 +463,8 @@ public class busdetails extends javax.swing.JFrame {
             Connection conn = DbConnection.ConnectDb();
         int row=jTable1.getSelectedRow();
         String value=(jTable1.getModel().getValueAt(row, 0).toString());
-<<<<<<< HEAD
         String sql="DELETE FROM bus where bus_id= '"+value+"'";
         PreparedStatement pst = conn.prepareStatement(sql);
-=======
-       // String sql="DELETE FROM bus where bus_id="+value;
-        PreparedStatement pst = conn.prepareStatement("delete from bus where bus_id='"+value+"' ");
-        //PreparedStatement pst = conn.prepareStatement(sql);
->>>>>>> 748d1010aaf2d0815ca95899011b073990f5a90c
         pst.executeUpdate();
         model.setRowCount(0);
         showDetails();
@@ -647,15 +496,7 @@ public class busdetails extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tEmpNameActionPerformed
 
-<<<<<<< HEAD
     private void tEmpNICActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tEmpNICActionPerformed
-=======
-    private void tEmpNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tEmpNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tEmpNameActionPerformed
-
-    private void tEmpPhoneNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tEmpPhoneNoActionPerformed
->>>>>>> 748d1010aaf2d0815ca95899011b073990f5a90c
         // TODO add your handling code here:
     }//GEN-LAST:event_tEmpNICActionPerformed
 
@@ -668,11 +509,7 @@ public class busdetails extends javax.swing.JFrame {
         tEmpID.setText(model.getValueAt(jTable1.getSelectedRow(),0).toString());
         tEmpName.setText(model.getValueAt(jTable1.getSelectedRow(),1).toString());
         tEmpNIC.setText(model.getValueAt(jTable1.getSelectedRow(),2).toString());
-<<<<<<< HEAD
         tEmpPhone.setText(model.getValueAt(jTable1.getSelectedRow(),3).toString());
-=======
-        tEmpPhoneNo.setText(model.getValueAt(jTable1.getSelectedRow(),3).toString());
->>>>>>> 748d1010aaf2d0815ca95899011b073990f5a90c
         tEmpAddress.setText(model.getValueAt(jTable1.getSelectedRow(),4).toString()); 
         tEmpMail.setText(model.getValueAt(jTable1.getSelectedRow(),5).toString());
         tEmpPassword.setText(model.getValueAt(jTable1.getSelectedRow(),6).toString());
@@ -686,11 +523,7 @@ public class busdetails extends javax.swing.JFrame {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
        try { DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-<<<<<<< HEAD
     if(tEmpID.getText().trim().isEmpty() || tEmpName.getText().trim().isEmpty()|| tEmpNIC.getText().trim().isEmpty()||tEmpPhone.getText().trim().isEmpty()||tEmpAddress.getText().trim().isEmpty()||tEmpMail.getText().trim().isEmpty()|| tEmpPassword.getText().trim().isEmpty()){
-=======
-    if(tEmpID.getText().trim().isEmpty()|| tEmpName.getText().trim().isEmpty()||tEmpNIC.getText().trim().isEmpty()||tEmpPhoneNo.getText().trim().isEmpty()||tEmpAddress.getText().trim().isEmpty()||tEmpMail.getText().trim().isEmpty()|| tEmpPassword.getText().trim().isEmpty()){
->>>>>>> 748d1010aaf2d0815ca95899011b073990f5a90c
         
             JOptionPane.showMessageDialog(null,"Please Fill All the Fields","Access Denied",JOptionPane.ERROR_MESSAGE);
         }
@@ -698,29 +531,18 @@ public class busdetails extends javax.swing.JFrame {
         
     else{
     
-<<<<<<< HEAD
 
         model.addRow(new Object[]{tEmpID.getText(),tEmpName.getText(),tEmpNIC.getText(),tEmpPhone.getText(),tEmpAddress.getText(),tEmpMail.getText(),tEmpPassword.getText()});    
         Connection conn = DbConnection.ConnectDb();
         String sql  = "INSERT INTO bus(bus_id, route_no, bus_no, bus_time, bus_from,bus_to,amount) VALUES (?,?,?,?,?,?,?)";
 
         PreparedStatement pst = conn.prepareStatement(sql);
-=======
-        model.addRow(new Object[]{tEmpID.getText(),tEmpName.getText(),tEmpNIC.getText(),tEmpPhoneNo.getText(),tEmpAddress.getText(),tEmpMail.getText(),tEmpName.getText()});    
-        Connection conn = DbConnection.ConnectDb();
-            String sql  = "INSERT INTO bus(bus_id, bus_route, route_no, bus_no, bus_time, bus_from,bus_to) VALUES (?,?,?,?,?,?,?)";
-            PreparedStatement pst = conn.prepareStatement(sql);
->>>>>>> 748d1010aaf2d0815ca95899011b073990f5a90c
             
       
            pst.setString(1,tEmpID.getText());
            pst.setString(2,tEmpName.getText());
            pst.setString(3,tEmpNIC.getText());
-<<<<<<< HEAD
            pst.setString(4,tEmpPhone.getText());
-=======
-           pst.setString(4,tEmpPhoneNo.getText());
->>>>>>> 748d1010aaf2d0815ca95899011b073990f5a90c
            pst.setString(5,tEmpAddress.getText());
            pst.setString(6,tEmpMail.getText());
            pst.setString(7,tEmpPassword.getText());
@@ -750,17 +572,9 @@ public class busdetails extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
 
-<<<<<<< HEAD
     private void tEmpMailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tEmpMailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tEmpMailActionPerformed
-=======
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        new adminLogIn().setVisible(true);
-        this.setVisible(false);// TODO add your handling code here:
-            // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
->>>>>>> 748d1010aaf2d0815ca95899011b073990f5a90c
 
     private void tEmpPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tEmpPasswordActionPerformed
         // TODO add your handling code here:
@@ -797,137 +611,7 @@ public class busdetails extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(busdetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-<<<<<<< HEAD
         
-=======
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
->>>>>>> 748d1010aaf2d0815ca95899011b073990f5a90c
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -939,7 +623,6 @@ public class busdetails extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
@@ -948,7 +631,6 @@ public class busdetails extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -957,7 +639,7 @@ public class busdetails extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    public static javax.swing.JTable jTable1;
+    private static javax.swing.JTable jTable1;
     private javax.swing.JLabel lMessage;
     private javax.swing.JTextField tEmpAddress;
     private javax.swing.JTextField tEmpID;
