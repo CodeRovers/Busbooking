@@ -18,12 +18,43 @@ import javax.swing.JOptionPane;
  */
 public class Pay extends javax.swing.JFrame {
 
+    static int setCount() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
     String bbus=CheckSeat.setbusid();
     String bookrefno =SelectTheSeats.getRefno();
     
-    static int x;
-    static int y;
+    
+    
+    static int price;
+    static int count;
+    static int total;
+
+    public static int getPrice() {
+        return price;
+    }
+
+    public static void setPrice(int price) {
+        Pay.price = price;
+    }
+
+    public static int getCount() {
+        return count;
+    }
+
+    public static void setCount(int count) {
+        Pay.count = count;
+    }
+
+    public static int getTotal() {
+        return total;
+    }
+
+    public static void setTotal(int total) {
+        Pay.total = total;
+    }
     /**
      * Creates new form NewJFrame
      */
@@ -38,7 +69,7 @@ public class Pay extends javax.swing.JFrame {
             
             if(rs.next()){
                txtamount.setText(rs.getString("amount"));
-                x = rs.getInt("amount");
+                price = rs.getInt("amount");
             }
                
             
@@ -56,7 +87,7 @@ public class Pay extends javax.swing.JFrame {
             
             if(rs.next()){
                txtnumofseats.setText(rs.getString("COUNT(seat_no)"));
-                y = rs.getInt("COUNT(seat_no)");
+                count = rs.getInt("COUNT(seat_no)");
               
             }
             
@@ -72,7 +103,7 @@ public class Pay extends javax.swing.JFrame {
            // int num = Integer.parseInt(count);
               
             
-            int total = x*y;
+             total = price*count;
              
            
              txttotal.setText(" "+total);

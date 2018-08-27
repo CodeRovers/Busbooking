@@ -21,6 +21,18 @@ public class LogIn extends javax.swing.JFrame {
      Connection conn=null;
     PreparedStatement pst=null;
     ResultSet rs=null;
+
+    public static String getEmpid() {
+        return empid;
+    }
+
+    public static void setEmpid(String empid) {
+        LogIn.empid = empid;
+    }
+    
+    static String empid; 
+
+   
     /**
     /**
      * Creates new form NewJFrame
@@ -200,7 +212,7 @@ public class LogIn extends javax.swing.JFrame {
             rs=pst.executeQuery();
             if(rs.next())
             {
-               
+               empid = rs.getString("emp_id");
                 home hm=new home();
                 hm.setVisible(true);
                 this.dispose();
