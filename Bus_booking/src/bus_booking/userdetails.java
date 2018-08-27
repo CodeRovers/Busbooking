@@ -5,9 +5,14 @@
  */
 package bus_booking;
 
+import java.awt.HeadlessException;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -21,7 +26,50 @@ public class userdetails extends javax.swing.JFrame {
      */
     public userdetails() {
         initComponents();
+        showDetails();
     }
+    
+    public ArrayList<show> showList(){
+        ArrayList<show> showList= new ArrayList<>();
+        try{
+            Connection conn = DbConnection.ConnectDb();
+        String Sql="Select * from employee ";
+            PreparedStatement pst = conn.prepareStatement(Sql);
+            ResultSet rs = pst.executeQuery();
+            show show;
+            
+            while(rs.next()){
+                show = new show(rs.getString("emp_id"),rs.getString("emp_name"),rs.getString("emp_nic"),rs.getString("emp_phone"),rs.getString("emp_address"),rs.getString("emp_mail"),rs.getString("emp_password"));
+                
+                showList.add(show);
+                        }
+            
+        }
+         catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null,e);
+        } 
+        return showList;
+    }
+    
+    
+    void showDetails(){
+        //userdetails ud = new userdetails();
+        ArrayList<show> list = showList();
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        Object[] row = new Object[7];
+        for(int i=0;i<list.size();i++){
+            row[0]=list.get(i).getEmp_id();
+            row[1]=list.get(i).getEmp_name();
+            row[2]=list.get(i).getEmp_nic();
+            row[3]=list.get(i).getEmp_phone();
+            row[4]=list.get(i).getEmp_address();
+            row[5]=list.get(i).getEmp_mail();
+            row[6]=list.get(i).getBus_to();
+            model.addRow(row);
+        }
+        }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -37,7 +85,26 @@ public class userdetails extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        tEmpID = new javax.swing.JTextField();
+        jButton5 = new javax.swing.JButton();
+        lMessage = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        tEmpNIC = new javax.swing.JTextField();
+        tEmpName = new javax.swing.JTextField();
+        tEmpPhoneNo = new javax.swing.JTextField();
+        tEmpAddress = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        tEmpMail = new javax.swing.JTextField();
+        jButton6 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        tEmpPassword = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -49,39 +116,250 @@ public class userdetails extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
 
+<<<<<<< HEAD
+=======
+        jButton2.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
+        jButton2.setText("Back");
+        jButton2.setActionCommand("Search");
+        jButton2.setName("searchorupdate"); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+>>>>>>> eeb08c919efbe2c0818244e7cb5d5137b1946186
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "User id", "user name", "user nic", "user phone", "user address", "nulluser mail"
+                "User id", "user name", "user nic", "user phone", "user address", "user mail", "user password"
             }
         ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
-        jButton1.setText("jButton1");
+        jButton4.setText("Delete");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Employee ID");
+
+        tEmpID.setText(" ");
+        tEmpID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tEmpIDActionPerformed(evt);
+            }
+        });
+
+        jButton5.setText("update");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        lMessage.setForeground(new java.awt.Color(255, 0, 0));
+        lMessage.setText(" ");
+
+        jLabel3.setText("Employee NIC");
+
+        jLabel4.setText("Employee Name");
+
+        jLabel6.setText("Employee Address");
+
+        jLabel7.setText("Employee Phone No");
+
+        tEmpNIC.setText(" ");
+        tEmpNIC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tEmpNICActionPerformed(evt);
+            }
+        });
+
+        tEmpName.setText(" ");
+        tEmpName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tEmpNameActionPerformed(evt);
+            }
+        });
+
+        tEmpPhoneNo.setText(" ");
+        tEmpPhoneNo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tEmpPhoneNoActionPerformed(evt);
+            }
+        });
+
+        tEmpAddress.setText(" ");
+        tEmpAddress.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tEmpAddressActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setText("Employee Mail");
+
+        tEmpMail.setText(" ");
+        tEmpMail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tEmpMailActionPerformed(evt);
+            }
+        });
+
+        jButton6.setText("Add");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
+        jButton3.setText("Log Out ");
+        jButton3.setActionCommand("Search");
+        jButton3.setName("searchorupdate"); // NOI18N
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setFont(new java.awt.Font("Lucida Calligraphy", 1, 36)); // NOI18N
+        jLabel9.setText(" USER DETAILS");
+
+        jLabel10.setText("Employee Password");
+
+        tEmpPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tEmpPasswordActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(322, 322, 322)
+<<<<<<< HEAD
                 .addComponent(jButton1)
                 .addGap(141, 639, Short.MAX_VALUE))
+=======
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(69, 69, 69)
+                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+>>>>>>> eeb08c919efbe2c0818244e7cb5d5137b1946186
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(107, 107, 107)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(475, Short.MAX_VALUE))
+                .addGap(229, 229, 229)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(tEmpPassword))
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(tEmpID, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jLabel7)
+                                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(tEmpPhoneNo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(tEmpAddress, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(tEmpNIC, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(tEmpName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(tEmpMail, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(109, 109, 109)
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton3))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 675, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(54, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addGap(26, 26, 26)
                 .addComponent(jButton1)
                 .addGap(39, 39, 39)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(205, Short.MAX_VALUE))
+=======
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(72, 72, 72)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton2)
+                            .addComponent(jButton3))))
+                .addGap(23, 23, 23)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tEmpID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tEmpName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tEmpNIC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tEmpPhoneNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tEmpAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(2, 2, 2)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tEmpMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lMessage)
+                    .addComponent(jLabel10)
+                    .addComponent(tEmpPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(54, 54, 54)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton6)
+                    .addComponent(jButton5)
+                    .addComponent(jButton4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+>>>>>>> eeb08c919efbe2c0818244e7cb5d5137b1946186
         );
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bus_booking/Bus.png"))); // NOI18N
@@ -108,7 +386,7 @@ public class userdetails extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
                 .addComponent(jLabel5)
-                .addGap(0, 337, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -126,7 +404,176 @@ public class userdetails extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+<<<<<<< HEAD
     public static void listed(){
+=======
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        new admin().setVisible(true);
+        this.setVisible(false);// TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void tEmpIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tEmpIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tEmpIDActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+            
+    try{
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+            Connection conn = DbConnection.ConnectDb();
+            int row = jTable1.getSelectedRow();
+            String value = (jTable1.getModel().getValueAt(row,0).toString());
+            String sql  = "UPDATE employee  SET emp_id=?,emp_name=?,emp_nic=?,emp_phone=?,emp_address=?,emp_mail=?,emp_password=?"+value;
+            PreparedStatement pst = conn.prepareStatement(sql);
+            pst.setString(1,tEmpID.getText());
+            pst.setString(2,tEmpName.getText());
+            pst.setString(3,tEmpNIC.getText());
+            pst.setString(4,tEmpPhoneNo.getText());
+            pst.setString(5,tEmpAddress.getText());
+            pst.setString(6,tEmpMail.getText());
+            pst.setString(7,tEmpPassword.getText());
+            
+            
+            pst.executeUpdate();
+                   
+            model.setRowCount(0);
+            showDetails();
+            JOptionPane.showMessageDialog(null, "Updated successfully");
+        }
+        catch(SQLException | HeadlessException e)
+        {
+            JOptionPane.showMessageDialog(null,e);
+        }      // TODO add your handling code here:
+
+        
+        /*    DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+    if(jTable1.getSelectedRow()==-1){
+        if(jTable1.getRowCount()==0){
+            lMessage.setText("Table is empty");
+        }else{lMessage.setText("You must select a product");
+        
+    }
+    }
+        else{
+        model.setValueAt(tEmpID.getText(),jTable1.getSelectedRow(),0);
+        model.setValueAt(tEmpName.getText(),jTable1.getSelectedRow(),1);
+        model.setValueAt(tEmpNIC.getText(),jTable1.getSelectedRow(),2);
+        model.setValueAt(tEmpPhoneNo.getText(),jTable1.getSelectedRow(),3);
+        model.setValueAt(tEmpAddress.getText(),jTable1.getSelectedRow(),4);
+        model.setValueAt(tEmpMail.getText(),jTable1.getSelectedRow(),5);
+        }
+    // TODO add your handling code here:*/
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+    if(jTable1.getSelectedRow()==-1){
+        if(jTable1.getRowCount()==0){
+            lMessage.setText("Table is empty");
+        }else{lMessage.setText("You must select a product");
+        
+    }
+    }
+        else{
+                model.removeRow(jTable1.getSelectedRow());
+        
+    
+        tEmpID.setText(null);
+        tEmpName.setText(null);
+        tEmpNIC.setText(null);
+        tEmpPhoneNo.setText(null);
+        tEmpAddress.setText(null);
+        tEmpMail.setText(null);
+        tEmpPassword.setText(null);
+    }
+    // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void tEmpNICActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tEmpNICActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tEmpNICActionPerformed
+
+    private void tEmpNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tEmpNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tEmpNameActionPerformed
+
+    private void tEmpPhoneNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tEmpPhoneNoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tEmpPhoneNoActionPerformed
+
+    private void tEmpAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tEmpAddressActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tEmpAddressActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        tEmpID.setText(model.getValueAt(jTable1.getSelectedRow(),0).toString());
+        tEmpName.setText(model.getValueAt(jTable1.getSelectedRow(),1).toString());
+        tEmpNIC.setText(model.getValueAt(jTable1.getSelectedRow(),2).toString());
+        tEmpPhoneNo.setText(model.getValueAt(jTable1.getSelectedRow(),3).toString());
+        tEmpAddress.setText(model.getValueAt(jTable1.getSelectedRow(),4).toString()); 
+        tEmpMail.setText(model.getValueAt(jTable1.getSelectedRow(),5).toString());
+        tEmpPassword.setText(model.getValueAt(jTable1.getSelectedRow(),6).toString());
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTable1MouseClicked
+
+    private void tEmpMailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tEmpMailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tEmpMailActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+       try { DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+    if(tEmpID.getText().trim().isEmpty()|| tEmpName.getText().trim().isEmpty()||tEmpNIC.getText().trim().isEmpty()||tEmpPhoneNo.getText().trim().isEmpty()||tEmpAddress.getText().trim().isEmpty()||tEmpMail.getText().trim().isEmpty()|| tEmpPassword.getText().trim().isEmpty()){
+        
+            JOptionPane.showMessageDialog(null, "!!!!!!!  Please File all details..");
+        }
+    
+        
+    else{
+    
+        model.addRow(new Object[]{tEmpID.getText(),tEmpName.getText(),tEmpNIC.getText(),tEmpPhoneNo.getText(),tEmpAddress.getText(),tEmpMail.getText(),tEmpName.getText()});    
+        Connection conn = DbConnection.ConnectDb();
+            String sql  = "INSERT INTO employee(emp_id, emp_name, emp_nic, emp_phone, emp_address, emp_mail,emp_password) VALUES (?,?,?,?,?,?,?)";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            
+      
+           pst.setString(1,tEmpID.getText());
+           pst.setString(2,tEmpName.getText());
+           pst.setString(3,tEmpNIC.getText());
+           pst.setString(4,tEmpPhoneNo.getText());
+           pst.setString(5,tEmpAddress.getText());
+           pst.setString(6,tEmpMail.getText());
+           pst.setString(7,tEmpPassword.getText());
+           pst.execute();
+           model.setRowCount(0);
+           showDetails();
+           
+          // pst.executeUpdate(sql);
+//
+          JOptionPane.showMessageDialog(this, "Success !");
+                 }
+        }
+    catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e);
+        } 
+//, TODO add your handling code here:
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        new adminLogIn().setVisible(true);
+        this.setVisible(false);// TODO add your handling code here:
+            // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void tEmpPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tEmpPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tEmpPasswordActionPerformed
+
+    /*public static void listed(){
+>>>>>>> eeb08c919efbe2c0818244e7cb5d5137b1946186
         DefaultTableModel table=new DefaultTableModel();
         table.addColumn("emp_id");
         table.addColumn("emp_name");
@@ -164,14 +611,14 @@ public class userdetails extends javax.swing.JFrame {
             
         }
     
-}
+}*/
     /**
      * @param args the command line arguments
      */
     
     
     public static void main(String args[]) {
-        listed();
+        //listed();
         
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -236,12 +683,36 @@ public class userdetails extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+<<<<<<< HEAD
     private javax.swing.JButton jButton1;
+=======
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+>>>>>>> eeb08c919efbe2c0818244e7cb5d5137b1946186
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     public static javax.swing.JTable jTable1;
+    private javax.swing.JLabel lMessage;
+    private javax.swing.JTextField tEmpAddress;
+    private javax.swing.JTextField tEmpID;
+    private javax.swing.JTextField tEmpMail;
+    private javax.swing.JTextField tEmpNIC;
+    private javax.swing.JTextField tEmpName;
+    private javax.swing.JTextField tEmpPassword;
+    private javax.swing.JTextField tEmpPhoneNo;
     // End of variables declaration//GEN-END:variables
 }

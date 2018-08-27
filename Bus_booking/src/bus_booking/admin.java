@@ -118,6 +118,11 @@ public class admin extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Lucida Calligraphy", 1, 36)); // NOI18N
         jButton2.setText("Control seats");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
         jButton3.setText("Log Out ");
@@ -144,6 +149,11 @@ public class admin extends javax.swing.JFrame {
 
         jButton6.setFont(new java.awt.Font("Lucida Calligraphy", 1, 36)); // NOI18N
         jButton6.setText("View Details");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setFont(new java.awt.Font("Lucida Calligraphy", 1, 36)); // NOI18N
         jButton7.setText("Control Bus");
@@ -159,38 +169,45 @@ public class admin extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(288, 288, 288)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 347, Short.MAX_VALUE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 347, Short.MAX_VALUE)
+                        .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(575, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton3)
-                .addGap(359, 359, 359))
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(288, 288, 288)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(578, Short.MAX_VALUE)))
+                .addGap(278, 278, 278))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(88, 88, 88)
+                .addGap(97, 97, 97)
                 .addComponent(jButton3)
-                .addGap(93, 93, 93)
+                .addGap(56, 56, 56)
                 .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                 .addGap(112, 112, 112)
+=======
+                .addGap(26, 26, 26)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+>>>>>>> eeb08c919efbe2c0818244e7cb5d5137b1946186
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                 .addContainerGap(152, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGap(314, 314, 314)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(355, Short.MAX_VALUE)))
+=======
+                .addContainerGap(121, Short.MAX_VALUE))
+>>>>>>> eeb08c919efbe2c0818244e7cb5d5137b1946186
         );
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bus_booking/Bus.png"))); // NOI18N
@@ -238,12 +255,14 @@ public class admin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        new LogIn().setVisible(true);
+        new adminLogIn().setVisible(true);
         this.setVisible(false);// TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
+        new userdetails().setVisible(true);
+        this.setVisible(false);// TODO add your handling code here:
+            // TODO add your handling code here:
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
@@ -263,13 +282,27 @@ public class admin extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4MouseClicked
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        /* showDetails();
+        new userdetails().setVisible(true);
+        this.setVisible(false);// TODO add your handling code here:
+            /* showDetails();
         
         userdetails ud= new userdetails();
         ud.setVisible(true);
        ud.pack();
        ud.setLocationRelativeTo(null);// TODO add your handling code here:*/
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        new userdetails().setVisible(true);
+        this.setVisible(false);// TODO add your handling code here:
+            // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    new CancelSeat().setVisible(true);
+        this.setVisible(false);// TODO add your handling code here:
+            // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

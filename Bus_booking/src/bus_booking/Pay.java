@@ -5,17 +5,112 @@
  */
 package bus_booking;
 
+import static bus_booking.CustomersDetails.bookrefno;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Thasni
  */
 public class Pay extends javax.swing.JFrame {
 
+    static int setCount() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
+    String bbus=CheckSeat.setbusid();
+    String bookrefno =SelectTheSeats.getRefno();
+    
+    
+    
+    static int price;
+    static int count;
+    static int total;
+
+    public static int getPrice() {
+        return price;
+    }
+
+    public static void setPrice(int price) {
+        Pay.price = price;
+    }
+
+    public static int getCount() {
+        return count;
+    }
+
+    public static void setCount(int count) {
+        Pay.count = count;
+    }
+
+    public static int getTotal() {
+        return total;
+    }
+
+    public static void setTotal(int total) {
+        Pay.total = total;
+    }
     /**
      * Creates new form NewJFrame
      */
     public Pay() {
-        initComponents();
+                initComponents();
+
+         try{
+            Connection conn = DbConnection.ConnectDb();
+            Statement pst = conn.createStatement();
+            String sql="SELECT`amount` FROM `bus` WHERE bus_id = '"+bbus+"'";
+            ResultSet rs = pst.executeQuery(sql);
+            
+            if(rs.next()){
+               txtamount.setText(rs.getString("amount"));
+                price = rs.getInt("amount");
+            }
+               
+            
+             
+        }
+        catch (SQLException e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+          try{
+            Connection conn = DbConnection.ConnectDb();
+            Statement pst = conn.createStatement();
+            String sql="SELECT COUNT(seat_no) FROM seat WHERE ref_no = '"+bookrefno+"'";
+            ResultSet rs = pst.executeQuery(sql);
+            
+            
+            if(rs.next()){
+               txtnumofseats.setText(rs.getString("COUNT(seat_no)"));
+                count = rs.getInt("COUNT(seat_no)");
+              
+            }
+            
+        }
+        catch (SQLException e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+          
+          
+            //String amountr =  txtamount.getSelectedText();
+            //String count =  txtnumofseats.getSelectedText();
+           //int amnt = Integer.parseInt(amountr);
+           // int num = Integer.parseInt(count);
+              
+            
+             total = price*count;
+             
+           
+             txttotal.setText(" "+total);
+          
+         
+       
+            
     }
 
     /**
@@ -33,9 +128,9 @@ public class Pay extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        txtamount = new javax.swing.JTextField();
+        txttotal = new javax.swing.JTextField();
+        txtnumofseats = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
@@ -59,11 +154,11 @@ public class Pay extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
         jLabel6.setText("Total : ");
 
-        jTextField2.setName("amountofaseat"); // NOI18N
+        txtamount.setName("amountofaseat"); // NOI18N
 
-        jTextField3.setName("total"); // NOI18N
+        txttotal.setName("total"); // NOI18N
 
-        jTextField4.setName("numberofseats"); // NOI18N
+        txtnumofseats.setName("numberofseats"); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Lucida Calligraphy", 1, 24)); // NOI18N
         jLabel2.setText("Pay");
@@ -95,9 +190,9 @@ public class Pay extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jButton3)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(txtnumofseats, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtamount, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txttotal, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(435, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -108,15 +203,15 @@ public class Pay extends javax.swing.JFrame {
                 .addGap(44, 44, 44)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtamount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtnumofseats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txttotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(43, 43, 43)
                 .addComponent(jButton3)
                 .addContainerGap(272, Short.MAX_VALUE))
@@ -165,7 +260,8 @@ public class Pay extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+         new ConfirmDetails().setVisible(true);
+        this.setVisible(false);                   // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
@@ -228,8 +324,8 @@ public class Pay extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField txtamount;
+    private javax.swing.JTextField txtnumofseats;
+    private javax.swing.JTextField txttotal;
     // End of variables declaration//GEN-END:variables
 }
