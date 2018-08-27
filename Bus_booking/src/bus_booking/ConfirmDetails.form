@@ -25,7 +25,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="73" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="59" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -99,54 +99,49 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="216" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="216" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel13" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel14" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="txtrefno" alignment="0" pref="150" max="32767" attributes="0"/>
-                                          <Component id="txtbusid" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="txtrouteno" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="txtbusno" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="txtdate" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="txttime" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="txtfrom" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="txtto" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="txtnoofseats" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="txtseatno" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="txtcusname" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="txtempid" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="txtamount" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
+                          <Component id="jButton4" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel13" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel14" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="txtrefno" alignment="0" pref="150" max="32767" attributes="0"/>
+                                      <Component id="txtbusid" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txtrouteno" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txtbusno" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txtdate" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txttime" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txtfrom" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txtto" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txtnoofseats" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txtseatnos" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txtcusname" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txtempid" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txtamount" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-                              <Component id="jButton5" min="-2" max="-2" attributes="0"/>
-                          </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
-                      <Component id="jButton4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="291" max="32767" attributes="0"/>
+                      <EmptySpace pref="135" max="32767" attributes="0"/>
+                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="222" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -154,14 +149,21 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtrefno" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton4" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="66" max="32767" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtbusid" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -204,26 +206,26 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtseatno" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtseatnos" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtcusname" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtempid" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtempid" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtamount" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtamount" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                      <Component id="jButton5" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="185" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                      <Component id="jButton4" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="204" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -234,7 +236,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Lucida Calligraphy" size="24" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Search Details"/>
+                <Property name="text" type="java.lang.String" value="Confirm Details"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel2">
@@ -386,7 +388,7 @@
                 <Property name="name" type="java.lang.String" value="referanceno" noResource="true"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtseatno">
+            <Component class="javax.swing.JTextField" name="txtseatnos">
               <Properties>
                 <Property name="name" type="java.lang.String" value="seatnumbers" noResource="true"/>
               </Properties>
@@ -398,38 +400,38 @@
             </Component>
             <Component class="javax.swing.JTextField" name="txtempid">
               <Properties>
-                <Property name="name" type="java.lang.String" value="customerid" noResource="true"/>
+                <Property name="name" type="java.lang.String" value="employeeid" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtamount">
               <Properties>
-                <Property name="name" type="java.lang.String" value="employeeid" noResource="true"/>
+                <Property name="name" type="java.lang.String" value="amount" noResource="true"/>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton2">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Calligraphy" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Log Out "/>
+                <Property name="actionCommand" type="java.lang.String" value="Search"/>
+                <Property name="name" type="java.lang.String" value="searchorupdate" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton4">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Lucida Calligraphy" size="18" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Search"/>
+                <Property name="text" type="java.lang.String" value="Confirm"/>
                 <Property name="actionCommand" type="java.lang.String" value="Search"/>
                 <Property name="name" type="java.lang.String" value="searchorupdate" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="jButton5">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Calligraphy" size="18" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Back"/>
-                <Property name="actionCommand" type="java.lang.String" value="Search"/>
-                <Property name="name" type="java.lang.String" value="searchorupdate" noResource="true"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
