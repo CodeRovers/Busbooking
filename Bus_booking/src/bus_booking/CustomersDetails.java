@@ -5,17 +5,29 @@
  */
 package bus_booking;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Thasni
  */
 public class CustomersDetails extends javax.swing.JFrame {
 
+
+    static String bookrefno;
+    
+
     /**
      * Creates new form NewJFrame
      */
     public CustomersDetails() {
         initComponents();
+        
+        bookrefno=SelectTheSeats.getRefno();
+        
     }
 
     /**
@@ -32,13 +44,13 @@ public class CustomersDetails extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtcusname = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        txtcusnum = new javax.swing.JTextField();
+        txtcusnic = new javax.swing.JTextField();
+        txtcusaddress = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
@@ -58,7 +70,7 @@ public class CustomersDetails extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
         jLabel4.setText("Mobile No : ");
 
-        jTextField1.setName("name"); // NOI18N
+        txtcusname.setName("name"); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Lucida Calligraphy", 1, 24)); // NOI18N
         jLabel2.setText("Customer Details");
@@ -69,11 +81,11 @@ public class CustomersDetails extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
         jLabel7.setText("Address :");
 
-        jTextField2.setName("mobileno"); // NOI18N
+        txtcusnum.setName("mobileno"); // NOI18N
 
-        jTextField3.setName("nic"); // NOI18N
+        txtcusnic.setName("nic"); // NOI18N
 
-        jTextField4.setName("address"); // NOI18N
+        txtcusaddress.setName("address"); // NOI18N
 
         jButton2.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
         jButton2.setText("Log Out ");
@@ -115,13 +127,13 @@ public class CustomersDetails extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(42, 42, 42)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTextField2)))
+                                    .addComponent(txtcusaddress, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(txtcusnic, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(txtcusnum)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtcusname, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING))))
                         .addGap(366, 366, 366))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
@@ -139,19 +151,19 @@ public class CustomersDetails extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtcusname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtcusnum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtcusnic, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtcusaddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jButton4)
                 .addContainerGap(262, Short.MAX_VALUE))
@@ -207,7 +219,37 @@ public class CustomersDetails extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+//<<<<<<< HEAD
+            if(txtcusname.getText().trim().isEmpty() && txtcusnum.getText().trim().isEmpty() && txtcusnic.getText().trim().isEmpty() && txtcusaddress.getText().trim().isEmpty()){
+                JOptionPane.showMessageDialog(null, "!!!!!!!  Please File all coloms..");
+            }
+            else{
+        try {
+            Connection conn = DbConnection.ConnectDb();
+            String sql = "INSERT INTO customer(ref_no, cus_name, cus_nic, cus_phone, cus_address) VALUES (?,?,?,?,?)";
+           
+            PreparedStatement pst = conn.prepareStatement(sql);
+           
+           pst.setString(1,bookrefno);
+           pst.setString(2,txtcusname.getText());
+           pst.setString(3,txtcusnum.getText());
+           pst.setString(4,txtcusnic.getText());
+           pst.setString(5,txtcusaddress.getText());
+           pst.execute();
+           
+           
+          
+             Pay amount =new Pay();
+               amount.setVisible(true);
+              
+                this.dispose();
+        }
+        catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e);
+        } 
+      }// TODO add your handling code here:
+    // TODO add your handling code here:
+
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
@@ -260,9 +302,9 @@ public class CustomersDetails extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField txtcusaddress;
+    private javax.swing.JTextField txtcusname;
+    private javax.swing.JTextField txtcusnic;
+    private javax.swing.JTextField txtcusnum;
     // End of variables declaration//GEN-END:variables
 }

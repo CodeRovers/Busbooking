@@ -10,6 +10,7 @@ package bus_booking;
  * @author Thasni
  */
 
+import java.awt.Color;
 import java.awt.HeadlessException;
 import java.sql.*;
 import java.util.logging.Level;
@@ -23,6 +24,8 @@ String[] booknow = new String[52];
         String bbus;
         String bdate;
         String seatno;
+        String refseatno;
+        static String refno;
         
     /**
      * Creates new form NewJFrame
@@ -30,6 +33,7 @@ String[] booknow = new String[52];
     public SelectTheSeats() {
         
         bbus=CheckSeat.setbusid();
+        bdate=CheckSeat.setdate();
         
         initComponents();        
         Connection con;
@@ -37,70 +41,70 @@ String[] booknow = new String[52];
         PreparedStatement pst;
         String sql;
         
-        sql = "select seat_no from seat where bbus_id=bbus and date=bdate";
+        sql = "select seat_no from seat where bus_id='"+bbus+"' AND date='"+bdate+"'";
         
         try
         { 
         con=DbConnection.ConnectDb();
         pst=con.prepareStatement(sql); 
         rs=pst.executeQuery();
-        rs.next();
+        
         while (rs.next())
         {
             String sno=rs.getString("seat_no");
 
-            if("s1".equals(sno)){jToggleButton1.setEnabled(false);}
-            if("s2".equals(sno)){jToggleButton2.setEnabled(false);} 
-            if("s3".equals(sno)){jToggleButton3.setEnabled(false);} 
-            if("s4".equals(sno)){jToggleButton4.setEnabled(false);}  
-            if("s5".equals(sno)){jToggleButton5.setEnabled(false);}  
-            if("s6".equals(sno)){jToggleButton6.setEnabled(false);}
-            if("s7".equals(sno)){jToggleButton7.setEnabled(false);} 
-            if("s8".equals(sno)){jToggleButton8.setEnabled(false);} 
-            if("s9".equals(sno)){jToggleButton9.setEnabled(false);}  
-            if("s10".equals(sno)){jToggleButton10.setEnabled(false);} 
-            if("s11".equals(sno)){jToggleButton11.setEnabled(false);}
-            if("s12".equals(sno)){jToggleButton12.setEnabled(false);} 
-            if("s13".equals(sno)){jToggleButton13.setEnabled(false);} 
-            if("s14".equals(sno)){jToggleButton14.setEnabled(false);}  
-            if("s15".equals(sno)){jToggleButton15.setEnabled(false);} 
-            if("s16".equals(sno)){jToggleButton16.setEnabled(false);}
-            if("s17".equals(sno)){jToggleButton17.setEnabled(false);} 
-            if("s18".equals(sno)){jToggleButton18.setEnabled(false);} 
-            if("s19".equals(sno)){jToggleButton19.setEnabled(false);}  
-            if("s20".equals(sno)){jToggleButton20.setEnabled(false);} 
-            if("s21".equals(sno)){jToggleButton21.setEnabled(false);}
-            if("s22".equals(sno)){jToggleButton22.setEnabled(false);} 
-            if("s23".equals(sno)){jToggleButton23.setEnabled(false);} 
-            if("s24".equals(sno)){jToggleButton24.setEnabled(false);}  
-            if("s25".equals(sno)){jToggleButton25.setEnabled(false);} 
-            if("s26".equals(sno)){jToggleButton26.setEnabled(false);}
-            if("s27".equals(sno)){jToggleButton27.setEnabled(false);} 
-            if("s28".equals(sno)){jToggleButton28.setEnabled(false);} 
-            if("s29".equals(sno)){jToggleButton29.setEnabled(false);}  
-            if("s30".equals(sno)){jToggleButton30.setEnabled(false);} 
-            if("s31".equals(sno)){jToggleButton31.setEnabled(false);}
-            if("s32".equals(sno)){jToggleButton32.setEnabled(false);} 
-            if("s33".equals(sno)){jToggleButton33.setEnabled(false);} 
-            if("s34".equals(sno)){jToggleButton34.setEnabled(false);}  
-            if("s35".equals(sno)){jToggleButton35.setEnabled(false);} 
-            if("s36".equals(sno)){jToggleButton36.setEnabled(false);}
-            if("s37".equals(sno)){jToggleButton37.setEnabled(false);} 
-            if("s38".equals(sno)){jToggleButton38.setEnabled(false);} 
-            if("s39".equals(sno)){jToggleButton39.setEnabled(false);}  
-            if("s40".equals(sno)){jToggleButton40.setEnabled(false);} 
-            if("s41".equals(sno)){jToggleButton41.setEnabled(false);}
-            if("s42".equals(sno)){jToggleButton42.setEnabled(false);} 
-            if("s43".equals(sno)){jToggleButton43.setEnabled(false);} 
-            if("s44".equals(sno)){jToggleButton44.setEnabled(false);}  
-            if("s45".equals(sno)){jToggleButton45.setEnabled(false);} 
-            if("s46".equals(sno)){jToggleButton46.setEnabled(false);}
-            if("s47".equals(sno)){jToggleButton47.setEnabled(false);} 
-            if("s48".equals(sno)){jToggleButton48.setEnabled(false);} 
-            if("s49".equals(sno)){jToggleButton49.setEnabled(false);}  
-            if("s50".equals(sno)){jToggleButton50.setEnabled(false);} 
-            if("s51".equals(sno)){jToggleButton51.setEnabled(false);}
-            if("s52".equals(sno)){jToggleButton52.setEnabled(false);}  
+            if("s1".equals(sno)){jToggleButton1.setEnabled(false);jToggleButton1.setBackground(Color.cyan);}
+            if("s2".equals(sno)){jToggleButton2.setEnabled(false);jToggleButton2.setBackground(Color.cyan);} 
+            if("s3".equals(sno)){jToggleButton3.setEnabled(false);jToggleButton3.setBackground(Color.cyan);} 
+            if("s4".equals(sno)){jToggleButton4.setEnabled(false);jToggleButton4.setBackground(Color.cyan);}  
+            if("s5".equals(sno)){jToggleButton5.setEnabled(false);jToggleButton5.setBackground(Color.cyan);}  
+            if("s6".equals(sno)){jToggleButton6.setEnabled(false);jToggleButton6.setBackground(Color.cyan);}
+            if("s7".equals(sno)){jToggleButton7.setEnabled(false);jToggleButton7.setBackground(Color.cyan);} 
+            if("s8".equals(sno)){jToggleButton8.setEnabled(false);jToggleButton8.setBackground(Color.cyan);} 
+            if("s9".equals(sno)){jToggleButton9.setEnabled(false);jToggleButton9.setBackground(Color.cyan);}  
+            if("s10".equals(sno)){jToggleButton10.setEnabled(false);jToggleButton10.setBackground(Color.cyan);} 
+            if("s11".equals(sno)){jToggleButton11.setEnabled(false);jToggleButton11.setBackground(Color.cyan);}
+            if("s12".equals(sno)){jToggleButton12.setEnabled(false);jToggleButton12.setBackground(Color.cyan);} 
+            if("s13".equals(sno)){jToggleButton13.setEnabled(false);jToggleButton13.setBackground(Color.cyan);} 
+            if("s14".equals(sno)){jToggleButton14.setEnabled(false);jToggleButton14.setBackground(Color.cyan);}  
+            if("s15".equals(sno)){jToggleButton15.setEnabled(false);jToggleButton15.setBackground(Color.cyan);} 
+            if("s16".equals(sno)){jToggleButton16.setEnabled(false);jToggleButton16.setBackground(Color.cyan);}
+            if("s17".equals(sno)){jToggleButton17.setEnabled(false);jToggleButton17.setBackground(Color.cyan);} 
+            if("s18".equals(sno)){jToggleButton18.setEnabled(false);jToggleButton18.setBackground(Color.cyan);} 
+            if("s19".equals(sno)){jToggleButton19.setEnabled(false);jToggleButton19.setBackground(Color.cyan);}  
+            if("s20".equals(sno)){jToggleButton20.setEnabled(false);jToggleButton20.setBackground(Color.cyan);} 
+            if("s21".equals(sno)){jToggleButton21.setEnabled(false);jToggleButton21.setBackground(Color.cyan);}
+            if("s22".equals(sno)){jToggleButton22.setEnabled(false);jToggleButton22.setBackground(Color.cyan);} 
+            if("s23".equals(sno)){jToggleButton23.setEnabled(false);jToggleButton23.setBackground(Color.cyan);} 
+            if("s24".equals(sno)){jToggleButton24.setEnabled(false);jToggleButton24.setBackground(Color.cyan);}  
+            if("s25".equals(sno)){jToggleButton25.setEnabled(false);jToggleButton25.setBackground(Color.cyan);} 
+            if("s26".equals(sno)){jToggleButton26.setEnabled(false);jToggleButton26.setBackground(Color.cyan);}
+            if("s27".equals(sno)){jToggleButton27.setEnabled(false);jToggleButton27.setBackground(Color.cyan);} 
+            if("s28".equals(sno)){jToggleButton28.setEnabled(false);jToggleButton28.setBackground(Color.cyan);} 
+            if("s29".equals(sno)){jToggleButton29.setEnabled(false);jToggleButton29.setBackground(Color.cyan);}  
+            if("s30".equals(sno)){jToggleButton30.setEnabled(false);jToggleButton30.setBackground(Color.cyan);} 
+            if("s31".equals(sno)){jToggleButton31.setEnabled(false);jToggleButton31.setBackground(Color.cyan);}
+            if("s32".equals(sno)){jToggleButton32.setEnabled(false);jToggleButton32.setBackground(Color.cyan);} 
+            if("s33".equals(sno)){jToggleButton33.setEnabled(false);jToggleButton33.setBackground(Color.cyan);} 
+            if("s34".equals(sno)){jToggleButton34.setEnabled(false);jToggleButton34.setBackground(Color.cyan);}  
+            if("s35".equals(sno)){jToggleButton35.setEnabled(false);jToggleButton35.setBackground(Color.cyan);} 
+            if("s36".equals(sno)){jToggleButton36.setEnabled(false);jToggleButton36.setBackground(Color.cyan);}
+            if("s37".equals(sno)){jToggleButton37.setEnabled(false);jToggleButton37.setBackground(Color.cyan);} 
+            if("s38".equals(sno)){jToggleButton38.setEnabled(false);jToggleButton38.setBackground(Color.cyan);} 
+            if("s39".equals(sno)){jToggleButton39.setEnabled(false);jToggleButton39.setBackground(Color.cyan);}  
+            if("s40".equals(sno)){jToggleButton40.setEnabled(false);jToggleButton40.setBackground(Color.cyan);} 
+            if("s41".equals(sno)){jToggleButton41.setEnabled(false);jToggleButton41.setBackground(Color.cyan);}
+            if("s42".equals(sno)){jToggleButton42.setEnabled(false);jToggleButton42.setBackground(Color.cyan);} 
+            if("s43".equals(sno)){jToggleButton43.setEnabled(false);jToggleButton43.setBackground(Color.cyan);} 
+            if("s44".equals(sno)){jToggleButton44.setEnabled(false);jToggleButton44.setBackground(Color.cyan);}  
+            if("s45".equals(sno)){jToggleButton45.setEnabled(false);jToggleButton45.setBackground(Color.cyan);} 
+            if("s46".equals(sno)){jToggleButton46.setEnabled(false);jToggleButton46.setBackground(Color.cyan);}
+            if("s47".equals(sno)){jToggleButton47.setEnabled(false);jToggleButton47.setBackground(Color.cyan);} 
+            if("s48".equals(sno)){jToggleButton48.setEnabled(false);jToggleButton48.setBackground(Color.cyan);} 
+            if("s49".equals(sno)){jToggleButton49.setEnabled(false);jToggleButton49.setBackground(Color.cyan);}  
+            if("s50".equals(sno)){jToggleButton50.setEnabled(false);jToggleButton50.setBackground(Color.cyan);} 
+            if("s51".equals(sno)){jToggleButton51.setEnabled(false);jToggleButton51.setBackground(Color.cyan);}
+            if("s52".equals(sno)){jToggleButton52.setEnabled(false);jToggleButton52.setBackground(Color.cyan);}  
         }
 
         } 
@@ -108,7 +112,7 @@ String[] booknow = new String[52];
         {
         JOptionPane.showMessageDialog(null,ex);
         }
-      jButton58.setEnabled(false);
+      
     }
 
     /**
@@ -779,8 +783,7 @@ String[] booknow = new String[52];
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(jToggleButton51, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jToggleButton50, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(jToggleButton50, javax.swing.GroupLayout.Alignment.LEADING)))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jToggleButton23)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -960,12 +963,23 @@ String[] booknow = new String[52];
     private void jButton59ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton59ActionPerformed
         // TODO add your handling code here:
         
-        Connection conn;
-        Statement stm;
-        String sqlins;
-        sqlins = "INSERT INTO `seat`(`bus_id`, `date`, `seat_no`, `available`) VALUES ("+bbus+","+bdate+","+seatno+",'no')";
+        for(int i=0 ; i<=51 ; i++){
+            if(booknow[i] != null){
+                refseatno=booknow[i];
+                break;
+            }
+            
+        }
         
-        for(int i=0 ; i<=52 ; i++){
+        refno=bbus+bdate+refseatno;
+       
+                
+        Connection conn;
+        PreparedStatement pstins;
+        String sqlins;
+        sqlins = "INSERT INTO `seat`(`bus_id`, `date`,`ref_no`, `seat_no`) VALUES (?,?,?,?)";
+        
+        for(int i=0 ; i<=51 ; i++){
             if(booknow[i] != null){
                 
                 seatno=booknow[i];
@@ -973,19 +987,34 @@ String[] booknow = new String[52];
                 try
                 { 
                     conn=DbConnection.ConnectDb();
-                    stm = conn.createStatement();
-                    stm.executeUpdate(sqlins);  
+                    pstins = conn.prepareStatement(sqlins);
+                    pstins.setString(1,bbus);
+                    pstins.setString(2,bdate);
+                    pstins.setString(3,refno);
+                    pstins.setString(4,seatno);
+                    pstins.execute();
+                    
                 }
-                catch(HeadlessException ex)
-                {
-                    JOptionPane.showMessageDialog(null,ex);
-                } catch (SQLException ex) {
+                 catch (SQLException ex) {
                     Logger.getLogger(SelectTheSeats.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 
             }
                 
         }
+//<<<<<<< HEAD
+      
+//=======
+        
+        if(refseatno != null){
+            new CustomersDetails().setVisible(true);
+            this.setVisible(false);
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"Please Select The Seats","Access Denied",JOptionPane.ERROR_MESSAGE);
+        }
+        
+//>>>>>>> 460ca886baeb68dcc99177e83baed804799c919e
     }//GEN-LAST:event_jButton59ActionPerformed
 
     private void jButton58ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton58ActionPerformed
@@ -996,9 +1025,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton2.isSelected()){
             booknow[1]="s2";
+            jToggleButton2.setBackground(Color.BLUE);
         }
         else{
             booknow[1]=null;
+            jToggleButton2.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton2ActionPerformed
 
@@ -1006,9 +1037,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton1.isSelected()){
             booknow[0]="s1";
+            jToggleButton1.setBackground(Color.BLUE);
         }
         else{
             booknow[0]=null;
+            jToggleButton1.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
@@ -1016,9 +1049,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton22.isSelected()){
             booknow[21]="s22";
+            jToggleButton22.setBackground(Color.BLUE);
         }
         else{
             booknow[21]=null;
+            jToggleButton22.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton22ActionPerformed
 
@@ -1026,9 +1061,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton36.isSelected()){
             booknow[35]="s36";
+            jToggleButton36.setBackground(Color.BLUE);
         }
         else{
             booknow[35]=null;
+            jToggleButton36.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton36ActionPerformed
 
@@ -1036,9 +1073,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton49.isSelected()){
             booknow[48]="s49";
+            jToggleButton49.setBackground(Color.BLUE);
         }
         else{
             booknow[48]=null;
+            jToggleButton49.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton49ActionPerformed
 
@@ -1046,9 +1085,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton3.isSelected()){
             booknow[2]="s3";
+            jToggleButton3.setBackground(Color.BLUE);
         }
         else{
             booknow[2]=null;
+            jToggleButton3.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton3ActionPerformed
 
@@ -1056,9 +1097,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton4.isSelected()){
             booknow[3]="s4";
+            jToggleButton4.setBackground(Color.BLUE);
         }
         else{
             booknow[3]=null;
+            jToggleButton4.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton4ActionPerformed
 
@@ -1066,9 +1109,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton5.isSelected()){
             booknow[4]="s5";
+            jToggleButton5.setBackground(Color.BLUE);
         }
         else{
             booknow[4]=null;
+            jToggleButton5.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton5ActionPerformed
 
@@ -1076,9 +1121,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton6.isSelected()){
             booknow[5]="s6";
+            jToggleButton6.setBackground(Color.BLUE);
         }
         else{
             booknow[5]=null;
+            jToggleButton6.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton6ActionPerformed
 
@@ -1086,9 +1133,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton7.isSelected()){
             booknow[6]="s7";
+            jToggleButton7.setBackground(Color.BLUE);
         }
         else{
             booknow[6]=null;
+            jToggleButton7.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton7ActionPerformed
 
@@ -1096,9 +1145,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton8.isSelected()){
             booknow[7]="s8";
+            jToggleButton8.setBackground(Color.BLUE);
         }
         else{
             booknow[7]=null;
+            jToggleButton8.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton8ActionPerformed
 
@@ -1106,9 +1157,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton9.isSelected()){
             booknow[8]="s9";
+            jToggleButton9.setBackground(Color.BLUE);
         }
         else{
             booknow[8]=null;
+            jToggleButton9.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton9ActionPerformed
 
@@ -1116,9 +1169,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton10.isSelected()){
             booknow[9]="s10";
+            jToggleButton10.setBackground(Color.BLUE);
         }
         else{
             booknow[9]=null;
+            jToggleButton10.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton10ActionPerformed
 
@@ -1126,9 +1181,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton11.isSelected()){
             booknow[10]="s11";
+            jToggleButton11.setBackground(Color.BLUE);
         }
         else{
             booknow[10]=null;
+            jToggleButton11.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton11ActionPerformed
 
@@ -1136,9 +1193,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton12.isSelected()){
             booknow[11]="s12";
+            jToggleButton12.setBackground(Color.BLUE);
         }
         else{
             booknow[11]=null;
+            jToggleButton12.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton12ActionPerformed
 
@@ -1146,9 +1205,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton13.isSelected()){
             booknow[12]="s13";
+            jToggleButton13.setBackground(Color.BLUE);
         }
         else{
             booknow[12]=null;
+            jToggleButton13.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton13ActionPerformed
 
@@ -1156,9 +1217,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton14.isSelected()){
             booknow[13]="s14";
+            jToggleButton14.setBackground(Color.BLUE);
         }
         else{
             booknow[13]=null;
+            jToggleButton14.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton14ActionPerformed
 
@@ -1166,9 +1229,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton15.isSelected()){
             booknow[14]="s15";
+            jToggleButton15.setBackground(Color.BLUE);
         }
         else{
             booknow[14]=null;
+            jToggleButton15.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton15ActionPerformed
 
@@ -1176,9 +1241,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton16.isSelected()){
             booknow[15]="s16";
+            jToggleButton16.setBackground(Color.BLUE);
         }
         else{
             booknow[15]=null;
+            jToggleButton16.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton16ActionPerformed
 
@@ -1186,9 +1253,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton17.isSelected()){
             booknow[16]="s17";
+            jToggleButton17.setBackground(Color.BLUE);
         }
         else{
             booknow[16]=null;
+            jToggleButton17.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton17ActionPerformed
 
@@ -1196,9 +1265,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton18.isSelected()){
             booknow[17]="s18";
+            jToggleButton18.setBackground(Color.BLUE);
         }
         else{
             booknow[17]=null;
+            jToggleButton18.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton18ActionPerformed
 
@@ -1206,9 +1277,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton19.isSelected()){
             booknow[18]="s19";
+            jToggleButton19.setBackground(Color.BLUE);
         }
         else{
             booknow[18]=null;
+            jToggleButton19.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton19ActionPerformed
 
@@ -1216,9 +1289,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton20.isSelected()){
             booknow[19]="s20";
+            jToggleButton20.setBackground(Color.BLUE);
         }
         else{
             booknow[19]=null;
+            jToggleButton20.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton20ActionPerformed
 
@@ -1226,9 +1301,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton21.isSelected()){
             booknow[20]="s21";
+            jToggleButton21.setBackground(Color.BLUE);
         }
         else{
             booknow[20]=null;
+            jToggleButton21.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton21ActionPerformed
 
@@ -1236,9 +1313,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton23.isSelected()){
             booknow[22]="s23";
+            jToggleButton23.setBackground(Color.BLUE);
         }
         else{
             booknow[22]=null;
+            jToggleButton23.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton23ActionPerformed
 
@@ -1246,9 +1325,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton24.isSelected()){
             booknow[23]="s24";
+            jToggleButton24.setBackground(Color.BLUE);
         }
         else{
             booknow[23]=null;
+            jToggleButton24.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton24ActionPerformed
 
@@ -1256,9 +1337,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton25.isSelected()){
             booknow[24]="s25";
+            jToggleButton25.setBackground(Color.BLUE);
         }
         else{
             booknow[24]=null;
+            jToggleButton25.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton25ActionPerformed
 
@@ -1266,9 +1349,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton26.isSelected()){
             booknow[25]="s26";
+            jToggleButton26.setBackground(Color.BLUE);
         }
         else{
             booknow[25]=null;
+            jToggleButton26.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton26ActionPerformed
 
@@ -1276,9 +1361,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton27.isSelected()){
             booknow[26]="s27";
+            jToggleButton27.setBackground(Color.BLUE);
         }
         else{
             booknow[26]=null;
+            jToggleButton27.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton27ActionPerformed
 
@@ -1286,9 +1373,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton28.isSelected()){
             booknow[27]="s28";
+            jToggleButton28.setBackground(Color.BLUE);
         }
         else{
             booknow[27]=null;
+            jToggleButton28.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton28ActionPerformed
 
@@ -1296,9 +1385,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton29.isSelected()){
             booknow[28]="s29";
+            jToggleButton29.setBackground(Color.BLUE);
         }
         else{
             booknow[28]=null;
+            jToggleButton29.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton29ActionPerformed
 
@@ -1306,9 +1397,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton30.isSelected()){
             booknow[29]="s30";
+            jToggleButton30.setBackground(Color.BLUE);
         }
         else{
             booknow[29]=null;
+            jToggleButton30.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton30ActionPerformed
 
@@ -1316,9 +1409,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton31.isSelected()){
             booknow[30]="s31";
+            jToggleButton31.setBackground(Color.BLUE);
         }
         else{
             booknow[30]=null;
+            jToggleButton31.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton31ActionPerformed
 
@@ -1326,9 +1421,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton32.isSelected()){
             booknow[31]="s32";
+            jToggleButton32.setBackground(Color.BLUE);
         }
         else{
             booknow[31]=null;
+            jToggleButton32.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton32ActionPerformed
 
@@ -1336,9 +1433,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton33.isSelected()){
             booknow[32]="s33";
+            jToggleButton33.setBackground(Color.BLUE);
         }
         else{
             booknow[32]=null;
+            jToggleButton33.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton33ActionPerformed
 
@@ -1346,9 +1445,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton34.isSelected()){
             booknow[33]="s34";
+            jToggleButton34.setBackground(Color.BLUE);
         }
         else{
             booknow[33]=null;
+            jToggleButton34.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton34ActionPerformed
 
@@ -1356,9 +1457,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton35.isSelected()){
             booknow[34]="s35";
+            jToggleButton35.setBackground(Color.BLUE);
         }
         else{
             booknow[34]=null;
+            jToggleButton35.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton35ActionPerformed
 
@@ -1366,9 +1469,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton37.isSelected()){
             booknow[36]="s37";
+            jToggleButton37.setBackground(Color.BLUE);
         }
         else{
             booknow[36]=null;
+            jToggleButton37.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton37ActionPerformed
 
@@ -1376,9 +1481,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton38.isSelected()){
             booknow[37]="s38";
+            jToggleButton38.setBackground(Color.BLUE);
         }
         else{
             booknow[37]=null;
+            jToggleButton38.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton38ActionPerformed
 
@@ -1386,9 +1493,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton39.isSelected()){
             booknow[38]="s39";
+            jToggleButton39.setBackground(Color.BLUE);
         }
         else{
             booknow[38]=null;
+            jToggleButton39.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton39ActionPerformed
 
@@ -1396,9 +1505,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton40.isSelected()){
             booknow[39]="s40";
+            jToggleButton40.setBackground(Color.BLUE);
         }
         else{
             booknow[39]=null;
+            jToggleButton40.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton40ActionPerformed
 
@@ -1406,9 +1517,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton41.isSelected()){
             booknow[40]="s41";
+            jToggleButton41.setBackground(Color.BLUE);
         }
         else{
             booknow[40]=null;
+            jToggleButton41.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton41ActionPerformed
 
@@ -1416,9 +1529,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton42.isSelected()){
             booknow[41]="s42";
+            jToggleButton42.setBackground(Color.BLUE);
         }
         else{
             booknow[41]=null;
+            jToggleButton42.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton42ActionPerformed
 
@@ -1426,9 +1541,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton43.isSelected()){
             booknow[42]="s43";
+            jToggleButton43.setBackground(Color.BLUE);
         }
         else{
             booknow[42]=null;
+            jToggleButton43.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton43ActionPerformed
 
@@ -1436,9 +1553,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton44.isSelected()){
             booknow[43]="s44";
+            jToggleButton44.setBackground(Color.BLUE);
         }
         else{
             booknow[43]=null;
+            jToggleButton44.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton44ActionPerformed
 
@@ -1446,9 +1565,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton45.isSelected()){
             booknow[44]="s45";
+            jToggleButton45.setBackground(Color.BLUE);
         }
         else{
             booknow[44]=null;
+            jToggleButton45.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton45ActionPerformed
 
@@ -1456,9 +1577,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton46.isSelected()){
             booknow[45]="s46";
+            jToggleButton46.setBackground(Color.BLUE);
         }
         else{
             booknow[45]=null;
+            jToggleButton46.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton46ActionPerformed
 
@@ -1466,9 +1589,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton47.isSelected()){
             booknow[46]="s47";
+            jToggleButton47.setBackground(Color.BLUE);
         }
         else{
             booknow[46]=null;
+            jToggleButton47.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton47ActionPerformed
 
@@ -1476,9 +1601,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton48.isSelected()){
             booknow[49]="s48";
+            jToggleButton48.setBackground(Color.BLUE);
         }
         else{
             booknow[49]=null;
+            jToggleButton48.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton48ActionPerformed
 
@@ -1486,9 +1613,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton50.isSelected()){
             booknow[49]="s50";
+            jToggleButton50.setBackground(Color.BLUE);
         }
         else{
             booknow[49]=null;
+            jToggleButton50.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton50ActionPerformed
 
@@ -1496,9 +1625,11 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton51.isSelected()){
             booknow[50]="s51";
+            jToggleButton51.setBackground(Color.BLUE);
         }
         else{
             booknow[50]=null;
+            jToggleButton51.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton51ActionPerformed
 
@@ -1506,12 +1637,23 @@ String[] booknow = new String[52];
         // TODO add your handling code here:
         if(jToggleButton52.isSelected()){
             booknow[51]="s52";
+            jToggleButton52.setBackground(Color.BLUE);
         }
         else{
             booknow[51]=null;
+            jToggleButton52.setBackground(Color.green);
         }
     }//GEN-LAST:event_jToggleButton52ActionPerformed
 
+    public static String getRefno() {
+        return refno;
+    }
+
+    public static void setRefno(String refno) {
+        SelectTheSeats.refno = refno;
+    } 
+    
+    
     /**
      * @param args the command line arguments
      */
