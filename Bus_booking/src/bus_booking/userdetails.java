@@ -83,7 +83,6 @@ public class userdetails extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton4 = new javax.swing.JButton();
@@ -117,6 +116,8 @@ public class userdetails extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
 
+<<<<<<< HEAD
+=======
         jButton2.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
         jButton2.setText("Back");
         jButton2.setActionCommand("Search");
@@ -127,7 +128,11 @@ public class userdetails extends javax.swing.JFrame {
             }
         });
 
+<<<<<<< HEAD
         jTable1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+=======
+>>>>>>> eeb08c919efbe2c0818244e7cb5d5137b1946186
+>>>>>>> a7346f1d77177a1734fdf342962f1f3a826f69ba
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -250,6 +255,22 @@ public class userdetails extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
+<<<<<<< HEAD
+=======
+                .addGap(322, 322, 322)
+<<<<<<< HEAD
+                .addComponent(jButton1)
+                .addGap(141, 639, Short.MAX_VALUE))
+=======
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(69, 69, 69)
+                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+>>>>>>> eeb08c919efbe2c0818244e7cb5d5137b1946186
+            .addGroup(jPanel2Layout.createSequentialGroup()
+>>>>>>> a7346f1d77177a1734fdf342962f1f3a826f69ba
                 .addGap(229, 229, 229)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -303,6 +324,13 @@ public class userdetails extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
+<<<<<<< HEAD
+                .addGap(26, 26, 26)
+                .addComponent(jButton1)
+                .addGap(39, 39, 39)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(205, Short.MAX_VALUE))
+=======
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(72, 72, 72)
@@ -350,6 +378,7 @@ public class userdetails extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+>>>>>>> eeb08c919efbe2c0818244e7cb5d5137b1946186
         );
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bus_booking/Bus.png"))); // NOI18N
@@ -394,6 +423,9 @@ public class userdetails extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+<<<<<<< HEAD
+    public static void listed(){
+=======
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         new admin().setVisible(true);
         this.setVisible(false);// TODO add your handling code here:
@@ -560,6 +592,7 @@ public class userdetails extends javax.swing.JFrame {
     }//GEN-LAST:event_tEmpPasswordActionPerformed
 
     /*public static void listed(){
+>>>>>>> eeb08c919efbe2c0818244e7cb5d5137b1946186
         DefaultTableModel table=new DefaultTableModel();
         table.addColumn("emp_id");
         table.addColumn("emp_name");
@@ -669,11 +702,15 @@ public class userdetails extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+<<<<<<< HEAD
+    private javax.swing.JButton jButton1;
+=======
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+>>>>>>> eeb08c919efbe2c0818244e7cb5d5137b1946186
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

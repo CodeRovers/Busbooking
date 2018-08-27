@@ -120,13 +120,17 @@
                       <Component id="jButton3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                       <Component id="jButton7" min="-2" pref="90" max="-2" attributes="0"/>
+<<<<<<< HEAD
+                      <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
+=======
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       <Component id="jButton4" min="-2" pref="90" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+>>>>>>> eeb08c919efbe2c0818244e7cb5d5137b1946186
                       <Component id="jButton2" min="-2" pref="90" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jButton6" min="-2" pref="90" max="-2" attributes="0"/>
-                      <EmptySpace pref="121" max="32767" attributes="0"/>
+                      <EmptySpace pref="152" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
