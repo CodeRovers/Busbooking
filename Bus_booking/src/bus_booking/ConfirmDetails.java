@@ -404,7 +404,7 @@ public class ConfirmDetails extends javax.swing.JFrame {
        
         try {
             Connection conn = DbConnection.ConnectDb();
-            String sql  = "INSERT INTO `booking`(`ref_no`, `bus_id`, `emp_id`, `num_of_seat`, `seat_no`, `date`, `amount`) VALUES (?,?,?,?,?,?,?,)";
+            String sql  = "INSERT INTO booking(ref_no, bus_id, emp_id, num_of_seat, seat_no, date, amount) VALUES (?,?,?,?,?,?,?)";
             PreparedStatement pst = conn.prepareStatement(sql);
             
 //            conn=DbConnection.ConnectDb();
@@ -413,7 +413,7 @@ public class ConfirmDetails extends javax.swing.JFrame {
 // String sql  = "INSERT INTO employee(emp_id, emp_name, emp_nic, emp_phone, emp_address, emp_mail, emp_password) VALUES (?,?,?,?,?,?,?)";
           
 //            pst= conn.prepareStatement(sql);
-           
+
            pst.setString(1,txtrefno.getText());
            pst.setString(2,txtbusid.getText());
            pst.setString(3,txtempid.getText());
