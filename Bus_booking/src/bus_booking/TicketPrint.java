@@ -307,7 +307,7 @@ public class TicketPrint extends javax.swing.JFrame {
             Paragraph p4 = new Paragraph("                 ******************");
             Paragraph p5 = new Paragraph(" ");
             Paragraph p6 = new Paragraph("Referance No : "+trefno.getText());
-            Paragraph p7 = new Paragraph("Bus No :"+tbusno.getText());
+            Paragraph p7 = new Paragraph("Bus No : "+tbusno.getText());
             Paragraph p8 = new Paragraph("Date : "+tdate.getText());
             Paragraph p9 = new Paragraph("Time : "+ttime.getText());
             Paragraph p10 = new Paragraph("From : "+tfrom.getText());
