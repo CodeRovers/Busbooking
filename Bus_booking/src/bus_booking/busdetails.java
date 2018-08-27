@@ -390,7 +390,11 @@ public class busdetails extends javax.swing.JFrame {
             Connection conn = DbConnection.ConnectDb();
             int row = jTable1.getSelectedRow();
             String value = (jTable1.getModel().getValueAt(row,0).toString());
+<<<<<<< HEAD
             String sql  = "UPDATE bus  SET bus_id=?,route_no=?,bus_no=?,bus_time=?,bus_from=?,bus_to=?"+value;
+=======
+            String sql  = "UPDATE employee  SET emp_id=?,emp_name=?,emp_nic=?,emp_phone=?,emp_address=?,emp_mail=?,emp_password=?"+value;
+>>>>>>> 40cc9b1dd643932e5878e4dcb897c6fad65a9407
             PreparedStatement pst = conn.prepareStatement(sql);
             pst.setString(1,tEmpID.getText());
             pst.setString(2,tEmpNIC.getText());
@@ -450,7 +454,7 @@ public class busdetails extends javax.swing.JFrame {
             Connection conn = DbConnection.ConnectDb();
         int row=jTable1.getSelectedRow();
         String value=(jTable1.getModel().getValueAt(row, 0).toString());
-        String sql="DELETE FROM bus where bus_id="+value;
+        String sql="DELETE FROM employee where emp_id="+value;
         PreparedStatement pst = conn.prepareStatement(sql);
         pst.executeUpdate();
         model.setRowCount(0);
@@ -516,9 +520,15 @@ public class busdetails extends javax.swing.JFrame {
         
     else{
     
+<<<<<<< HEAD
         model.addRow(new Object[]{tEmpID.getText(),tEmpNIC.getText(),tEmpPhoneNo.getText(),tEmpAddress.getText(),tEmpMail.getText(),});    
         Connection conn = DbConnection.ConnectDb();
             String sql  = "INSERT INTO bus(bus_id, route_no, bus_no, bus_time, bus_from,bus_to) VALUES (?,?,?,?,?,?)";
+=======
+        model.addRow(new Object[]{tEmpID.getText(),tEmpName.getText(),tEmpNIC.getText(),tEmpPhoneNo.getText(),tEmpAddress.getText(),tEmpMail.getText(),tEmpPassword.getText()});    
+        Connection conn = DbConnection.ConnectDb();
+            String sql  = "INSERT INTO employee(emp_id, emp_name, emp_nic, emp_phone, emp_address, emp_mail, emp_password) VALUES (?,?,?,?,?,?,?)";
+>>>>>>> 40cc9b1dd643932e5878e4dcb897c6fad65a9407
             PreparedStatement pst = conn.prepareStatement(sql);
             
       
@@ -707,7 +717,7 @@ public class busdetails extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    public static javax.swing.JTable jTable1;
+    private static javax.swing.JTable jTable1;
     private javax.swing.JLabel lMessage;
     private javax.swing.JTextField tEmpAddress;
     private javax.swing.JTextField tEmpID;
