@@ -40,7 +40,7 @@ public class busdetails extends javax.swing.JFrame {
             show show;
             
             while(rs.next()){
-                show = new show(rs.getString("emp_id"),rs.getString("emp_name"),rs.getString("emp_nic"),rs.getString("emp_phone"),rs.getString("emp_address"),rs.getString("emp_mail"),rs.getString("emp_password"));
+                show = new show(rs.getString("emp_id"),rs.getString("emp_name"),rs.getString("emp_nic"),rs.getString("emp_phone"),rs.getString("emp_address"),rs.getString("emp_mail"),rs.getString("emp_password"),rs.getString("Emp_name"));
                 
                 showList.add(show);
                         }
@@ -61,12 +61,12 @@ public class busdetails extends javax.swing.JFrame {
         Object[] row = new Object[7];
         for(int i=0;i<list.size();i++){
             row[0]=list.get(i).getEmp_id();
-            row[1]=list.get(i).getEmp_name();
-            row[2]=list.get(i).getEmp_nic();
-            row[3]=list.get(i).getEmp_phone();
-            row[4]=list.get(i).getEmp_address();
-            row[5]=list.get(i).getEmp_mail();
-            row[6]=list.get(i).getBus_to();
+            row[1]=list.get(i).getEmp_nic();
+            row[2]=list.get(i).getEmp_phone();
+            row[3]=list.get(i).getEmp_address();
+            row[4]=list.get(i).getEmp_mail();
+            row[5]=list.get(i).getBus_to();
+            row[6]=list.get(i).getEmp_name();
             model.addRow(row);
         }
         }
@@ -93,11 +93,9 @@ public class busdetails extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         lMessage = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         tEmpNIC = new javax.swing.JTextField();
-        tEmpName = new javax.swing.JTextField();
         tEmpPhoneNo = new javax.swing.JTextField();
         tEmpAddress = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
@@ -132,7 +130,7 @@ public class busdetails extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Bus ID", "Bus Route", "Route No", "Bus No", "Bus Time", "Bus From", "Bus To"
+                "Bus ID", "Route No", "Bus No", "Bus Time", "Bus From", "Bus To"
             }
         ));
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -174,9 +172,6 @@ public class busdetails extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Lucida Calligraphy", 1, 12)); // NOI18N
         jLabel3.setText("Route No :");
 
-        jLabel4.setFont(new java.awt.Font("Lucida Calligraphy", 1, 12)); // NOI18N
-        jLabel4.setText("Bus Route :");
-
         jLabel6.setFont(new java.awt.Font("Lucida Calligraphy", 1, 12)); // NOI18N
         jLabel6.setText("Bus Time :");
 
@@ -187,13 +182,6 @@ public class busdetails extends javax.swing.JFrame {
         tEmpNIC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tEmpNICActionPerformed(evt);
-            }
-        });
-
-        tEmpName.setText(" ");
-        tEmpName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tEmpNameActionPerformed(evt);
             }
         });
 
@@ -247,8 +235,14 @@ public class busdetails extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(128, 128, 128)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tEmpID, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -264,29 +258,21 @@ public class busdetails extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tEmpPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tEmpID, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(tEmpPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(540, 540, 540)
                         .addComponent(lMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(tEmpName, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                                    .addComponent(tEmpNIC)
-                                    .addComponent(tEmpMail))
-                                .addComponent(tEmpPhoneNo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(tEmpAddress, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(tEmpPhoneNo, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                            .addComponent(tEmpMail)
+                            .addComponent(tEmpAddress)
+                            .addComponent(tEmpNIC))
                         .addContainerGap())))
         );
         jPanel2Layout.setVerticalGroup(
@@ -303,14 +289,10 @@ public class busdetails extends javax.swing.JFrame {
                                 .addGap(21, 21, 21)
                                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jButton2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tEmpID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tEmpName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -331,7 +313,7 @@ public class busdetails extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
                             .addComponent(tEmpPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                        .addGap(40, 40, 40)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton6)
                             .addComponent(jButton5)
@@ -408,15 +390,18 @@ public class busdetails extends javax.swing.JFrame {
             Connection conn = DbConnection.ConnectDb();
             int row = jTable1.getSelectedRow();
             String value = (jTable1.getModel().getValueAt(row,0).toString());
-            String sql  = "UPDATE bus  SET bus_id=?,bus_route=?,route_no=?,bus_no=?,bus_time=?,bus_from=?,bus_to=?"+value;
+<<<<<<< HEAD
+            String sql  = "UPDATE bus  SET bus_id=?,route_no=?,bus_no=?,bus_time=?,bus_from=?,bus_to=?"+value;
+=======
+            String sql  = "UPDATE employee  SET emp_id=?,emp_name=?,emp_nic=?,emp_phone=?,emp_address=?,emp_mail=?,emp_password=?"+value;
+>>>>>>> 40cc9b1dd643932e5878e4dcb897c6fad65a9407
             PreparedStatement pst = conn.prepareStatement(sql);
             pst.setString(1,tEmpID.getText());
-            pst.setString(2,tEmpName.getText());
-            pst.setString(3,tEmpNIC.getText());
-            pst.setString(4,tEmpPhoneNo.getText());
-            pst.setString(5,tEmpAddress.getText());
-            pst.setString(6,tEmpMail.getText());
-            pst.setString(7,tEmpPassword.getText());
+            pst.setString(2,tEmpNIC.getText());
+            pst.setString(3,tEmpPhoneNo.getText());
+            pst.setString(4,tEmpAddress.getText());
+            pst.setString(5,tEmpMail.getText());
+            pst.setString(6,tEmpPassword.getText());
             
             
             pst.executeUpdate();
@@ -469,7 +454,7 @@ public class busdetails extends javax.swing.JFrame {
             Connection conn = DbConnection.ConnectDb();
         int row=jTable1.getSelectedRow();
         String value=(jTable1.getModel().getValueAt(row, 0).toString());
-        String sql="DELETE FROM bus where bus_id="+value;
+        String sql="DELETE FROM employee where emp_id="+value;
         PreparedStatement pst = conn.prepareStatement(sql);
         pst.executeUpdate();
         model.setRowCount(0);
@@ -481,7 +466,6 @@ public class busdetails extends javax.swing.JFrame {
         
     
         tEmpID.setText(null);
-        tEmpName.setText(null);
         tEmpNIC.setText(null);
         tEmpPhoneNo.setText(null);
         tEmpAddress.setText(null);
@@ -502,10 +486,6 @@ public class busdetails extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tEmpNICActionPerformed
 
-    private void tEmpNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tEmpNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tEmpNameActionPerformed
-
     private void tEmpPhoneNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tEmpPhoneNoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tEmpPhoneNoActionPerformed
@@ -517,12 +497,11 @@ public class busdetails extends javax.swing.JFrame {
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
         tEmpID.setText(model.getValueAt(jTable1.getSelectedRow(),0).toString());
-        tEmpName.setText(model.getValueAt(jTable1.getSelectedRow(),1).toString());
-        tEmpNIC.setText(model.getValueAt(jTable1.getSelectedRow(),2).toString());
-        tEmpPhoneNo.setText(model.getValueAt(jTable1.getSelectedRow(),3).toString());
-        tEmpAddress.setText(model.getValueAt(jTable1.getSelectedRow(),4).toString()); 
-        tEmpMail.setText(model.getValueAt(jTable1.getSelectedRow(),5).toString());
-        tEmpPassword.setText(model.getValueAt(jTable1.getSelectedRow(),6).toString());
+        tEmpNIC.setText(model.getValueAt(jTable1.getSelectedRow(),1).toString());
+        tEmpPhoneNo.setText(model.getValueAt(jTable1.getSelectedRow(),2).toString());
+        tEmpAddress.setText(model.getValueAt(jTable1.getSelectedRow(),3).toString()); 
+        tEmpMail.setText(model.getValueAt(jTable1.getSelectedRow(),4).toString());
+        tEmpPassword.setText(model.getValueAt(jTable1.getSelectedRow(),5).toString());
         
         // TODO add your handling code here:
     }//GEN-LAST:event_jTable1MouseClicked
@@ -533,7 +512,7 @@ public class busdetails extends javax.swing.JFrame {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
        try { DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-    if(tEmpID.getText().trim().isEmpty()|| tEmpName.getText().trim().isEmpty()||tEmpNIC.getText().trim().isEmpty()||tEmpPhoneNo.getText().trim().isEmpty()||tEmpAddress.getText().trim().isEmpty()||tEmpMail.getText().trim().isEmpty()|| tEmpPassword.getText().trim().isEmpty()){
+    if(tEmpID.getText().trim().isEmpty() || tEmpNIC.getText().trim().isEmpty()||tEmpPhoneNo.getText().trim().isEmpty()||tEmpAddress.getText().trim().isEmpty()||tEmpMail.getText().trim().isEmpty()|| tEmpPassword.getText().trim().isEmpty()){
         
             JOptionPane.showMessageDialog(null, "!!!!!!!  Please File all details..");
         }
@@ -541,19 +520,24 @@ public class busdetails extends javax.swing.JFrame {
         
     else{
     
-        model.addRow(new Object[]{tEmpID.getText(),tEmpName.getText(),tEmpNIC.getText(),tEmpPhoneNo.getText(),tEmpAddress.getText(),tEmpMail.getText(),tEmpName.getText()});    
+<<<<<<< HEAD
+        model.addRow(new Object[]{tEmpID.getText(),tEmpNIC.getText(),tEmpPhoneNo.getText(),tEmpAddress.getText(),tEmpMail.getText(),});    
         Connection conn = DbConnection.ConnectDb();
-            String sql  = "INSERT INTO bus(bus_id, bus_route, route_no, bus_no, bus_time, bus_from,bus_to) VALUES (?,?,?,?,?,?,?)";
+            String sql  = "INSERT INTO bus(bus_id, route_no, bus_no, bus_time, bus_from,bus_to) VALUES (?,?,?,?,?,?)";
+=======
+        model.addRow(new Object[]{tEmpID.getText(),tEmpName.getText(),tEmpNIC.getText(),tEmpPhoneNo.getText(),tEmpAddress.getText(),tEmpMail.getText(),tEmpPassword.getText()});    
+        Connection conn = DbConnection.ConnectDb();
+            String sql  = "INSERT INTO employee(emp_id, emp_name, emp_nic, emp_phone, emp_address, emp_mail, emp_password) VALUES (?,?,?,?,?,?,?)";
+>>>>>>> 40cc9b1dd643932e5878e4dcb897c6fad65a9407
             PreparedStatement pst = conn.prepareStatement(sql);
             
       
            pst.setString(1,tEmpID.getText());
-           pst.setString(2,tEmpName.getText());
-           pst.setString(3,tEmpNIC.getText());
-           pst.setString(4,tEmpPhoneNo.getText());
-           pst.setString(5,tEmpAddress.getText());
-           pst.setString(6,tEmpMail.getText());
-           pst.setString(7,tEmpPassword.getText());
+           pst.setString(2,tEmpNIC.getText());
+           pst.setString(3,tEmpPhoneNo.getText());
+           pst.setString(4,tEmpAddress.getText());
+           pst.setString(5,tEmpMail.getText());
+           pst.setString(6,tEmpPassword.getText());
            pst.execute();
            model.setRowCount(0);
            showDetails();
@@ -725,7 +709,6 @@ public class busdetails extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -734,13 +717,12 @@ public class busdetails extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    public static javax.swing.JTable jTable1;
+    private static javax.swing.JTable jTable1;
     private javax.swing.JLabel lMessage;
     private javax.swing.JTextField tEmpAddress;
     private javax.swing.JTextField tEmpID;
     private javax.swing.JTextField tEmpMail;
     private javax.swing.JTextField tEmpNIC;
-    private javax.swing.JTextField tEmpName;
     private javax.swing.JTextField tEmpPassword;
     private javax.swing.JTextField tEmpPhoneNo;
     // End of variables declaration//GEN-END:variables
